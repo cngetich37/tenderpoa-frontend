@@ -1,13 +1,14 @@
 // import LoginPage from "./pages/LoginPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Home from "./pages/HomePage";
+import Dashboard from "./pages/Dashboard";
+// import Home from "./pages/HomePage";
 // import RegisterPage from "./pages/RegisterPage";
 const App = () => {
   return (
     <>
       <NavBar />
-      <Home/>
+      <Dashboard/>
       <Footer />
     </>
   );
