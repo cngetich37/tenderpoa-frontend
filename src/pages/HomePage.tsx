@@ -1,7 +1,8 @@
+import {Link} from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <div className="hero min-h-screen bg-[#800000]">
+      <main className="hero min-h-screen bg-[#800000]">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-white font-serif">
@@ -17,10 +18,10 @@ const Home = () => {
               tendering process is a work of art, all within a few clicks. This
               is the epitome of tendering sophistication, made simple for you.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to="/dashboard" className="btn btn-primary">Dashboard</Link>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

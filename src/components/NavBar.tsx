@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
-    <div className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50">
       <div className="navbar relative bg-slate-100 text-[#800000]">
         <div className="navbar-start">
           <div className="dropdown">
@@ -32,20 +33,20 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl font-serif">
+          <Link to="/" className="btn btn-ghost normal-case text-xl font-serif">
             TenderPoa
-          </a>
+          </Link>
         </div>
         <div className="navbar-end flex gap-2">
-          <a className="btn text-white btn-primary font-mono hover:bg-purple-400">
+          <Link to="/login" className="btn text-white btn-primary font-mono hover:bg-purple-400">
             Login
-          </a>
-          <a className="btn text-white bg-[#800000] font-mono hover:bg-purple-400">
+          </Link>
+          <Link to="/signup" className="btn text-white bg-[#800000] font-mono hover:bg-purple-400">
             Sign up
-          </a>
+          </Link>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
