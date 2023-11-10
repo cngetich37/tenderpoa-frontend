@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const OtpPage = () => {
   return (
     <>
       <div className="hero h-screen bg-[#800000]">
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
           <div className="ml-4 flex-col text-center lg:text-center">
             {/* <h1 className="text-5xl font-bold text-white">
-              Tender Poa
-            </h1> */}
+          Tender Poa
+        </h1> */}
             {/* <p className="py-6 text-white text-lg font-mono   font-semibold">Manage Your Bids</p> */}
           </div>
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
@@ -16,41 +16,24 @@ const LoginPage = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-[#800000] text-lg font-semibold">
-                    Email
+                    Enter the Code
                   </span>
                 </label>
                 <input
-                  type="email"
-                  placeholder="email"
+                  type="text"
+                  placeholder="enter the code"
                   className="input bg-white input-error w-full max-w-md lg:w-screen"
                   required
                 />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
-                    Password
-                  </span>
-                </label>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
-                  required
-                />
-                <label className="label">
-                  <a
-                    href="#"
-                    className="label-text-alt link text-[#800000]"
-                  >
-                    Forgot password?
-                  </a>
-                </label>
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2">Login</button>
-                  <Link to="/loginsso" className="btn bg-[#800000]  text-white hover:bg-red-700">Login with SSO</Link>
+                  <Link
+                    to="/otpcodepage"
+                    className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
+                  >
+                    Enter Code
+                  </Link>
                 </div>
               </div>
             </form>
@@ -61,4 +44,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default OtpPage;
