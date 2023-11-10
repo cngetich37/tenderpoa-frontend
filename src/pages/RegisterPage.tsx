@@ -39,6 +39,19 @@ const RegisterPage = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                    Email
+                  </span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="email"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Password
                   </span>
                 </label>
