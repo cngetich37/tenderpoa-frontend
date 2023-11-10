@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 const LoginWithSSO = () => {
   return (
     <>
@@ -21,18 +20,35 @@ const LoginWithSSO = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
-                  <Link
-                    to="/otpcodepage"
+                  <button
                     className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
+                    onClick={() => {
+                      <div className="alert alert-success">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="stroke-current shrink-0 h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <span>code has been sent your email!</span>
+                      </div>;
+                    }}
                   >
                     Login
-                  </Link>
+                  </button>
                 </div>
               </div>
             </form>

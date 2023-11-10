@@ -26,10 +26,10 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-48"
             >
               <li>
-                <a>Login</a>
+                <Link to="/login">Login</Link>
               </li>
               <li>
-                <a>Sign up</a>
+                <Link to="/signup">Sign up</Link>
               </li>
             </ul>
           </div>
@@ -38,7 +38,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-end flex gap-2">
-          <Link to="/login" className="btn text-white btn-primary font-mono hover:bg-purple-400">
+          <Link to="/login" className="btn text-white bg-[#000080] font-mono hover:bg-purple-400">
             Login
           </Link>
           <Link to="/signup" className="btn text-white bg-[#800000] font-mono hover:bg-purple-400">

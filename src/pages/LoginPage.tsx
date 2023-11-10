@@ -22,7 +22,7 @@ const LoginPage = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
@@ -35,7 +35,7 @@ const LoginPage = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
                 <label className="label">

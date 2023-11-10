@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const RegisterPage = () => {
+const SignUpPage = () => {
   return (
     <>
       <div className="hero h-full bg-[#800000]">
@@ -19,7 +19,7 @@ const RegisterPage = () => {
                 <input
                   type="text"
                   placeholder="first name"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
@@ -32,7 +32,7 @@ const RegisterPage = () => {
                 <input
                   type="text"
                   placeholder="last name"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
@@ -45,7 +45,7 @@ const RegisterPage = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
@@ -58,7 +58,7 @@ const RegisterPage = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
@@ -71,7 +71,7 @@ const RegisterPage = () => {
                 <input
                   type="password"
                   placeholder="confirm password"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
 
@@ -97,4 +97,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default SignUpPage;

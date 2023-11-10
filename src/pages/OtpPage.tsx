@@ -22,7 +22,7 @@ const OtpPage = () => {
                 <input
                   type="text"
                   placeholder="enter the code"
-                  className="input bg-white input-error w-full max-w-md lg:w-screen"
+                  className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   required
                 />
               </div>
