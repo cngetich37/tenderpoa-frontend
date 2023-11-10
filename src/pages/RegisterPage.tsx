@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const RegisterPage = () => {
   return (
     <>
@@ -66,7 +67,7 @@ const RegisterPage = () => {
                     <a href="#" className="label-text-alt link text-[#800000] mr-1" >
                       Already have an account? 
                     </a>
-                    <span className="label-text-alt link text-[#2196F3] font-bold">Login</span>
+                    <Link to="/login" className="label-text-alt link text-[#2196F3] font-bold">Login</Link>
                   </label>
                 </div>
               </div>
