@@ -1,9 +1,4 @@
-import { Link, Routes, Route } from "react-router-dom";
-import AllTenders from "../components/AllTenders";
-import SaavaEngLtd from "../components/SaavaEngLtd";
-import IntracomAfricaLtd from "../components/IntracomAfricaLtd";
-import DueTenders from "../components/DueTenders";
-import AlreadyBidded from "../components/AlreadyBidded";
+import { Link, Routes} from "react-router-dom";
 const Dashboard = () => {
   return (
     <div>
