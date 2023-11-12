@@ -17,19 +17,25 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/loginsso" element={<LoginWithSSO />}></Route>
-        <Route path="/otpcodepage" element={<OtpPage />}></Route>
-        <Route path="/signup" element={<SignUpPage />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/alltenders" element={<AllTenders />}></Route>
-        <Route path="/saava" element={<SaavaEngLtd />}></Route>
-        <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
-        <Route path="/due" element={<DueTenders />}></Route>
-        <Route path="/bidded" element={<AlreadyBidded />}></Route>
-      </Routes>
+
+      <div className="flex bg-gray-200">
+        <div className="flex-none h-full"><Dashboard/></div>
+        <div className="flex-1 w-48 h-full">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/loginsso" element={<LoginWithSSO />}></Route>
+            <Route path="/otpcodepage" element={<OtpPage />}></Route>
+            <Route path="/signup" element={<SignUpPage />}></Route>
+            {/* <Route path="/dashboard" element={<Dashboard />}></Route> */}
+            <Route path="/alltenders" element={<AllTenders />}></Route>
+            <Route path="/saava" element={<SaavaEngLtd />}></Route>
+            <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
+            <Route path="/due" element={<DueTenders />}></Route>
+            <Route path="/bidded" element={<AlreadyBidded />}></Route>
+          </Routes>
+        </div>
+      </div>
       <Footer />
     </>
   );

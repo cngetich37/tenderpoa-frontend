@@ -7,7 +7,6 @@ const columns = [
     name: "First Name",
     selector: (row: any) => row.first_name,
     sortable: true,
-    searchable:true
   },
   {
     name: "Last Name",
@@ -25,7 +24,6 @@ const AllTenders = () => {
   const [loading, setLoading] = useState(false);
   const [totalRows, setTotalRows] = useState(0);
   const [perPage, setPerPage] = useState(10);
-
   const fetchUsers = async (page: any) => {
     setLoading(true);
 
@@ -59,8 +57,32 @@ const AllTenders = () => {
   }, []);
 
   return (
+    <div className="min-h-full bg-gray-200">
+      <form className="card-body">
+        <div className="flex gap-2 justify-end items-start">
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-[#800000] text-sm font-semibold">
+                Search
+              </span>
+            </label>
+            <input
+              type="text"
+              placeholder="search"
+              className="input bg-white input-primary w-full max-w-md lg:w-screen text-black"
+              required
+            />
+          </div>
+          <div className="">
+            <div className="form-control mt-9">
+              <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-0">
+                search
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
 
-    <div className="min-h-screen h-auto bg-gray-200">
       <DataTable
         title="Users"
         columns={columns}
