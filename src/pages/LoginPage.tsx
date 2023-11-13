@@ -17,7 +17,7 @@ const LoginPage = () => {
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
+                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Email
                   </span>
                 </label>
@@ -30,7 +30,7 @@ const LoginPage = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
+                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Password
                   </span>
                 </label>
