@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
+import intracompic from "../assets/intracom.jpeg"
 const Sidebar = () => {
   return (
     <>
         <div className="flex h-screen">
           <div>
             <div className="min-h-screen bg-[#510000] ">
-              {/* <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r  hover:w-56 hover:shadow-lg"> */}
               <div className="sidebar min-h-screen w-[3.35rem] lg:w-56 overflow-hidden border-r  hover:w-56 hover:shadow-lg">
                 <div className="flex h-screen flex-col justify-between pt-8 pb-6">
                   <div>
-                    {/* <div className="w-max p-2.5">
-                    <img src="https://tailus.io/images/logo.svg" className="w-32" alt=""/>
-                  </div> */}
+                    <div className="ml-12 w-max p-2.5">
+                    <img src={intracompic} className="w-16" alt=""/>
+                  </div>
                     <ul className="mt-6 space-y-2 tracking-wide ">
                       <li className="min-w-max">
                         <Link
