@@ -6,7 +6,9 @@ const AllTenders = () => {
       <div className="flex-none h-full">
         <Sidebar />
       </div>
-      <div className="flex-1 w-48 h-full">All Tenders</div>
+      <div className="flex-1 w-48 h-full">
+       <h1>All Tenders</h1>
+      </div>
     </div>
   );
 };
