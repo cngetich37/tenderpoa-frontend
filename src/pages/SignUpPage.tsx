@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import homepic from "../assets/homepic.png"
 const SignUpPage = () => {
   return (
     <>
-      <div className="hero h-full bg-[#800000]">
+      <div className="hero h-full " style={{backgroundImage:`url(${homepic}) `, backgroundSize:'cover'}}>
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
           <div className="ml-4 flex-col text-center lg:text-center">
             {/* <p className="py-6 text-white text-lg font-mono   font-semibold">Manage Your Bids</p> */}

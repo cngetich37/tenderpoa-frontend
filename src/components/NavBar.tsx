@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <header className="sticky top-0 z-50">
-      <div className="navbar relative bg-slate-100 text-[#800000]">
+      <div className="navbar relative bg-[#800000] text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-48"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-[#800000] hover:text-teal-800 bg-white rounded-box w-48"
             >
               <li>
                 <Link to="/login">Login</Link>
@@ -38,10 +38,16 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="navbar-end flex gap-2">
-          <Link to="/login" className="btn text-white bg-[#000080] font-mono hover:bg-purple-400">
+          <Link
+            to="/login"
+            className="btn text-white bg-[#000080] font-mono hover:bg-purple-400"
+          >
             Login
           </Link>
-          <Link to="/signup" className="btn text-white bg-[#800000] font-mono hover:bg-purple-400">
+          <Link
+            to="/signup"
+            className="btn text-white bg-[#228b22] font-mono hover:bg-purple-400"
+          >
             Sign up
           </Link>
         </div>
