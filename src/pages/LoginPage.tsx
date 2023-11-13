@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import homepic from "../assets/homepic.png"
+import homepic from "../assets/homepic.png";
 const LoginPage = () => {
   return (
     <>
-      <div className="hero h-full" style={{backgroundImage:`url(${homepic})`, backgroundSize:'cover'}}>
+      <div
+        className="hero h-full"
+        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
+      >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
           <div className="ml-4 flex-col text-center lg:text-center">
             {/* <h1 className="text-5xl font-bold text-white">
@@ -11,7 +14,11 @@ const LoginPage = () => {
             </h1> */}
             {/* <p className="py-6 text-white text-lg font-mono   font-semibold">Manage Your Bids</p> */}
           </div>
+
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
+            <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
+              Login
+            </h1>
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -39,18 +46,22 @@ const LoginPage = () => {
                   required
                 />
                 <label className="label">
-                  <a
-                    href="#"
-                    className="label-text-alt link text-[#800000]"
-                  >
+                  <a href="#" className="label-text-alt link text-[#800000]">
                     Forgot password?
                   </a>
                 </label>
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2">Login</button>
-                  <Link to="/loginsso" className="btn bg-[#800000]  text-white hover:bg-red-700">Login with SSO</Link>
+                  <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2">
+                    Login
+                  </button>
+                  <Link
+                    to="/loginsso"
+                    className="btn bg-[#800000]  text-white hover:bg-red-700"
+                  >
+                    Login with SSO
+                  </Link>
                 </div>
               </div>
             </form>
