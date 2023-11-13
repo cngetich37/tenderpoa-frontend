@@ -8,12 +8,7 @@ const LoginPage = () => {
         style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
       >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
-          <div className="ml-4 flex-col text-center lg:text-center">
-            {/* <h1 className="text-5xl font-bold text-white">
-              Tender Poa
-            </h1> */}
-            {/* <p className="py-6 text-white text-lg font-mono   font-semibold">Manage Your Bids</p> */}
-          </div>
+          <div className="ml-4 flex-col text-center lg:text-center"></div>
 
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
