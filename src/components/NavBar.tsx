@@ -31,11 +31,40 @@ const NavBar = () => {
               <li>
                 <Link to="/signup">Sign up</Link>
               </li>
+              <li>
+                <Link to="/intracom">Intracom</Link>
+              </li>
+              <li>
+                <Link to="/saava">Saava</Link>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl font-serif">
             TenderPoa
           </Link>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a>Add a Tender</a>
+            </li>
+            <li tabIndex={0}>
+              <details>
+                <summary>Companies</summary>
+                <ul className="p-2  bg-white text-[#800000]">
+                  <li>
+                    <Link to="/intracom">Intracom Africa Ltd</Link>
+                  </li>
+                  <li>
+                    <Link to="/saava">Saava Engineering Ltd</Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a>Steps to Bid</a>
+            </li>
+          </ul>
         </div>
         <div className="navbar-end flex gap-2">
           <Link

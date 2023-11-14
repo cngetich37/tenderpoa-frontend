@@ -1,5 +1,5 @@
 import Sidebar from "../components/Sidebar";
-import DataTable, { TableColumn } from "react-data-table-component";
+import DataTable, { TableColumn,createTheme } from "react-data-table-component";
 import data from "../assets/MOCK_DATA.json";
 
 interface DataRow {
@@ -142,6 +142,36 @@ const customStyles = {
   },
 };
 
+createTheme(
+  "solarized",
+  {
+    text: {
+      primary: "#800000",
+      secondary: "#510000",
+    },
+    background: {
+      default: "#FFFFFF",
+    },
+    context: {
+      background: "#510000",
+      text: "#FFFFFF",
+    },
+    divider: {
+      default: "#073642",
+    },
+    button: {
+      default: "#800000",
+      hover: "rgba(0,0,0,.08)",
+      focus: "rgba(255,255,255,.12)",
+      disabled: "rgba(255, 255, 255, .34)",
+    },
+    sortFocus: {
+      default: "#2aa198",
+    },
+  },
+  "light"
+);
+
 const AllTenders = (): JSX.Element => {
   return (
     <div className="flex bg-white">
@@ -161,6 +191,7 @@ const AllTenders = (): JSX.Element => {
             pagination
             paginationComponentOptions={paginationComponentOptions}
             customStyles={customStyles}
+            theme="solarized"
           />
         </div>
       </div>
