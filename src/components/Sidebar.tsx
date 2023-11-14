@@ -3,7 +3,7 @@ import intracompic from "../assets/intracom.jpeg"
 const Sidebar = () => {
   return (
     <>
-        <div className="flex h-screen">
+        <div className="flex h-auto">
           <div>
             <div className="min-h-screen bg-[#510000] ">
               <div className="sidebar min-h-screen w-[3.35rem] lg:w-56 overflow-hidden border-r  hover:w-56 hover:shadow-lg">

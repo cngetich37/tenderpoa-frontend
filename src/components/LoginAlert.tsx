@@ -3,4 +3,3 @@ const LoginAlert = () => {
 };
 
 export default LoginAlert;
-
