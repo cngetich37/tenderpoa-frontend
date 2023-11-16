@@ -46,17 +46,17 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Add a Tender</a>
+              <Link to="/addtender">Add a Tender</Link>
             </li>
             <li tabIndex={0}>
               <details>
                 <summary>Companies</summary>
                 <ul className="p-2  bg-white text-[#800000]">
                   <li>
-                    <Link to="/intracom">Intracom Africa Ltd</Link>
+                    <Link to="/intracom">Intracom</Link>
                   </li>
                   <li>
-                    <Link to="/saava">Saava Engineering Ltd</Link>
+                    <Link to="/saava">Saava</Link>
                   </li>
                 </ul>
               </details>
