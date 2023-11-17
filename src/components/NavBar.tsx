@@ -46,7 +46,7 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/addtender">Add a Tender</Link>
+              <Link to="/multistepform">Add a Tender</Link>
             </li>
             <li tabIndex={0}>
               <details>
