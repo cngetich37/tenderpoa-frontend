@@ -16,7 +16,7 @@ const VisuallyHiddenInput = styled("input")({
 
 export default function InputFileUpload() {
   return (
-    <div className="h-48 md:h-full sm:h-full">
+    <div className="h-48 md:h-full sm:h-full sm:w-full md-w-full">
       <Button
         component="label"
         variant="contained"
