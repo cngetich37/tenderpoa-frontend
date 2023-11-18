@@ -11,9 +11,6 @@ export default function Step1() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <React.Fragment>
-        {/* <Typography variant="h6" gutterBottom>
-       Register a Tender
-      </Typography> */}
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -94,6 +91,16 @@ export default function Step1() {
               id="tenderValue"
               name="tenderValue"
               label="Tender Value"
+              fullWidth
+              variant="standard"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="dollarrate"
+              name="dollarrate"
+              label="Dollar Rate"
               fullWidth
               variant="standard"
             />

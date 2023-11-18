@@ -26,16 +26,10 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-[#800000] hover:text-teal-800 bg-white rounded-box w-48"
             >
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/alltenders">All Tenders</Link>
               </li>
               <li>
-                <Link to="/signup">Sign up</Link>
-              </li>
-              <li>
-                <Link to="/intracom">Intracom</Link>
-              </li>
-              <li>
-                <Link to="/saava">Saava</Link>
+                <Link to="/multistepform">Add a Tender</Link>
               </li>
             </ul>
           </div>
