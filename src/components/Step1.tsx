@@ -24,7 +24,7 @@ export default function Step1() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextareaAutosize
-              className="w-96 text-sm font-normal bg-white leading-normal p-3 shadow-lg mt-2 shadow-slate-100 border border-solid"
+              className="w-80 text-sm font-normal bg-white leading-normal p-3 shadow-lg mt-2 shadow-slate-100 border border-solid"
               placeholder="tender description"
               aria-label="Tender Description"
             />
