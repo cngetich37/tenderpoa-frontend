@@ -1,9 +1,16 @@
+import * as React from "react";
+import Grid from "@mui/material/Grid";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
-
-const Step3 = () => {
+export default function Step3() {
   return (
-    <div>Step3</div>
-  )
+    <div className="h-48">
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <React.Fragment>
+          <Grid container spacing={3}></Grid>
+        </React.Fragment>
+      </LocalizationProvider>
+    </div>
+  );
 }
-
-export default Step3

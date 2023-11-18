@@ -7,37 +7,30 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
-// import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {"Copyright © "}
-//       <Link color="inherit" href="https://intracom.africa/">
-//         Intracom Africa Ltd
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Step4 from "./Step4";
 
 const theme = createTheme({
-  palette:{
+  palette: {
     primary: {
-      main:"#800000",
+      main: "#800000",
     },
     secondary: {
-      main:"#510000",
-    }
-  }
-})
+      main: "#510000",
+    },
+  },
+});
 
-const steps = ["Register Tender", "Upload the Tender document", "Review your Tender"];
+const steps = [
+  "Register Tender",
+  "Upload the Tender document",
+  "Additional Details",
+  "Review your Tender",
+];
 
 function getStepContent(step: number) {
   switch (step) {
@@ -47,6 +40,8 @@ function getStepContent(step: number) {
       return <Step2 />;
     case 2:
       return <Step3 />;
+    case 3:
+      return <Step4 />;
     default:
       throw new Error("Unknown step");
   }
@@ -67,47 +62,43 @@ export default function MultiStepForm() {
     <div className="flex justify-center">
       <div className="flex h-full lg:w-2/3 w-full">
         <ThemeProvider theme={theme}>
-        <React.Fragment>
-          <CssBaseline />
-          {/* <AppBar
-            position="absolute"
-            color="default"
-            elevation={0}
-            sx={{
-              position: "relative",
-              borderBottom: (t) => `1px solid ${t.palette.divider}`,
-            }}
-          >
-            <Toolbar>
-      
-            </Toolbar>
-          </AppBar> */}
-          <Container component="main" maxWidth="lg"  sx={{ mb: 4 }}>
-            <Paper
-              variant="outlined"
-              sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-            >
-              <Typography component="h1" variant="h4" align="center" color="primary">
-                Add a Tender
-              </Typography>
-              <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
-                {steps.map((label) => (
-                  <Step key={label}>
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                ))}
-              </Stepper>
-              {activeStep === steps.length ? (
-                <React.Fragment>
-                  <Typography variant="h5" gutterBottom color="secondary">
-                    Thank you for submitting your tender
-                  </Typography>
-                  <Typography variant="subtitle1" color="primary">
-                    Your tender number is T-001. You can make updates on the All Tenders section.
-                  </Typography>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
+          <React.Fragment>
+            <CssBaseline />
+
+            <Container component="main" maxWidth="lg" sx={{ mb: 4 }}>
+              <Paper
+                variant="outlined"
+                sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+              >
+                <Typography
+                  component="h1"
+                  variant="h4"
+                  align="center"
+                  color="primary"
+                >
+                  Add a Tender
+                </Typography>
+                <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+                  {steps.map((label) => (
+                    <Step key={label}>
+                      <StepLabel>{label}</StepLabel>
+                    </Step>
+                  ))}
+                </Stepper>
+                {activeStep === steps.length ? (
+                  <div className="h-48">
+                    <React.Fragment>
+                      <Typography variant="h5" gutterBottom color="secondary">
+                        Thank you for submitting your tender
+                      </Typography>
+                      <Typography variant="subtitle1" color="primary">
+                        Your tender number is T-001. You can make updates on the
+                        All Tenders section.
+                      </Typography>
+                    </React.Fragment>
+                  </div>
+                ) : (
+                  <React.Fragment>
                     {getStepContent(activeStep)}
                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                       {activeStep !== 0 && (
@@ -116,23 +107,23 @@ export default function MultiStepForm() {
                         </Button>
                       )}
                       <Button
-                        variant="contained" color="primary"
+                        variant="contained"
+                        color="primary"
                         onClick={handleNext}
                         sx={{ mt: 3, ml: 1 }}
                       >
-                        {activeStep === steps.length - 1 ? "Submit Tender" : "Next"}
+                        {activeStep === steps.length - 1
+                          ? "Submit Tender"
+                          : "Next"}
                       </Button>
                     </Box>
-                </React.Fragment>
-              )}
-            </Paper>
-            {/* <Copyright /> */}
-          </Container>
-        </React.Fragment>
+                  </React.Fragment>
+                )}
+              </Paper>
+            </Container>
+          </React.Fragment>
         </ThemeProvider>
       </div>
     </div>
   );
 }
-
-
