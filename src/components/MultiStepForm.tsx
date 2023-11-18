@@ -64,71 +64,73 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="h-screen w-full">
-      <ThemeProvider theme={theme}>
-      <React.Fragment>
-        <CssBaseline />
-        {/* <AppBar
-          position="absolute"
-          color="default"
-          elevation={0}
-          sx={{
-            position: "relative",
-            borderBottom: (t) => `1px solid ${t.palette.divider}`,
-          }}
-        >
-          <Toolbar>
-      
-          </Toolbar>
-        </AppBar> */}
-        <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-          <Paper
-            variant="outlined"
-            sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+    <div className="flex justify-center">
+      <div className="flex h-full lg:w-2/3 w-full">
+        <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <CssBaseline />
+          {/* <AppBar
+            position="absolute"
+            color="default"
+            elevation={0}
+            sx={{
+              position: "relative",
+              borderBottom: (t) => `1px solid ${t.palette.divider}`,
+            }}
           >
-            <Typography component="h1" variant="h4" align="center" color="primary">
-              Add a Tender
-            </Typography>
-            <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-            {activeStep === steps.length ? (
-              <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for submitting your tender
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your tender number is T-001. You can make updates on the All Tenders section.
-                </Typography>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                  {getStepContent(activeStep)}
-                  <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                    {activeStep !== 0 && (
-                      <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                        Back
+            <Toolbar>
+      
+            </Toolbar>
+          </AppBar> */}
+          <Container component="main" maxWidth="lg"  sx={{ mb: 4 }}>
+            <Paper
+              variant="outlined"
+              sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+            >
+              <Typography component="h1" variant="h4" align="center" color="primary">
+                Add a Tender
+              </Typography>
+              <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+                {steps.map((label) => (
+                  <Step key={label}>
+                    <StepLabel>{label}</StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+              {activeStep === steps.length ? (
+                <React.Fragment>
+                  <Typography variant="h5" gutterBottom color="secondary">
+                    Thank you for submitting your tender
+                  </Typography>
+                  <Typography variant="subtitle1" color="primary">
+                    Your tender number is T-001. You can make updates on the All Tenders section.
+                  </Typography>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                    {getStepContent(activeStep)}
+                    <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                      {activeStep !== 0 && (
+                        <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
+                          Back
+                        </Button>
+                      )}
+                      <Button
+                        variant="contained" color="primary"
+                        onClick={handleNext}
+                        sx={{ mt: 3, ml: 1 }}
+                      >
+                        {activeStep === steps.length - 1 ? "Submit Tender" : "Next"}
                       </Button>
-                    )}
-                    <Button
-                      variant="contained" color="primary"
-                      onClick={handleNext}
-                      sx={{ mt: 3, ml: 1 }}
-                    >
-                      {activeStep === steps.length - 1 ? "Submit Tender" : "Next"}
-                    </Button>
-                  </Box>
-              </React.Fragment>
-            )}
-          </Paper>
-          {/* <Copyright /> */}
-        </Container>
-      </React.Fragment>
-      </ThemeProvider>
+                    </Box>
+                </React.Fragment>
+              )}
+            </Paper>
+            {/* <Copyright /> */}
+          </Container>
+        </React.Fragment>
+        </ThemeProvider>
+      </div>
     </div>
   );
 }
