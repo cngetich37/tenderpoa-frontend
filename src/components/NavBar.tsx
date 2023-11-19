@@ -56,7 +56,7 @@ const NavBar = () => {
               </details>
             </li>
             <li>
-              <a>Steps to Bid</a>
+              <Link to="/stepstobid">Steps to Bid</Link>
             </li>
           </ul>
         </div>

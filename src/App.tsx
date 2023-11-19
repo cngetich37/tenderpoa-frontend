@@ -12,6 +12,7 @@ import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
 import MultiStepForm from "./components/MultiStepForm";
+import StepsToBid from "./components/StepsToBid";
 const App = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/otpcodepage" element={<OtpPage />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/multistepform" element={<MultiStepForm />}></Route>
+        <Route path="/stepstobid" element={<StepsToBid />}></Route>
       </Routes>
       <Footer />
     </>
