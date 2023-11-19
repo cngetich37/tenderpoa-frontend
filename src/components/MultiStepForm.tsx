@@ -65,9 +65,9 @@ export default function MultiStepForm() {
           <React.Fragment>
             <CssBaseline />
 
-            <Container component="main" maxWidth="lg" sx={{ mb: 4 }}>
+            <Container component="main" maxWidth="md" sx={{ mb: 4 }}>
               <Paper
-                variant="outlined"
+                variant="outlined" 
                 sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
               >
                 <Typography
@@ -78,7 +78,7 @@ export default function MultiStepForm() {
                 >
                   Add a Tender
                 </Typography>
-                <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+                <Stepper className="sm:w-1/2" activeStep={activeStep} sx={{ pt: 3, pb: 5}}>
                   {steps.map((label) => (
                     <Step key={label}>
                       <StepLabel>{label}</StepLabel>
