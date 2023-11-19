@@ -31,6 +31,9 @@ const NavBar = () => {
               <li>
                 <Link to="/multistepform">Add a Tender</Link>
               </li>
+              <li>
+                <Link to="/stepstobid">Steps to Bid</Link>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl font-serif">
