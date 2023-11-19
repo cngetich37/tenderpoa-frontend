@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
-import { validSchema } from "../schemas/validatePasswords";
+import { loginSchema } from "../validationSchemas/validateLoginForm";
 
 interface LoginFormValues {
   email: string;
@@ -19,7 +19,7 @@ const LoginPage = () => {
         email: "",
         password: "",
       },
-      validationSchema: validSchema,
+      validationSchema: loginSchema,
       onSubmit: loginForm,
     });
   return (
@@ -79,7 +79,9 @@ const LoginPage = () => {
                   autoComplete="on"
                 />
                 {errors.password && touched.password && (
-                  <p className="alert bg-[#FF0000] text-white mt-2">{errors.password}</p>
+                  <p className="alert bg-[#FF0000] text-white mt-2">
+                    {errors.password}
+                  </p>
                 )}
                 <div className="label">
                   <a href="#" className="label-text-alt link text-[#800000]">

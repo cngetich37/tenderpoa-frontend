@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
-import { validSchema } from "../schemas/validatePasswords";
+import { validSchema } from "../validationSchemas/validateSignUpForm";
 
 interface signUpFormValues {
   firstName: string;
@@ -63,7 +63,9 @@ const SignUpPage = () => {
                 />
               </div>
               {errors.firstName && touched.firstName && (
-                <p className="alert bg-[#FF0000] text-white">{errors.firstName}</p>
+                <p className="alert bg-[#FF0000] text-white">
+                  {errors.firstName}
+                </p>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="lastName">
@@ -83,7 +85,9 @@ const SignUpPage = () => {
                 />
               </div>
               {errors.lastName && touched.lastName && (
-                <p className="alert bg-[#FF0000] text-white">{errors.lastName}</p>
+                <p className="alert bg-[#FF0000] text-white">
+                  {errors.lastName}
+                </p>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="email">
@@ -123,7 +127,9 @@ const SignUpPage = () => {
                 />
               </div>
               {errors.password && touched.password && (
-                <p className="alert bg-[#FF0000] text-white">{errors.password}</p>
+                <p className="alert bg-[#FF0000] text-white">
+                  {errors.password}
+                </p>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="confirmPassword">
@@ -142,7 +148,9 @@ const SignUpPage = () => {
                   autoComplete="on"
                 />
                 {errors.confirmPassword && touched.confirmPassword && (
-                  <p className="alert bg-[#FF0000] text-white mt-2">{errors.confirmPassword}</p>
+                  <p className="alert bg-[#FF0000] text-white mt-2">
+                    {errors.confirmPassword}
+                  </p>
                 )}
                 <div className="flex gap-0">
                   <div className="label">

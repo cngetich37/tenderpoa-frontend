@@ -1,6 +1,7 @@
 import * as yup from "yup";
-
-const passwordRules = /^(?=.*[A-Z])(?=.*[a-z])(?=.*d).{8,}$/;
+// password rules state that a valid password should have a min of 8 characters, at least one uppercase letter, at least one lower case letter,
+// and a special character
+const passwordRules = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+{}|;:'",.<>?/\\~-]).{8,}$/;
 
 export const validSchema = yup.object().shape({
   firstName: yup.string().required("Please enter your first name!"),
