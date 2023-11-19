@@ -60,7 +60,7 @@ export default function MultiStepForm() {
 
   return (
     <div className="flex justify-center">
-      <div className="flex h-full lg:w-2/3 w-full sm:w-1/2">
+      <div className="flex h-full lg:w-2/3 w-screen sm:w-1/2">
         <ThemeProvider theme={theme}>
           <React.Fragment>
             <CssBaseline />
