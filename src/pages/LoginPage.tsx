@@ -1,6 +1,27 @@
 import { Link } from "react-router-dom";
 import homepic from "../assets/homepic.png";
+import { useFormik } from "formik";
+import { validSchema } from "../schemas/validatePasswords";
+
+interface LoginFormValues {
+  email: string;
+  password: string;
+}
+
+const loginForm = () => {
+  console.log("Login successful!");
+};
+
 const LoginPage = () => {
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+    useFormik<LoginFormValues>({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: validSchema,
+      onSubmit: loginForm,
+    });
   return (
     <>
       <div
@@ -14,37 +35,57 @@ const LoginPage = () => {
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
               Login
             </h1>
-            <form className="card-body">
+            <form
+              className="card-body"
+              onSubmit={handleSubmit}
+              autoComplete="true"
+            >
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor="email">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Email
                   </span>
                 </label>
                 <input
+                  id="email"
+                  name="email"
                   type="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="email"
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
-                  required
+                  autoComplete="on"
                 />
               </div>
+              {errors.email && touched.email && (
+                <p className="alert bg-[#FF0000] text-white">{errors.email}</p>
+              )}
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor="password">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Password
                   </span>
                 </label>
                 <input
+                  id="password"
+                  name="password"
                   type="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   placeholder="password"
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
-                  required
+                  autoComplete="on"
                 />
-                <label className="label">
+                {errors.password && touched.password && (
+                  <p className="alert bg-[#FF0000] text-white mt-2">{errors.password}</p>
+                )}
+                <div className="label">
                   <a href="#" className="label-text-alt link text-[#800000]">
                     Forgot password?
                   </a>
-                </label>
+                </div>
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
