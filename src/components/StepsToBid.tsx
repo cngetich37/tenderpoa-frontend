@@ -105,7 +105,7 @@ export default function StepsToBid() {
   return (
     <div className="flex bg-white">
       <ThemeProvider theme={theme}>
-        <Box className="w-1/2 h-auto">
+        <Box className="w-1/2 h-auto px-6 py-6 mt-4 ml-6">
           <Stepper activeStep={activeStep} orientation="vertical">
             {steps.map((step, index) => (
               <Step key={step.label}>
@@ -145,7 +145,7 @@ export default function StepsToBid() {
           {activeStep === steps.length && (
             <Paper square elevation={0} sx={{ p: 3 }}>
               <Typography>
-                All steps completed - you&apos;re finished
+                All bidding steps completed.- you&apos;re done
               </Typography>
               <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
                 Reset
