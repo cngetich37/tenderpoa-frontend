@@ -78,7 +78,7 @@ export default function MultiStepForm() {
                 >
                   Add a Tender
                 </Typography>
-                <Stepper className="sm:w-1/2" activeStep={activeStep} sx={{ pt: 3, pb: 5, px:6}}>
+                <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5}}>
                   {steps.map((label) => (
                     <Step key={label}>
                       <StepLabel>{label}</StepLabel>
