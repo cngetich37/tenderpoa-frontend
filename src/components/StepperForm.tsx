@@ -8,11 +8,10 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Step1 from "./Step1";
+import Step1 from "./AddTender";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 
 const theme = createTheme({
   palette: {
@@ -28,7 +27,7 @@ const theme = createTheme({
 const steps = [
   "Register Tender",
   "Upload the Tender document",
-  "Additional Details"
+  "Additional Details",
 ];
 
 function getStepContent(step: number) {
@@ -64,7 +63,7 @@ export default function MultiStepForm() {
 
             <Container component="main" maxWidth="md" sx={{ mb: 4 }}>
               <Paper
-                variant="outlined" 
+                variant="outlined"
                 sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
               >
                 <Typography
@@ -75,7 +74,7 @@ export default function MultiStepForm() {
                 >
                   Add a Tender
                 </Typography>
-                <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5}}>
+                <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
                   {steps.map((label) => (
                     <Step key={label}>
                       <StepLabel>{label}</StepLabel>
@@ -109,6 +108,7 @@ export default function MultiStepForm() {
                         color="primary"
                         onClick={handleNext}
                         sx={{ mt: 3, ml: 1 }}
+                        type="submit"
                       >
                         {activeStep === steps.length - 1
                           ? "Submit Tender"

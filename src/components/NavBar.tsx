@@ -29,7 +29,7 @@ const NavBar = () => {
                 <Link to="/alltenders">All Tenders</Link>
               </li>
               <li>
-                <Link to="/multistepform">Add a Tender</Link>
+                <Link to="/step1">Add a Tender</Link>
               </li>
               <li>
                 <Link to="/stepstobid">Steps to Bid</Link>
@@ -43,7 +43,7 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/multistepform">Add a Tender</Link>
+              <Link to="/addtender">Add a Tender</Link>
             </li>
             <li tabIndex={0}>
               <details>

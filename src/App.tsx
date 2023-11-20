@@ -11,8 +11,8 @@ import AlreadyBidded from "./components/AlreadyBidded";
 import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
-import MultiStepForm from "./components/MultiStepForm";
 import StepsToBid from "./components/StepsToBid";
+import AddTender from "./components/AddTender";
 const App = () => {
   return (
     <>
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/loginsso" element={<LoginWithSSO />}></Route>
         <Route path="/otpcodepage" element={<OtpPage />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
-        <Route path="/multistepform" element={<MultiStepForm />}></Route>
+        <Route path="/addtender" element={<AddTender />}></Route>
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
       </Routes>
       <Footer />
