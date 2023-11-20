@@ -12,7 +12,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Step4 from "./Step4";
+
 
 const theme = createTheme({
   palette: {
@@ -28,8 +28,7 @@ const theme = createTheme({
 const steps = [
   "Register Tender",
   "Upload the Tender document",
-  "Additional Details",
-  "Review your Tender",
+  "Additional Details"
 ];
 
 function getStepContent(step: number) {
@@ -40,8 +39,6 @@ function getStepContent(step: number) {
       return <Step2 />;
     case 2:
       return <Step3 />;
-    case 3:
-      return <Step4 />;
     default:
       throw new Error("Unknown step");
   }
