@@ -18,5 +18,6 @@ export const validateTender = yup.object().shape({
   location: yup.string().required("Please enter the location!"),
   tenderValue: yup.number().required("Please enter the tender value!"),
   dollarRate: yup.number().required("Please enter the dollar rate!"),
+  company: yup.string().required("Please enter the name of the company!"),
   tenderFile: yup.mixed().required("Please upload the tender document!"),
 });

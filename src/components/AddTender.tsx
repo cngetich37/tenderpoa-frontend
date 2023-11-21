@@ -65,6 +65,7 @@ export default function AddTender() {
                       location: "",
                       tenderValue: 10000,
                       dollarRate: 151.55,
+                      company:"",
                       tenderFile: File,
                     }}
                     validationSchema={validateTender}
@@ -267,6 +268,24 @@ export default function AddTender() {
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
+                            <TextField
+                              id="company"
+                              name="company"
+                              value={formik.values.company}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              label="Company"
+                              fullWidth
+                              variant="standard"
+                            />
+                            {formik.errors.company &&
+                              formik.touched.company && (
+                                <Alert severity="error" className="mt-1">
+                                  {formik.errors.company}
+                                </Alert>
+                              )}
+                          </Grid>
+                          <Grid item xs={12}>
                             <div className="mr-4">
                               <TextField
                                 id="tenderFile"

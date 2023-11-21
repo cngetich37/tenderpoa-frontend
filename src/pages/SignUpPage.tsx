@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
 import { validSchema } from "../validationSchemas/validateSignUpForm";
-
+import Alert from "@mui/material/Alert";
 interface signUpFormValues {
   firstName: string;
   lastName: string;
@@ -62,10 +62,11 @@ const SignUpPage = () => {
                   // className={errors.email && touched.email ? "input-error" : ""}
                 />
               </div>
+
               {errors.firstName && touched.firstName && (
-                <p className="alert bg-[#FF0000] text-white">
+                <Alert severity="error" className="mt-1">
                   {errors.firstName}
-                </p>
+                </Alert>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="lastName">
@@ -84,10 +85,11 @@ const SignUpPage = () => {
                   autoComplete="on"
                 />
               </div>
+
               {errors.lastName && touched.lastName && (
-                <p className="alert bg-[#FF0000] text-white">
+                <Alert severity="error" className="mt-1">
                   {errors.lastName}
-                </p>
+                </Alert>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="email">
@@ -106,8 +108,11 @@ const SignUpPage = () => {
                   autoComplete="on"
                 />
               </div>
+
               {errors.email && touched.email && (
-                <p className="alert bg-[#FF0000] text-white">{errors.email}</p>
+                <Alert severity="error" className="mt-1">
+                  {errors.email}
+                </Alert>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="password">
@@ -126,10 +131,11 @@ const SignUpPage = () => {
                   autoComplete="on"
                 />
               </div>
+
               {errors.password && touched.password && (
-                <p className="alert bg-[#FF0000] text-white">
+                <Alert severity="error" className="mt-1">
                   {errors.password}
-                </p>
+                </Alert>
               )}
               <div className="form-control">
                 <label className="label" htmlFor="confirmPassword">
@@ -147,10 +153,11 @@ const SignUpPage = () => {
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
+
                 {errors.confirmPassword && touched.confirmPassword && (
-                  <p className="alert bg-[#FF0000] text-white mt-2">
+                  <Alert severity="error" className="mt-1">
                     {errors.confirmPassword}
-                  </p>
+                  </Alert>
                 )}
                 <div className="flex gap-0">
                   <div className="label">

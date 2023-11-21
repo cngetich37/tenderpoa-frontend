@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
 import { loginSchema } from "../validationSchemas/validateLoginForm";
-
+import Alert from "@mui/material/Alert";
 interface LoginFormValues {
   email: string;
   password: string;
@@ -59,8 +59,11 @@ const LoginPage = () => {
                 />
               </div>
               {errors.email && touched.email && (
-                <p className="alert bg-[#FF0000] text-white">{errors.email}</p>
+                <Alert severity="error" className="mt-1">
+                  {errors.email}
+                </Alert>
               )}
+
               <div className="form-control">
                 <label className="label" htmlFor="password">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
@@ -79,10 +82,10 @@ const LoginPage = () => {
                   autoComplete="on"
                 />
                 {errors.password && touched.password && (
-                  <p className="alert bg-[#FF0000] text-white mt-2">
-                    {errors.password}
-                  </p>
-                )}
+                <Alert severity="error" className="mt-2">
+                  {errors.password}
+                </Alert>
+              )}
                 <div className="label">
                   <a href="#" className="label-text-alt link text-[#800000]">
                     Forgot password?
