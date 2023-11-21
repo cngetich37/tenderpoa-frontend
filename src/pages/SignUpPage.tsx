@@ -177,7 +177,7 @@ const SignUpPage = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#800000] text-white hover:bg-zinc-500">
+                <button className="btn bg-[#800000] text-white hover:bg-zinc-500" type="submit">
                   Sign up
                 </button>
               </div>

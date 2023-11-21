@@ -82,10 +82,10 @@ const LoginPage = () => {
                   autoComplete="on"
                 />
                 {errors.password && touched.password && (
-                <Alert severity="error" className="mt-2">
-                  {errors.password}
-                </Alert>
-              )}
+                  <Alert severity="error" className="mt-2">
+                    {errors.password}
+                  </Alert>
+                )}
                 <div className="label">
                   <a href="#" className="label-text-alt link text-[#800000]">
                     Forgot password?
@@ -94,15 +94,18 @@ const LoginPage = () => {
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2">
+                  <button
+                    className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
+                    type="submit"
+                  >
                     Login
                   </button>
-                  <Link
-                    to="/loginsso"
+                  <button
                     className="btn bg-[#800000]  text-white hover:bg-red-700"
+                    type="submit"
                   >
-                    Login with SSO
-                  </Link>
+                    <Link to="/loginsso">Login with SSO</Link>
+                  </button>
                 </div>
               </div>
             </form>
