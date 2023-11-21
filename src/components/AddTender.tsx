@@ -11,39 +11,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DateTimePicker } from "@mui/x-date-pickers";
-// import { useFormik } from "formik";
 import Button from "@mui/material/Button";
 import { validateTender } from "./validationTenderForm/validateTenderForm";
 import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { styled } from "@mui/material/styles";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Formik } from "formik";
-// interface TenderFormValues {
-//   tenderNo: string;
-//   tenderDescription: string;
-//   client: string;
-//   siteVisitDate: Date;
-//   timeExtension: number;
-//   bidSecurity: string;
-//   bidSourceInsurance: string;
-//   closingDateTime: Date;
-//   location: string;
-//   tenderValue: number;
-//   dollarRate: number;
-// }
 
-const VisuallyHiddenInput = styled("input")({
-  clip: "rect(0 0 0 0)",
-  clipPath: "inset(50%)",
-  height: 1,
-  overflow: "hidden",
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  whiteSpace: "nowrap",
-  width: 1,
-});
 
 const theme = createTheme({
   palette: {
@@ -56,31 +29,9 @@ const theme = createTheme({
   },
 });
 
-// const today = dayjs();
 const tomorrow = dayjs().subtract(-1, "day");
-// const todayStartOfTheDay = today.startOf("day");
-// const submitTender = () => {
-//   console.log("Tender has been submitted!");
-// };
+
 export default function AddTender() {
-  // const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
-  //   useFormik<TenderFormValues>({
-  //     initialValues: {
-  //       tenderNo: "",
-  //       tenderDescription: "",
-  //       client: "",
-  //       siteVisitDate: new Date(),
-  //       timeExtension: 5,
-  //       bidSecurity: "",
-  //       bidSourceInsurance: "",
-  //       closingDateTime: new Date(),
-  //       location: "",
-  //       tenderValue: 10000,
-  //       dollarRate: 151.55,
-  //     },
-  //     validationSchema: validateTender,
-  //     onSubmit: submitTender,
-  //   });
   return (
     <div className="flex justify-center bg-white">
       <div className="flex h-full lg:w-2/3 w-screen sm:w-1/2 py-6 mt-6 mb-6">
@@ -114,7 +65,7 @@ export default function AddTender() {
                       location: "",
                       tenderValue: 10000,
                       dollarRate: 151.55,
-                      tenderFile: null,
+                      tenderFile: File,
                     }}
                     validationSchema={validateTender}
                     onSubmit={(values, actions) => {
@@ -316,30 +267,24 @@ export default function AddTender() {
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
-                            <div className="mt-4">
-                              <Button
-                                component="label"
-                                htmlFor="tenderFile"
-                                variant="contained"
-                                startIcon={<CloudUploadIcon />}
-                              >
-                                Upload a tender document
-                                <VisuallyHiddenInput
-                                  id="tenderFile"
-                                  name="tenderFile"
-                                  type="file"
-                                  onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                  ) => {
-                                    const tenderFile =
-                                      event.currentTarget.files?.[0] || null;
-                                    formik.setFieldValue(
-                                      "tenderFile",
-                                      tenderFile
-                                    );
-                                  }}
-                                />
-                              </Button>
+                            <div className="mr-4">
+                              <TextField
+                                id="tenderFile"
+                                name="tenderFile"
+                                type="file"
+                                // onChange={(
+                                //   event: React.ChangeEvent<HTMLInputElement>
+                                // ) => {
+                                //   let tenderFile =
+                                //     event.currentTarget.files?.[0] || null;
+
+                                //   formik.setFieldValue(
+                                //     "tenderFile",
+                                //     tenderFile
+                                //   );
+                                // }}
+                                onChange={formik.handleChange}
+                              ></TextField>
                             </div>
                           </Grid>
                         </Grid>
