@@ -184,6 +184,7 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <DatePicker
+                              format="DD/MM/YYYY"
                               label="site visit date"
                               defaultValue={tomorrow}
                               disablePast
@@ -248,6 +249,7 @@ export default function AddTender() {
                           <Grid item xs={12} sm={6}>
                             <DateTimePicker
                               label="closing date & time"
+                              format="DD/MM/YYYY hh:mm A"
                               defaultValue={tomorrow}
                               disablePast
                               views={[
