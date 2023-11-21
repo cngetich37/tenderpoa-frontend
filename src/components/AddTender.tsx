@@ -17,9 +17,9 @@ import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Formik } from "formik";
 import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
+
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import NativeSelect from "@mui/material/NativeSelect";
 
 const theme = createTheme({
   palette: {
@@ -35,11 +35,11 @@ const theme = createTheme({
 const tomorrow = dayjs().subtract(-1, "day");
 
 export default function AddTender() {
-  const [status, setStatus] = React.useState('Not Bidded');
+  // const [status, setStatus] = React.useState("Not Bidded");
 
-  const handleChange = (event:any) => {
-    setStatus(event.target.value);
-  };
+  // const handleChange = (event: any) => {
+  //   setStatus(event.target.value);
+  // };
 
   return (
     <div className="flex justify-center bg-white">
@@ -298,50 +298,34 @@ export default function AddTender() {
                           <Grid item xs={12} md={6}>
                             <div className="mr-4">
                               <TextField
+                                required
                                 id="tenderFile"
                                 name="tenderFile"
                                 type="file"
-                                // onChange={(
-                                //   event: React.ChangeEvent<HTMLInputElement>
-                                // ) => {
-                                //   let tenderFile =
-                                //     event.currentTarget.files?.[0] || null;
-
-                                //   formik.setFieldValue(
-                                //     "tenderFile",
-                                //     tenderFile
-                                //   );
-                                // }}
                                 onChange={formik.handleChange}
                               ></TextField>
                             </div>
                           </Grid>
+
                           <Grid item xs={12} sm={6}>
                             <FormControl fullWidth>
-                              <InputLabel id="status">status</InputLabel>
-                              <Select
-                                labelId="status"
-                                id="status"
-                                value={status}
-                                label="Status"
-                                onChange={handleChange}
-                                onBlur={formik.handleBlur}
+                              <InputLabel variant="standard" htmlFor="status">
+                                Status
+                              </InputLabel>
+                              <NativeSelect
+                                defaultValue={formik.values.status}
+                                onChange={formik.handleChange}
+                                inputProps={{
+                                  name: "status",
+                                  id: "status",
+                                }}
                               >
-                                <MenuItem value={10}>Not Bidded</MenuItem>
-                                <MenuItem value={20}>Bidded</MenuItem>
-                              </Select>
+                                <option value={"Not Bidded"}>Not Bidded</option>
+                                <option value={"Bidded"}>Bidded</option>
+                                <option value={"Due"}>Due</option>
+                              </NativeSelect>
                             </FormControl>
-                            {/* <TextField
-                              value={formik.values.status}
-                              onChange={formik.handleChange}
-                              onBlur={formik.handleBlur}
-                              id="status"
-                              name="status"
-                              label="Status"
-                              fullWidth
-                              autoComplete="given-name"
-                              variant="standard"
-                            /> */}
+
                             {formik.errors.status && formik.touched.status && (
                               <Alert severity="error" className="mt-1">
                                 {formik.errors.status}
