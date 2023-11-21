@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import dayjs from "dayjs";
 import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -55,6 +56,9 @@ const theme = createTheme({
   },
 });
 
+// const today = dayjs();
+const tomorrow = dayjs().subtract(-1, "day");
+// const todayStartOfTheDay = today.startOf("day");
 // const submitTender = () => {
 //   console.log("Tender has been submitted!");
 // };
@@ -125,7 +129,6 @@ export default function AddTender() {
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               value={formik.values.tenderNo}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
@@ -145,7 +148,6 @@ export default function AddTender() {
 
                           <Grid item xs={12} sm={6}>
                             <TextareaAutosize
-                              required
                               className="w-80 text-sm font-normal bg-white leading-normal p-3 shadow-lg mt-2 shadow-slate-100 border border-solid"
                               value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
@@ -164,7 +166,6 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               value={formik.values.client}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
@@ -182,12 +183,16 @@ export default function AddTender() {
                             )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
-                            <DatePicker label="site visit date" />
+                            <DatePicker
+                              label="site visit date"
+                              defaultValue={tomorrow}
+                              disablePast
+                              views={["year", "month", "day"]}
+                            />
                           </Grid>
 
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="timeExtension"
                               name="timeExtension"
                               value={formik.values.timeExtension}
@@ -206,7 +211,6 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="bidSecurity"
                               name="bidSecurity"
                               value={formik.values.bidSecurity}
@@ -225,7 +229,6 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="bidSourceInsurance"
                               name="bidSourceInsurance"
                               value={formik.values.bidSourceInsurance}
@@ -243,11 +246,21 @@ export default function AddTender() {
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
-                            <DateTimePicker label="closing date & time" />
+                            <DateTimePicker
+                              label="closing date & time"
+                              defaultValue={tomorrow}
+                              disablePast
+                              views={[
+                                "year",
+                                "month",
+                                "day",
+                                "hours",
+                                "minutes",
+                              ]}
+                            />
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="location"
                               name="location"
                               value={formik.values.location}
@@ -266,7 +279,6 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="tenderValue"
                               name="tenderValue"
                               value={formik.values.tenderValue}
@@ -285,7 +297,6 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              required
                               id="dollarRate"
                               name="dollarRate"
                               value={formik.values.dollarRate}
