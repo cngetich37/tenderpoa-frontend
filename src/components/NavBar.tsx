@@ -29,7 +29,7 @@ const NavBar = () => {
                 <Link to="/alltenders">All Tenders</Link>
               </li>
               <li>
-                <Link to="/step1">Add a Tender</Link>
+                <Link to="/addtender">Add a Tender</Link>
               </li>
               <li>
                 <Link to="/stepstobid">Steps to Bid</Link>
