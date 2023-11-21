@@ -13,6 +13,7 @@ import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
 import StepsToBid from "./components/StepsToBid";
 import AddTender from "./components/AddTender";
+import BenesseLtd from "./components/BenesseLtd";
 const App = () => {
   return (
     <>
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />}></Route>
         <Route path="/addtender" element={<AddTender />}></Route>
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
+        <Route path="/benesse" element={<BenesseLtd />}></Route>
       </Routes>
       <Footer />
     </>

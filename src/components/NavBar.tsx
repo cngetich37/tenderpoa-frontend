@@ -55,6 +55,9 @@ const NavBar = () => {
                   <li>
                     <Link to="/saava">Saava</Link>
                   </li>
+                  <li>
+                    <Link to="/benesse">Benesse</Link>
+                  </li>
                 </ul>
               </details>
             </li>
