@@ -16,7 +16,10 @@ import { validateTender } from "./validationTenderForm/validateTenderForm";
 import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Formik } from "formik";
-
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const theme = createTheme({
   palette: {
@@ -32,6 +35,12 @@ const theme = createTheme({
 const tomorrow = dayjs().subtract(-1, "day");
 
 export default function AddTender() {
+  const [status, setStatus] = React.useState('Not Bidded');
+
+  const handleChange = (event:any) => {
+    setStatus(event.target.value);
+  };
+
   return (
     <div className="flex justify-center bg-white">
       <div className="flex h-full lg:w-2/3 w-screen sm:w-1/2 py-6 mt-6 mb-6">
@@ -65,8 +74,9 @@ export default function AddTender() {
                       location: "",
                       tenderValue: 10000,
                       dollarRate: 151.55,
-                      company:"",
+                      company: "",
                       tenderFile: File,
+                      status: "Not Bidded",
                     }}
                     validationSchema={validateTender}
                     onSubmit={(values, actions) => {
@@ -285,7 +295,7 @@ export default function AddTender() {
                                 </Alert>
                               )}
                           </Grid>
-                          <Grid item xs={12}>
+                          <Grid item xs={12} md={6}>
                             <div className="mr-4">
                               <TextField
                                 id="tenderFile"
@@ -305,6 +315,38 @@ export default function AddTender() {
                                 onChange={formik.handleChange}
                               ></TextField>
                             </div>
+                          </Grid>
+                          <Grid item xs={12} sm={6}>
+                            <FormControl fullWidth>
+                              <InputLabel id="status">status</InputLabel>
+                              <Select
+                                labelId="status"
+                                id="status"
+                                value={status}
+                                label="Status"
+                                onChange={handleChange}
+                                onBlur={formik.handleBlur}
+                              >
+                                <MenuItem value={10}>Not Bidded</MenuItem>
+                                <MenuItem value={20}>Bidded</MenuItem>
+                              </Select>
+                            </FormControl>
+                            {/* <TextField
+                              value={formik.values.status}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              id="status"
+                              name="status"
+                              label="Status"
+                              fullWidth
+                              autoComplete="given-name"
+                              variant="standard"
+                            /> */}
+                            {formik.errors.status && formik.touched.status && (
+                              <Alert severity="error" className="mt-1">
+                                {formik.errors.status}
+                              </Alert>
+                            )}
                           </Grid>
                         </Grid>
                         <div className="flex justify-end mt-6">

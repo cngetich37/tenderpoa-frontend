@@ -20,4 +20,5 @@ export const validateTender = yup.object().shape({
   dollarRate: yup.number().required("Please enter the dollar rate!"),
   company: yup.string().required("Please enter the name of the company!"),
   tenderFile: yup.mixed().required("Please upload the tender document!"),
+  status: yup.string().required("Please enter the status of the tender!"),
 });
