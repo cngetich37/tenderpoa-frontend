@@ -6,7 +6,7 @@ const BenesseLtd = () => {
       <div className="flex-none h-full">
         <Sidebar />
       </div>
-      <div className="flex-1 w-48 h-full">BenesseLtd</div>
+      <div className="flex-1 w-48 h-full">Benesse Ltd</div>
     </div>
   );
 };
