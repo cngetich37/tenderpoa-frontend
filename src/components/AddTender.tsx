@@ -17,7 +17,6 @@ import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Formik } from "formik";
 import InputLabel from "@mui/material/InputLabel";
-
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
@@ -297,13 +296,18 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} md={6}>
                             <div className="mr-4">
+                            <InputLabel htmlFor="tenderFile" className="text-sm">
+                              Upload a Tender Document
+                            </InputLabel>
                               <TextField
+                                color="primary"
                                 required
                                 id="tenderFile"
                                 name="tenderFile"
                                 type="file"
                                 onChange={formik.handleChange}
-                              ></TextField>
+                              >
+                              </TextField>
                             </div>
                           </Grid>
 
