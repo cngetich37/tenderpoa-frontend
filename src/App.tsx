@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import SaavaEngLtd from "./components/SaavaEngLtd";
 import IntracomAfricaLtd from "./components/IntracomAfricaLtd";
 import DueTenders from "./components/DueTenders";
-import AllTenders from "./components/AllTenders";
+import AllPendingTenders from "./components/AllPendingTenders";
 import AlreadyBidded from "./components/AlreadyBidded";
 import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";
@@ -20,7 +20,10 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/alltenders" element={<AllTenders />}></Route>
+        <Route
+          path="/allpendingtenders"
+          element={<AllPendingTenders />}
+        ></Route>
         <Route path="/saava" element={<SaavaEngLtd />}></Route>
         <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
         <Route path="/due" element={<DueTenders />}></Route>

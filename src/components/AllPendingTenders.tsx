@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+import Sidebar from "./Sidebar";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import data from "../assets/MOCK_DATA.json";
 import dayjs from "dayjs";
@@ -33,7 +33,12 @@ const theme = createTheme({
 });
 
 const columns: GridColDef[] = [
-  { field: "tender_no",  headerClassName: 'theme.palette.primary', headerName: "Tender No", width: 130 },
+  {
+    field: "tender_no",
+    headerClassName: "theme.palette.primary",
+    headerName: "Tender No",
+    width: 130,
+  },
   { field: "tender_description", headerName: "Tender Description", width: 130 },
   { field: "client", headerName: "Client", width: 130 },
   {
@@ -75,7 +80,7 @@ const columns: GridColDef[] = [
 
 const rows = data;
 
-export default function AllTenders() {
+export default function AllPendingTenders() {
   return (
     <div className="flex bg-white">
       <div className="flex-none h-full">
@@ -90,7 +95,7 @@ export default function AllTenders() {
             color="primary"
             className="mb-4 pb-4"
           >
-            All Tenders
+            All Pending Tenders
           </Typography>
           <div style={{ height: 400, width: "100%" }}>
             <DataGrid

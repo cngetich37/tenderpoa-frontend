@@ -20,7 +20,7 @@ const Home = () => {
                 tendering process is a work of art, all within a few clicks. This
                 is the epitome of tendering sophistication, made simple for you.
               </p>
-              <Link to="/alltenders" className="btn bg-[#800000] text-white hover:text-white hover:bg-purple-400">Make A Bid</Link>
+              <Link to="/addtender" className="btn bg-[#800000] text-white hover:text-white hover:bg-purple-400">Make a Bid</Link>
             </div>
           </div>
         </div>

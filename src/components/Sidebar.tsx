@@ -15,7 +15,7 @@ const Sidebar = () => {
                   <ul className="mt-6 space-y-2 tracking-wide ">
                     <li className="min-w-max">
                       <Link
-                        to="/alltenders"
+                        to="/allpendingtenders"
                         aria-label="dashboard"
                         className="relative flex items-center space-x-4 px-4 py-3 text-gray-600 hover:text-white bg-gradient-to-r from-white to-[#800000]"
                       >
@@ -37,7 +37,9 @@ const Sidebar = () => {
                             className="fill-current group-hover:text-[#800000]"
                           ></path>
                         </svg>
-                        <span className="-mr-1 font-medium">All Tenders</span>
+                        <span className="-mr-1 font-medium">
+                          All Pending Tenders
+                        </span>
                       </Link>
                     </li>
                     <li className="min-w-max">
