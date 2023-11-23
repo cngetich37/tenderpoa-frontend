@@ -86,15 +86,25 @@ const LoginPage = () => {
                     {errors.password}
                   </Alert>
                 )}
-                <div className="label">
-                  <a href="#" className="label-text-alt link text-[#800000]">
-                    Forgot password?
-                  </a>
-                </div>
-                <div className="label">
-                  <a href="#" className="label-text-alt link text-[#800000]">
-                    Forgot password?
-                  </a>
+                <div className="flex">
+                  <div className="flex-1 label">
+                    <Link to="/forgotpassword" className="label-text-alt link text-[#800000]">
+                      Forgot password?
+                    </Link>
+                  </div>
+                  <div className="flex justify-end label">
+                    <a href="#" className="label-text-alt link text-[#800000]">
+                      Don't have an account?
+                    </a>
+                    <span className="label">
+                      <Link
+                        to="/signup"
+                        className="label-text-alt link text-[#2196F3] font-bold"
+                      >
+                        Signup
+                      </Link>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="flex-col gap-2">
