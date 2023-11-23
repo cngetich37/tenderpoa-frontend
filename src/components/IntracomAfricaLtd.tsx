@@ -164,7 +164,6 @@ export default function IntracomAfricaLtd() {
                 },
               }}
               pageSizeOptions={[10, 20]}
-              checkboxSelection
               slots={{ toolbar: GridToolbar }}
             />
           </Box>

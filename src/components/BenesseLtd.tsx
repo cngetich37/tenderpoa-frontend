@@ -164,7 +164,6 @@ export default function BenesseLtd() {
                 },
               }}
               pageSizeOptions={[10, 20]}
-              checkboxSelection
               slots={{ toolbar: GridToolbar }}
             />
           </Box>
