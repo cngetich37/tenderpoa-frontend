@@ -164,7 +164,7 @@ export default function AllBiddedTenders() {
                 },
               }}
               pageSizeOptions={[10, 20]}
-              checkboxSelection
+              // checkboxSelection
               slots={{ toolbar: GridToolbar }}
             />
           </Box>
