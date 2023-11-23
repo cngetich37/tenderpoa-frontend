@@ -19,7 +19,6 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -30,7 +29,6 @@ const theme = createTheme({
     },
   },
 });
-
 
 const tomorrow = dayjs().subtract(-1, "day");
 
@@ -109,6 +107,12 @@ export default function AddTender() {
                           </Grid>
 
                           <Grid item xs={12} sm={6}>
+                            <InputLabel
+                              htmlFor="tenderDescription"
+                              variant="standard"
+                            >
+                              Tender Description
+                            </InputLabel>
                             <TextareaAutosize
                               className="w-80 text-sm font-normal bg-white leading-normal p-3 shadow-lg mt-2 shadow-slate-100 border border-solid"
                               value={formik.values.tenderDescription}
@@ -299,7 +303,7 @@ export default function AddTender() {
                             <div className="mr-4">
                               <InputLabel
                                 htmlFor="tenderFile"
-                                className="text-sm"
+                                variant="standard"
                               >
                                 Upload a Tender Document
                               </InputLabel>
