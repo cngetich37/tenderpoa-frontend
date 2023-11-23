@@ -7,10 +7,14 @@ const Sidebar = () => {
         <div>
           <div className="h-auto bg-[#510000] sm:h-screen ">
             <div className="sidebar min-h-screen w-[3.35rem] lg:w-56 overflow-hidden border-r  hover:w-56 hover:shadow-lg">
-              <div className="flex h-screen flex-col justify-between pt-6 pb-6">
+              <div className="flex h-auto flex-col justify-between pt-3 pb-3">
                 <div>
                   <div className="ml-12 w-max p-2">
-                    <img src={intracompic} className="rounded-full border-white h-20" alt="" />
+                    <img
+                      src={intracompic}
+                      className="rounded-full border-white h-20"
+                      alt=""
+                    />
                   </div>
                   <ul className="mt-4 space-y-2 tracking-wide ">
                     <li className="min-w-max">
