@@ -19,6 +19,7 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -29,6 +30,7 @@ const theme = createTheme({
     },
   },
 });
+
 
 const tomorrow = dayjs().subtract(-1, "day");
 
@@ -73,7 +75,7 @@ export default function AddTender() {
                       tenderValue: 10000,
                       dollarRate: 151.55,
                       company: "",
-                      tenderFile: File,
+                      tenderFile: null,
                       status: "Not Bidded",
                     }}
                     validationSchema={validateTender}
@@ -303,13 +305,19 @@ export default function AddTender() {
                               </InputLabel>
                               <TextField
                                 color="primary"
-                                required
                                 id="tenderFile"
                                 name="tenderFile"
                                 type="file"
                                 onChange={formik.handleChange}
                                 value={formik.values.tenderFile}
-                              ></TextField>
+                                onBlur={formik.handleBlur}
+                              />
+                              {formik.errors.tenderFile &&
+                                formik.touched.tenderFile && (
+                                  <Alert severity="error" className="mt-1">
+                                    {formik.errors.tenderFile}
+                                  </Alert>
+                                )}
                             </div>
                           </Grid>
 
