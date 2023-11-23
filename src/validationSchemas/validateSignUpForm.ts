@@ -8,7 +8,7 @@ export const validSchema = yup.object().shape({
   firstName: yup
     .string()
     .min(3, "first name can't be less than 3 characters!")
-    .max(15,"first name can't be more than 15 characters!")
+    .max(15, "first name can't be more than 15 characters!")
     .required("Please enter your first name!"),
   lastName: yup
     .string()
@@ -18,6 +18,10 @@ export const validSchema = yup.object().shape({
   email: yup
     .string()
     .email("Please enter a valid email!")
+    .matches(
+      /^(.+)@(intracom\.africa|saava\.co\.ke|benesse\.co\.ke)$/,
+      "Email must be from Intracom Africa Ltd, Saava Eng. Ltd, or Benesse EA Ltd"
+    )
     .required("email is required!"),
   password: yup
     .string()
