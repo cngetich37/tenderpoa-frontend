@@ -5,14 +5,14 @@ const Sidebar = () => {
     <>
       <div className="flex h-auto">
         <div>
-          <div className="min-h-screen bg-[#510000] ">
+          <div className="h-auto bg-[#510000] sm:h-screen ">
             <div className="sidebar min-h-screen w-[3.35rem] lg:w-56 overflow-hidden border-r  hover:w-56 hover:shadow-lg">
-              <div className="flex h-screen flex-col justify-between pt-8 pb-6">
+              <div className="flex h-screen flex-col justify-between pt-6 pb-6">
                 <div>
-                  <div className="ml-12 w-max p-2.5">
-                    <img src={intracompic} className="w-16" alt="" />
+                  <div className="ml-12 w-max p-2">
+                    <img src={intracompic} className="rounded-full border-white h-20" alt="" />
                   </div>
-                  <ul className="mt-6 space-y-2 tracking-wide ">
+                  <ul className="mt-4 space-y-2 tracking-wide ">
                     <li className="min-w-max">
                       <Link
                         to="/allpendingtenders"
@@ -177,7 +177,7 @@ const Sidebar = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="w-max -mb-3">
+                <div className="w-max mt-4 rounded-md mb-6">
                   <Link
                     to="/"
                     className="group flex items-center space-x-4  px-4 py-3 text-gray-600  group-hover:text-white  bg-gradient-to-r from-white to-[#800000] "
@@ -194,7 +194,7 @@ const Sidebar = () => {
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <span className=" group-hover:text-white ">Logout</span>
+                    <span className=" group-hover:text-white">Logout</span>
                   </Link>
                 </div>
               </div>
