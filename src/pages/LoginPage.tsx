@@ -91,6 +91,11 @@ const LoginPage = () => {
                     Forgot password?
                   </a>
                 </div>
+                <div className="label">
+                  <a href="#" className="label-text-alt link text-[#800000]">
+                    Forgot password?
+                  </a>
+                </div>
               </div>
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">

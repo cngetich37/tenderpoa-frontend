@@ -1,13 +1,14 @@
-import Sidebar from "../components/Sidebar";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import Sidebar from "./Sidebar";
+import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import data from "../assets/MOCK_DATA.json";
+import Box from "@mui/material/Box";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // tenderNo:
 // tenderDescription:
-// client:
+// client:,
 // siteVisitDate:
 // timeExtension: 5,
 // bidSecurity: "",
@@ -32,55 +33,101 @@ const theme = createTheme({
   },
 });
 
-const columns: GridColDef[] = [
-  {
-    field: "tender_no",
-    headerClassName: "theme.palette.primary",
-    headerName: "Tender No",
-    width: 130,
-  },
-  { field: "tender_description", headerName: "Tender Description", width: 130 },
-  { field: "client", headerName: "Client", width: 130 },
-  {
-    field: "site_visit_date",
-    headerName: "Site Visit Date",
-    width: 130,
-    valueFormatter: (params) => dayjs(params.value).format("DD/MM/YYYY"),
-  },
-  { field: "time_extension", headerName: "Time Extension", width: 130 },
-  { field: "bid_security", headerName: "Bid Security", width: 130 },
-  {
-    field: "bid_source_insurance",
-    headerName: "Bid Source Insurance",
-    width: 170,
-  },
-  {
-    field: "closing_date_time",
-    headerName: "Closing Date Time",
-    width: 130,
-    valueFormatter: (params) => dayjs(params.value).format("DD/MM/YYYY"),
-  },
-  { field: "location", headerName: "Location", width: 130 },
-  {
-    field: "tender_value",
-    headerName: "Tender Value",
-    type: "number",
-    width: 130,
-  },
-  { field: "dollar_rate", headerName: "Dollar Rate", width: 130 },
-
-  {
-    field: "tender_document_from_client",
-    headerName: "Tender Document",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-  },
-];
-
 const rows = data;
 
-export default function AlreadyBidded() {
+export default function AllBiddedTenders() {
+  const columns: GridColDef[] = [
+    {
+      field: "tender_no",
+      headerClassName: "super-app-theme--header",
+      headerName: "Tender No",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "tender_description",
+      headerName: "Tender Description",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "client",
+      headerName: "Client",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "site_visit_date",
+      headerName: "Site Visit Date",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "time_extension",
+      headerName: "Time Extension",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "bid_security",
+      headerName: "Bid Security",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "bid_source_insurance",
+      headerName: "Bid Source Insurance",
+      headerClassName: "super-app-theme--header",
+      width: 170,
+      editable: true,
+    },
+    {
+      field: "closing_date_time",
+      headerName: "Closing Date Time",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      valueFormatter: (params) => dayjs(params.value).format("DD/MM/YYYY"),
+      editable: true,
+    },
+    {
+      field: "location",
+      headerName: "Location",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "tender_value",
+      headerName: "Tender Value",
+      headerClassName: "super-app-theme--header",
+      type: "number",
+      width: 130,
+      editable: true,
+    },
+    {
+      field: "dollar_rate",
+      headerName: "Dollar Rate",
+      headerClassName: "super-app-theme--header",
+      width: 130,
+      editable: true,
+    },
+
+    {
+      field: "tender_document_from_client",
+      headerName: "Tender Document",
+      headerClassName: "super-app-theme--header",
+      description: "This column has a value getter and is not sortable.",
+      sortable: false,
+      width: 160,
+      editable: true,
+    },
+  ]; // Replace YourDataType with your actual data type
+
   return (
     <div className="flex bg-white">
       <div className="flex-none h-full">
@@ -95,21 +142,32 @@ export default function AlreadyBidded() {
             color="primary"
             className="mb-4 pb-4"
           >
-            Already Bidded
+            Already Bidded Tenders
           </Typography>
-          <div style={{ height: 400, width: "100%" }}>
+          <Box
+            sx={{
+              height: 400,
+              width: "100%",
+              "& .super-app-theme--header": {
+                backgroundColor: "#800000",
+                color: "white",
+              },
+            }}
+          >
             <DataGrid
+              editMode="row"
               rows={rows}
               columns={columns}
               initialState={{
                 pagination: {
-                  paginationModel: { page: 0, pageSize: 5 },
+                  paginationModel: { page: 0, pageSize: 10 },
                 },
               }}
-              pageSizeOptions={[5, 20]}
+              pageSizeOptions={[10, 20]}
               checkboxSelection
+              slots={{ toolbar: GridToolbar }}
             />
-          </div>
+          </Box>
         </ThemeProvider>
       </div>
     </div>
