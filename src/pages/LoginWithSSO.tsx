@@ -21,7 +21,10 @@ const LoginWithSSO = () => {
     });
   return (
     <>
-      <div className="hero h-screen bg-[#800000]" style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}>
+      <div
+        className="hero h-screen"
+        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
+      >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
           <div className="ml-4 flex-col text-center lg:text-center"></div>
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
@@ -51,7 +54,10 @@ const LoginWithSSO = () => {
               )}
               <div className="flex-col gap-2">
                 <div className="form-control mt-6">
-                  <button className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2" type="submit">
+                  <button
+                    className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
+                    type="submit"
+                  >
                     Login
                   </button>
                 </div>

@@ -12,7 +12,7 @@ export const validSchema = yup.object().shape({
     .required("Please enter your first name!"),
   lastName: yup
     .string()
-    .min(10, "last name can't be less than 10 characters")
+    .min(3, "last name can't be less than 10 characters")
     .max(15)
     .required("Please enter your last name!"),
   email: yup
@@ -31,6 +31,6 @@ export const validSchema = yup.object().shape({
     .required("password is required!"),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password")], "passwords must match!")
+    .oneOf([yup.ref("password")], "password must match!")
     .required("confirm password is required!"),
 });
