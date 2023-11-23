@@ -137,7 +137,7 @@ export default function AllBiddedTenders() {
         <ThemeProvider theme={theme}>
           <Typography
             component="h1"
-            variant="h4"
+            variant="h6"
             align="center"
             color="primary"
             className="mb-4 pb-4"

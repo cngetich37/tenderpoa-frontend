@@ -137,7 +137,7 @@ export default function BenesseLtd() {
         <ThemeProvider theme={theme}>
           <Typography
             component="h1"
-            variant="h4"
+            variant="h6"
             align="center"
             color="primary"
             className="mb-4 pb-4"
