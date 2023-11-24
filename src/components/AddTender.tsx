@@ -33,11 +33,6 @@ const theme = createTheme({
 const tomorrow = dayjs().subtract(-1, "day");
 
 export default function AddTender() {
-  // const [status, setStatus] = React.useState("Not Bidded");
-
-  // const handleChange = (event: any) => {
-  //   setStatus(event.target.value);
-  // };
 
   return (
     <div className="flex justify-center bg-white">
@@ -107,21 +102,15 @@ export default function AddTender() {
                           </Grid>
 
                           <Grid item xs={12} sm={6}>
-                            <InputLabel
-                              htmlFor="tenderDescription"
-                              variant="standard"
-                            >
-                              Tender Description
-                            </InputLabel>
                             <TextareaAutosize
-                              className="w-80 text-sm font-normal bg-white leading-normal p-3 shadow-lg mt-2 shadow-slate-100 border border-solid"
                               value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               id="tenderDescription"
                               name="tenderDescription"
                               placeholder="tender description"
-                              aria-label="Tender Description"
+                              className="w-full mt-6 border-solid"
+                              
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
