@@ -30,6 +30,9 @@ const ForgotPassword = () => {
           <div className="ml-4 flex-col text-center lg:text-center"></div>
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
             <form className="card-body" onSubmit={handleSubmit}>
+            <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
+              Forgot Password
+            </h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-[#800000] text-lg font-semibold">
