@@ -137,7 +137,7 @@ const SignUpPage = () => {
                   {errors.password}
                 </Alert>
               )}
-              <div className="form-control">
+              <div className="form-control mb-1">
                 <label className="label" htmlFor="confirmPassword">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
                     Confirm Password
