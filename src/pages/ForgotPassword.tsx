@@ -23,7 +23,7 @@ const ForgotPassword = () => {
   return (
     <>
       <div
-        className="hero h-screen bg-[#800000]"
+        className="hero h-screen bg-white"
         style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
       >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">

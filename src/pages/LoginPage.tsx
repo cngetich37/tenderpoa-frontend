@@ -25,7 +25,7 @@ const LoginPage = () => {
   return (
     <>
       <div
-        className="hero h-full"
+        className="hero h-full bg-white"
         style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
       >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
