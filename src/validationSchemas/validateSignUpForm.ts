@@ -20,7 +20,7 @@ export const validSchema = yup.object().shape({
     .email("Please enter a valid email!")
     .matches(
       /^(.+)@(intracom\.africa|saava\.co\.ke|benesse\.co\.ke)$/,
-      "invalid email!"
+      "Invalid email!"
     )
     .required("email is required!"),
   password: yup
