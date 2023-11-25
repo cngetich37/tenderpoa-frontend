@@ -3,7 +3,7 @@ import homepic from "../assets/homepic.png"
 const Home = () => {
   return (
     <>
-      <main className="hero min-h-screen object-scale-down" style={{backgroundImage:`url(${homepic})`}}>
+      <main className="hero min-h-screen object-scale-down bg-white" style={{backgroundImage:`url(${homepic})`}}>
         <div className="hero-overlay bg-opacity-60">
           <div className="hero-content text-center">
             <div className="max-w-md font-serif">
