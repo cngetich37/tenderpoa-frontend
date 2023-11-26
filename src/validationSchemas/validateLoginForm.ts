@@ -8,10 +8,10 @@ export const loginSchema = yup.object().shape({
   email: yup
     .string()
     .email("Please enter a valid email!")
-    .matches(
-      /^(.+)@(intracom\.africa|saava\.co\.ke|benesse\.co\.ke)$/,
-      "Invalid email!"
-    )
+    // .matches(
+    //   /^(.+)@(intracom\.africa|saava\.co\.ke|benesse\.co\.ke)$/,
+    //   "Invalid email!"
+    // )
     .required("email is required!"),
   password: yup
     .string()

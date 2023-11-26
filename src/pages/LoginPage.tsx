@@ -3,16 +3,37 @@ import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
 import { loginSchema } from "../validationSchemas/validateLoginForm";
 import Alert from "@mui/material/Alert";
+import { FormikHelpers } from "formik";
+import axios from "axios";
 interface LoginFormValues {
   email: string;
   password: string;
 }
 
-const loginForm = () => {
-  console.log("Login successful!");
-};
-
 const LoginPage = () => {
+  const handleLogin = async (
+    values: LoginFormValues,
+    { setSubmitting }: FormikHelpers<LoginFormValues>
+  ) => {
+    try {
+      // Make a POST request using Axios
+      const response = await axios.post(
+        "https://tenderpoa.onrender.com/api/users/login",
+        values
+      );
+
+      // Handle the response (you can customize this based on your API)
+      console.log(response.data);
+
+      // Reset the form or perform any other actions on successful submission
+    } catch (error) {
+      // Handle errors (e.g., display an error message)
+      console.error("Error during login:", error);
+    } finally {
+      // Make sure to set submitting to false, whether the request succeeds or fails
+      setSubmitting(false);
+    }
+  };
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik<LoginFormValues>({
       initialValues: {
@@ -20,7 +41,7 @@ const LoginPage = () => {
         password: "",
       },
       validationSchema: loginSchema,
-      onSubmit: loginForm,
+      onSubmit: handleLogin,
     });
   return (
     <>
@@ -53,7 +74,7 @@ const LoginPage = () => {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="email"
+                  placeholder="Enter your email"
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
@@ -88,7 +109,10 @@ const LoginPage = () => {
                 )}
                 <div className="flex">
                   <div className="flex-1 label">
-                    <Link to="/forgotpassword" className="label-text-alt link text-[#800000]">
+                    <Link
+                      to="/forgotpassword"
+                      className="label-text-alt link text-[#800000]"
+                    >
                       Forgot password?
                     </Link>
                   </div>

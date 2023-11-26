@@ -15,6 +15,7 @@ import StepsToBid from "./components/StepsToBid";
 import AddTender from "./components/AddTender";
 import BenesseLtd from "./components/BenesseLtd";
 import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 const App = () => {
   return (
     <>
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
         <Route path="/benesse" element={<BenesseLtd />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
+        <Route path="/resetpassword" element={<ResetPassword />}></Route>
       </Routes>
       <Footer />
     </>

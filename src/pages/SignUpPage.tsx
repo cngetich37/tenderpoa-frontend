@@ -3,6 +3,8 @@ import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
 import { validSchema } from "../validationSchemas/validateSignUpForm";
 import Alert from "@mui/material/Alert";
+import axios from "axios";
+import { FormikHelpers } from "formik";
 interface signUpFormValues {
   firstName: string;
   lastName: string;
@@ -11,11 +13,29 @@ interface signUpFormValues {
   confirmPassword: string;
 }
 
-const submitForm = () => {
-  console.log("submitted!");
-};
 const SignUpPage = () => {
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
+  const handleSignup = async (
+    values: signUpFormValues,
+    { setSubmitting }: FormikHelpers<signUpFormValues>
+  ) => {
+    try {
+      // Make a POST request using Axios
+      const response = await axios.post("https://tenderpoa.onrender.com/api/users/signup", values);
+
+      // Handle the response (you can customize this based on your API)
+      console.log(response.data);
+
+      // Reset the form or perform any other actions on successful submission
+    } catch (error) {
+      // Handle errors (e.g., display an error message)
+      console.error("Error during signup:", error);
+    } finally {
+      // Make sure to set submitting to false, whether the request succeeds or fails
+      setSubmitting(false);
+    }
+  };
+
+  const { values, errors, touched, handleChange, handleBlur,handleSubmit } =
     useFormik<signUpFormValues>({
       initialValues: {
         firstName: "",
@@ -25,7 +45,7 @@ const SignUpPage = () => {
         confirmPassword: "",
       },
       validationSchema: validSchema,
-      onSubmit: submitForm,
+      onSubmit: handleSignup,
     });
   return (
     <>
@@ -177,7 +197,10 @@ const SignUpPage = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#800000] text-white hover:bg-zinc-500" type="submit">
+                <button
+                  className="btn bg-[#800000] text-white hover:bg-zinc-500"
+                  type="submit"
+                >
                   Sign up
                 </button>
               </div>
