@@ -110,7 +110,7 @@ const LoginPage = () => {
                 <div className="flex">
                   <div className="flex-1 label">
                     <Link
-                      to="/forgotpassword"
+                      to="/forgot-password"
                       className="label-text-alt link text-[#800000]"
                     >
                       Forgot password?
