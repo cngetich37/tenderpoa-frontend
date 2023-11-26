@@ -55,7 +55,7 @@ const ResetPassword = () => {
                 Forgot Password
               </h1>
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor="password">
                   <span className="label-text text-[#800000] text-lg font-semibold">
                     Password
                   </span>
