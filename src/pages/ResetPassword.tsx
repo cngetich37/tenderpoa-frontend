@@ -4,11 +4,22 @@ import Alert from "@mui/material/Alert";
 import axios from "axios";
 import { passwordSchema } from "../validationSchemas/validatePassword";
 import { FormikHelpers } from "formik";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 interface ResetPasswordFormValues {
   password: string;
 }
 
 const ResetPassword = () => {
+  const [token, setToken] = useState<string>('');
+  const { token: routeToken } = useParams(); // Assuming the token is a route parameter
+
+  useEffect(() => {
+    // Make sure routeToken is defined before setting the state
+    if (routeToken) {
+      setToken(routeToken);
+    }
+  }, [routeToken]);
   const handleResetPassword = async (
     values: ResetPasswordFormValues,
     { setSubmitting }: FormikHelpers<ResetPasswordFormValues>
@@ -16,7 +27,7 @@ const ResetPassword = () => {
     try {
       // Make a POST request using Axios
       const response = await axios.post(
-        `https://tenderpoa.onrender.com/api/users/reset-password/:token`,
+        `https://tenderpoa.onrender.com/api/users/reset-password/${token}`,
         values
       );
 
