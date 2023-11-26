@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import { loginSchema } from "../validationSchemas/validateLoginForm";
 import Alert from "@mui/material/Alert";
 import axios from "axios";
-import { useState } from "react";
 
 interface ResetPasswordFormValues {
   password: string;
