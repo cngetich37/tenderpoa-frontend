@@ -37,8 +37,8 @@ const App = () => {
         <Route path="/addtender" element={<AddTender />}></Route>
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
         <Route path="/benesse" element={<BenesseLtd />}></Route>
-        <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
-        <Route path="/resetpassword" element={<ResetPassword />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+        <Route path="/reset-password" element={<ResetPassword />}></Route>
       </Routes>
       <Footer />
     </>

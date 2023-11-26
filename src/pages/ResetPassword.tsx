@@ -10,10 +10,9 @@ interface ResetPasswordFormValues {
 }
 
 const ResetPassword = () => {
-  const [token, setToken] = useState("");
   const handleResetPassword = async () => {
     // Call the API endpoint to reset the password
-    await axios.post(`/resetpassword/${token}`, values.password);
+    await axios.post(`https://tenderpoa.onrender.com/api/users/reset-password/:token`, values);
     // Display a message to the user indicating that the password has been reset
     <Alert severity="success" className="mt-1">
       Password reset successfully!
