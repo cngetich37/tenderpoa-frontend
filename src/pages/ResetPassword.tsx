@@ -1,28 +1,44 @@
 import homepic from "../assets/homepic.png";
 import { useFormik } from "formik";
-import { loginSchema } from "../validationSchemas/validateLoginForm";
 import Alert from "@mui/material/Alert";
 import axios from "axios";
-
+import { passwordSchema } from "../validationSchemas/validatePassword";
+import { FormikHelpers } from "formik";
 interface ResetPasswordFormValues {
   password: string;
 }
 
 const ResetPassword = () => {
-  const handleResetPassword = async () => {
-    // Call the API endpoint to reset the password
-    await axios.post(`https://tenderpoa.onrender.com/api/users/reset-password/:token`, values);
-    // Display a message to the user indicating that the password has been reset
-    <Alert severity="success" className="mt-1">
-      Password reset successfully!
-    </Alert>;
+  const handleResetPassword = async (
+    values: ResetPasswordFormValues,
+    { setSubmitting }: FormikHelpers<ResetPasswordFormValues>
+  ) => {
+    try {
+      // Make a POST request using Axios
+      const response = await axios.post(
+        `https://tenderpoa.onrender.com/api/users/reset-password/:token`,
+        values
+      );
+
+      // Handle the response (you can customize this based on your API)
+      console.log(response.data);
+
+      // Reset the form or perform any other actions on successful submission
+    } catch (error) {
+      // Handle errors (e.g., display an error message)
+      console.error("Error during reset of password:", error);
+    } finally {
+      // Make sure to set submitting to false, whether the request succeeds or fails
+      setSubmitting(false);
+    }
   };
+
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik<ResetPasswordFormValues>({
       initialValues: {
         password: "",
       },
-      validationSchema: loginSchema,
+      validationSchema: passwordSchema,
       onSubmit: handleResetPassword,
     });
   return (
@@ -67,7 +83,6 @@ const ResetPassword = () => {
                     className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
                     type="submit"
                     onChange={handleChange}
-                    onClick={handleResetPassword}
                   >
                     Reset Password
                   </button>
