@@ -5,6 +5,7 @@ import { validSchema } from "../validationSchemas/validateSignUpForm";
 import Alert from "@mui/material/Alert";
 import axios from "axios";
 import { FormikHelpers } from "formik";
+import { useState } from "react";
 interface signUpFormValues {
   firstName: string;
   lastName: string;
@@ -14,28 +15,40 @@ interface signUpFormValues {
 }
 
 const SignUpPage = () => {
+  const [accountSuccess, setaccountSuccess] = useState(false);
+  const [accountError, setAccountError] = useState(false);
   const handleSignup = async (
     values: signUpFormValues,
     { setSubmitting }: FormikHelpers<signUpFormValues>
   ) => {
     try {
       // Make a POST request using Axios
-      const response = await axios.post("https://tenderpoa.onrender.com/api/users/signup", values);
+      const response = await axios.post(
+        "https://tenderpoa.onrender.com/api/users/signup",
+        values
+      );
 
       // Handle the response (you can customize this based on your API)
       console.log(response.data);
-
+      setTimeout(() => {
+        setaccountSuccess(true);
+        setAccountError(false);
+      }, 1000);
       // Reset the form or perform any other actions on successful submission
     } catch (error) {
       // Handle errors (e.g., display an error message)
       console.error("Error during signup:", error);
+      setTimeout(() => {
+        setAccountError(true);
+        setaccountSuccess(false);
+      }, 1000);
     } finally {
       // Make sure to set submitting to false, whether the request succeeds or fails
       setSubmitting(false);
     }
   };
 
-  const { values, errors, touched, handleChange, handleBlur,handleSubmit } =
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik<signUpFormValues>({
       initialValues: {
         firstName: "",
@@ -64,6 +77,17 @@ const SignUpPage = () => {
               onSubmit={handleSubmit}
               autoComplete="true"
             >
+              <div className="flex-col justify-center">
+                {accountSuccess ? (
+                  <Alert severity="success">
+                    <p>Account created successfully!</p>
+                  </Alert>
+                ) : accountError ? (
+                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                    <p>Account already exists!</p>
+                  </Alert>
+                ) : null}
+              </div>
               <div className="form-control">
                 <label className="label" htmlFor="firstName">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono lg:w-screen">
