@@ -80,11 +80,7 @@ const ResetPassword = () => {
                     <p>Password Reset Successful!</p>
                   </Alert>
                 ) : resetPasswordError ? (
-                  <Alert
-                    variant="filled"
-                    severity="error"
-                    sx={{ color: "#FF0000" }}
-                  >
+                  <Alert variant="filled" severity="error">
                     <p>Password Reset Failed!</p>
                   </Alert>
                 ) : null}

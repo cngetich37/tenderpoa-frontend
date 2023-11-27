@@ -86,11 +86,7 @@ const LoginPage = () => {
                     <p>Login successful!</p>
                   </Alert>
                 ) : loginError ? (
-                  <Alert
-                    variant="filled"
-                    severity="error"
-                    sx={{ color: "#FF0000" }}
-                  >
+                  <Alert variant="filled" severity="error">
                     <p>Invalid email or password!</p>
                   </Alert>
                 ) : null}

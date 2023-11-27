@@ -83,11 +83,7 @@ const SignUpPage = () => {
                     <p>Account created successfully!</p>
                   </Alert>
                 ) : accountError ? (
-                  <Alert
-                    variant="filled"
-                    severity="error"
-                    sx={{ color: "#FF0000" }}
-                  >
+                  <Alert variant="filled" severity="error">
                     <p>Account already exists!</p>
                   </Alert>
                 ) : null}

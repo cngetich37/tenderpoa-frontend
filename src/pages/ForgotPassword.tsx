@@ -78,11 +78,7 @@ const ForgotPassword = () => {
                     <p>Password Reset Email Sent!</p>
                   </Alert>
                 ) : forgotPasswordError ? (
-                  <Alert
-                    variant="filled"
-                    severity="error"
-                    sx={{ color: "#FF0000" }}
-                  >
+                  <Alert variant="filled" severity="error">
                     <p>User not found!</p>
                   </Alert>
                 ) : null}
