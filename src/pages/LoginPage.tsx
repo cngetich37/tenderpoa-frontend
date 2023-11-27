@@ -6,6 +6,7 @@ import Alert from "@mui/material/Alert";
 import { FormikHelpers } from "formik";
 import axios from "axios";
 import { useState } from "react";
+// import {useNavigate} from 'react-router-dom';
 
 interface LoginFormValues {
   email: string;
@@ -15,6 +16,7 @@ interface LoginFormValues {
 const LoginPage = () => {
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [loginError, setLoginError] = useState(false);
+  // const navigate = useNavigate();
   const handleLogin = async (
     values: LoginFormValues,
     { setSubmitting }: FormikHelpers<LoginFormValues>
@@ -28,12 +30,12 @@ const LoginPage = () => {
 
       // Handle the response
       console.log(response.data);
-      // Simulating a successful login after 2 seconds
+      // Simulating a successful login after 1 seconds
       setTimeout(() => {
         setLoginSuccess(true);
         setLoginError(false);
       }, 1000);
-
+      // navigate('/allpendingtenders');
       // Reset the form or perform any other actions on successful submission
     } catch (error) {
       // Handle errors (e.g., display an error message)

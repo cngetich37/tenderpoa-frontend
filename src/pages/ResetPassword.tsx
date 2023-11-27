@@ -11,7 +11,9 @@ interface ResetPasswordFormValues {
 }
 
 const ResetPassword = () => {
-  const [token, setToken] = useState<string>('');
+  const [resetPasswordSuccess, setResetPasswordSuccess] = useState(false);
+  const [resetPasswordError, setResetPasswordError] = useState(false);
+  const [token, setToken] = useState<string>("");
   const { token: routeToken } = useParams(); // Assuming the token is a route parameter
 
   useEffect(() => {
@@ -33,11 +35,18 @@ const ResetPassword = () => {
 
       // Handle the response (you can customize this based on your API)
       console.log(response.data);
-
+      setTimeout(() => {
+        setResetPasswordSuccess(true);
+        setResetPasswordError(false);
+      }, 1000);
       // Reset the form or perform any other actions on successful submission
     } catch (error) {
       // Handle errors (e.g., display an error message)
       console.error("Error during reset of password:", error);
+      setTimeout(() => {
+        setResetPasswordError(true);
+        setResetPasswordSuccess(false);
+      }, 1000);
     } finally {
       // Make sure to set submitting to false, whether the request succeeds or fails
       setSubmitting(false);
@@ -65,6 +74,17 @@ const ResetPassword = () => {
               <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
                 Forgot Password
               </h1>
+              <div className="flex-col justify-center">
+                {resetPasswordSuccess ? (
+                  <Alert severity="success">
+                    <p>Password Reset Successful!</p>
+                  </Alert>
+                ) : resetPasswordError ? (
+                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                    <p>Password Reset Failed!</p>
+                  </Alert>
+                ) : null}
+              </div>
               <div className="form-control">
                 <label className="label" htmlFor="password">
                   <span className="label-text text-[#800000] text-lg font-semibold">
