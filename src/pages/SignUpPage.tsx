@@ -77,7 +77,7 @@ const SignUpPage = () => {
               onSubmit={handleSubmit}
               autoComplete="true"
             >
-              <div className="flex-col justify-center">
+              <div className="flex justify-center">
                 {accountSuccess ? (
                   <Alert severity="success">
                     <p>Account created successfully!</p>

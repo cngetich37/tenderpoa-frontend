@@ -74,7 +74,7 @@ const ResetPassword = () => {
               <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
                 Forgot Password
               </h1>
-              <div className="flex-col justify-center">
+              <div className="flex justify-center">
                 {resetPasswordSuccess ? (
                   <Alert severity="success">
                     <p>Password Reset Successful!</p>

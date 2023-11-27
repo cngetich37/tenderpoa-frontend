@@ -80,7 +80,7 @@ const LoginPage = () => {
               onSubmit={handleSubmit}
               autoComplete="true"
             >
-              <div className="flex-col justify-center">
+              <div className="flex justify-center">
                 {loginSuccess ? (
                   <Alert severity="success">
                     <p>Login successful!</p>
