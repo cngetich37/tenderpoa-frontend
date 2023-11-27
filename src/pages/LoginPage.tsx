@@ -5,12 +5,16 @@ import { loginSchema } from "../validationSchemas/validateLoginForm";
 import Alert from "@mui/material/Alert";
 import { FormikHelpers } from "formik";
 import axios from "axios";
+import { useState } from "react";
+
 interface LoginFormValues {
   email: string;
   password: string;
 }
 
 const LoginPage = () => {
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginError, setLoginError] = useState(false);
   const handleLogin = async (
     values: LoginFormValues,
     { setSubmitting }: FormikHelpers<LoginFormValues>
@@ -22,12 +26,24 @@ const LoginPage = () => {
         values
       );
 
-      // Handle the response (you can customize this based on your API)
+      // Handle the response
       console.log(response.data);
+      // Simulating a successful login after 2 seconds
+      setTimeout(() => {
+        setLoginSuccess(true);
+        setLoginError(false);
+      }, 1000);
 
       // Reset the form or perform any other actions on successful submission
     } catch (error) {
       // Handle errors (e.g., display an error message)
+      // Simulating a login error after 3 seconds
+      console.log(error);
+      setTimeout(() => {
+        setLoginError(true);
+        setLoginSuccess(false);
+      }, 2000);
+
       console.error("Error during login:", error);
     } finally {
       // Make sure to set submitting to false, whether the request succeeds or fails
@@ -56,11 +72,23 @@ const LoginPage = () => {
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
               Login
             </h1>
+
             <form
               className="card-body"
               onSubmit={handleSubmit}
               autoComplete="true"
             >
+              <div className="flex-col justify-center">
+                {loginSuccess ? (
+                  <Alert severity="success">
+                    <p>Login successful!</p>
+                  </Alert>
+                ) : loginError ? (
+                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                    <p>Invalid email or password!</p>
+                  </Alert>
+                ) : null}
+              </div>
               <div className="form-control">
                 <label className="label" htmlFor="email">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
