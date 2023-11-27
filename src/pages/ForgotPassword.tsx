@@ -74,11 +74,15 @@ const ForgotPassword = () => {
               </h1>
               <div className="flex justify-center">
                 {forgotPasswordSuccess ? (
-                  <Alert severity="success">
+                  <Alert variant="filled" severity="success">
                     <p>Password Reset Email Sent!</p>
                   </Alert>
                 ) : forgotPasswordError ? (
-                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                  <Alert
+                    variant="filled"
+                    severity="error"
+                    sx={{ color: "#FF0000" }}
+                  >
                     <p>User not found!</p>
                   </Alert>
                 ) : null}

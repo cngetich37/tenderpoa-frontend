@@ -82,11 +82,15 @@ const LoginPage = () => {
             >
               <div className="flex justify-center">
                 {loginSuccess ? (
-                  <Alert severity="success">
+                  <Alert variant="filled" severity="success">
                     <p>Login successful!</p>
                   </Alert>
                 ) : loginError ? (
-                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                  <Alert
+                    variant="filled"
+                    severity="error"
+                    sx={{ color: "#FF0000" }}
+                  >
                     <p>Invalid email or password!</p>
                   </Alert>
                 ) : null}

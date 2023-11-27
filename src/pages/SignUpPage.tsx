@@ -79,11 +79,15 @@ const SignUpPage = () => {
             >
               <div className="flex justify-center">
                 {accountSuccess ? (
-                  <Alert severity="success">
+                  <Alert variant="filled" severity="success">
                     <p>Account created successfully!</p>
                   </Alert>
                 ) : accountError ? (
-                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                  <Alert
+                    variant="filled"
+                    severity="error"
+                    sx={{ color: "#FF0000" }}
+                  >
                     <p>Account already exists!</p>
                   </Alert>
                 ) : null}
