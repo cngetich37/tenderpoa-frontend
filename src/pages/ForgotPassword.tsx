@@ -5,12 +5,15 @@ import Alert from "@mui/material/Alert";
 import axios from "axios";
 import { FormikHelpers } from "formik";
 import { emailSchema } from "../validationSchemas/validateEmail";
+import { useState } from "react";
 
 interface ForgotPasswordFormValues {
   email: string;
 }
 
 const ForgotPassword = () => {
+  const [forgotPasswordSuccess, setForgotPasswordSuccess] = useState(false);
+  const [forgotPasswordError, setForgotPasswordError] = useState(false);
   const handleForgotPassword = async (
     values: ForgotPasswordFormValues,
     { setSubmitting }: FormikHelpers<ForgotPasswordFormValues>
@@ -25,11 +28,19 @@ const ForgotPassword = () => {
 
       // Handle the response (you can customize this based on your API)
       console.log(response.data);
+      setTimeout(() => {
+        setForgotPasswordSuccess(true);
+        setForgotPasswordError(false);
+      }, 1000);
 
       // Reset the form or perform any other actions on successful submission
     } catch (error) {
       // Handle errors (e.g., display an error message)
       console.error("Error during forgot password:", error);
+      setTimeout(() => {
+        setForgotPasswordError(true);
+        setForgotPasswordSuccess(false);
+      }, 1000);
     } finally {
       // Make sure to set submitting to false, whether the request succeeds or fails
       setSubmitting(false);
@@ -61,6 +72,17 @@ const ForgotPassword = () => {
               <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
                 Forgot Password
               </h1>
+              <div className="flex justify-center">
+                {forgotPasswordSuccess ? (
+                  <Alert severity="success">
+                    <p>Login successful!</p>
+                  </Alert>
+                ) : forgotPasswordError ? (
+                  <Alert severity="error" sx={{ color: "#FF0000" }}>
+                    <p>Invalid email or password!</p>
+                  </Alert>
+                ) : null}
+              </div>
               <div className="form-control">
                 <label className="label" htmlFor="email">
                   <span className="label-text text-[#800000] text-lg font-semibold">
