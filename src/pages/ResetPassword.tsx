@@ -15,6 +15,8 @@ const ResetPassword = () => {
   const [resetPasswordError, setResetPasswordError] = useState(false);
   const [token, setToken] = useState<string>("");
   const { token: routeToken } = useParams(); // Assuming the token is a route parameter
+  const [resetSuccessful, setResetSuccessful] = useState("");
+  const [resetError, setResetError] = useState("");
 
   useEffect(() => {
     // Make sure routeToken is defined before setting the state
@@ -34,15 +36,15 @@ const ResetPassword = () => {
       );
 
       // Handle the response (you can customize this based on your API)
-      console.log(response.data);
+      setResetSuccessful(response.data.message);
       setTimeout(() => {
         setResetPasswordSuccess(true);
         setResetPasswordError(false);
       }, 1000);
       // Reset the form or perform any other actions on successful submission
-    } catch (error) {
+    } catch (error: any) {
       // Handle errors (e.g., display an error message)
-      console.error("Error during reset of password:", error);
+      setResetError(error.response.data.message);
       setTimeout(() => {
         setResetPasswordError(true);
         setResetPasswordSuccess(false);
@@ -77,11 +79,11 @@ const ResetPassword = () => {
               <div className="flex justify-center">
                 {resetPasswordSuccess ? (
                   <Alert variant="filled" severity="success">
-                    <p>Password Reset Successful!</p>
+                    <p>{resetSuccessful}</p>
                   </Alert>
                 ) : resetPasswordError ? (
                   <Alert variant="filled" severity="error">
-                    <p>Password Reset Failed!</p>
+                    <p>{resetError}</p>
                   </Alert>
                 ) : null}
               </div>
