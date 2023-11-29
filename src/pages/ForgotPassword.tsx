@@ -14,6 +14,9 @@ interface ForgotPasswordFormValues {
 const ForgotPassword = () => {
   const [forgotPasswordSuccess, setForgotPasswordSuccess] = useState(false);
   const [forgotPasswordError, setForgotPasswordError] = useState(false);
+  const [forgotPasswordApiSuccess, setForgotPasswordApiSuccess] = useState("");
+  const [forgotPasswordApiError, setForgotPasswordApiError] = useState("");
+
   const handleForgotPassword = async (
     values: ForgotPasswordFormValues,
     { setSubmitting }: FormikHelpers<ForgotPasswordFormValues>
@@ -27,16 +30,16 @@ const ForgotPassword = () => {
       );
 
       // Handle the response (you can customize this based on your API)
-      console.log(response.data);
+      setForgotPasswordApiSuccess(response.data.message);
       setTimeout(() => {
         setForgotPasswordSuccess(true);
         setForgotPasswordError(false);
       }, 1000);
 
       // Reset the form or perform any other actions on successful submission
-    } catch (error) {
+    } catch (error: any) {
       // Handle errors (e.g., display an error message)
-      console.error("Error during forgot password:", error);
+      setForgotPasswordApiError(error.response.data.message);
       setTimeout(() => {
         setForgotPasswordError(true);
         setForgotPasswordSuccess(false);
@@ -75,11 +78,11 @@ const ForgotPassword = () => {
               <div className="flex justify-center">
                 {forgotPasswordSuccess ? (
                   <Alert variant="filled" severity="success">
-                    <p>Password Reset Email Sent!</p>
+                    <p>{forgotPasswordApiSuccess}</p>
                   </Alert>
                 ) : forgotPasswordError ? (
                   <Alert variant="filled" severity="error">
-                    <p>User not found!</p>
+                    <p>{forgotPasswordApiError}</p>
                   </Alert>
                 ) : null}
               </div>
