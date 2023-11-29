@@ -14,10 +14,27 @@ import Button from "@mui/material/Button";
 import { validateTender } from "./validationTenderForm/validateTenderForm";
 import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Formik } from "formik";
+import { Formik, FormikHelpers } from "formik";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
+import axios from "axios";
+interface TenderFormValues {
+  tenderNo: string;
+  tenderDescription: string;
+  client: string;
+  siteVisitDate: Date;
+  timeExtension: number;
+  bidSecurity: string;
+  bidSourceInsurance: string;
+  closingDateTime: Date;
+  location: string;
+  tenderValue: number;
+  dollarRate: number;
+  company: string;
+  tenderFile: string;
+  status: string;
+}
 
 const theme = createTheme({
   palette: {
@@ -33,6 +50,40 @@ const theme = createTheme({
 const tomorrow = dayjs().subtract(-1, "day");
 
 export default function AddTender() {
+  const [tenderSuccess, setTenderSuccess] = React.useState(false);
+  const [tenderError, setTenderError] = React.useState(false);
+  const [tenderApiSuccess, setApiTenderSuccess] = React.useState("");
+  const [error, setError] = React.useState("");
+  const handleTender = async (
+    values: TenderFormValues,
+    { setSubmitting }: FormikHelpers<TenderFormValues>
+  ) => {
+    try {
+      // Make a POST request using Axios
+      const response = await axios.post(
+        "https://tenderpoa.onrender.com/api/tenders",
+        values
+      );
+      setApiTenderSuccess(response.data.message);
+      // Simulating a successful login after 1 seconds
+      setTimeout(() => {
+        setTenderSuccess(true);
+        setTenderError(false);
+      }, 1000);
+      // navigate('/allpendingtenders');
+      // Reset the form or perform any other actions on successful submission
+    } catch (error: any) {
+      // Handle errors (e.g., display an error message)
+      setError(error.response.data.message);
+      setTimeout(() => {
+        setTenderError(true);
+        setTenderSuccess(false);
+      }, 2000);
+    } finally {
+      // Make sure to set submitting to false, whether the request succeeds or fails
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex justify-center bg-white">
@@ -51,6 +102,17 @@ export default function AddTender() {
               >
                 Add a Tender
               </Typography>
+              <div className="flex justify-center">
+                {tenderSuccess ? (
+                  <Alert variant="filled" severity="success">
+                    <p>{tenderApiSuccess}</p>
+                  </Alert>
+                ) : tenderError ? (
+                  <Alert variant="filled" severity="error">
+                    <p>{error}</p>
+                  </Alert>
+                ) : null}
+              </div>
 
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <React.Fragment>
@@ -68,19 +130,14 @@ export default function AddTender() {
                       tenderValue: 10000,
                       dollarRate: 151.55,
                       company: "",
-                      tenderFile: null,
+                      tenderFile: "",
                       status: "Not Bidded",
                     }}
                     validationSchema={validateTender}
-                    onSubmit={(values, actions) => {
-                      setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        actions.setSubmitting(false);
-                      }, 400);
-                    }}
+                    onSubmit={handleTender}
                   >
                     {(formik) => (
-                      <form onSubmit={formik.handleSubmit}>
+                      <form onSubmit={formik.handleSubmit} encType="multipart/form-data">
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
@@ -109,8 +166,7 @@ export default function AddTender() {
                               id="tenderDescription"
                               name="tenderDescription"
                               placeholder="tender description"
-                              className="w-full mt-6 border-solid"
-                              
+                              className="w-full mt-6 border-solid bg-white"
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
@@ -271,16 +327,29 @@ export default function AddTender() {
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
-                            <TextField
-                              id="company"
-                              name="company"
-                              value={formik.values.company}
-                              onChange={formik.handleChange}
-                              onBlur={formik.handleBlur}
-                              label="Company"
-                              fullWidth
-                              variant="standard"
-                            />
+                            <FormControl fullWidth>
+                              <InputLabel variant="standard" htmlFor="status">
+                                Company
+                              </InputLabel>
+                              <NativeSelect
+                                defaultValue={formik.values.status}
+                                onChange={formik.handleChange}
+                                inputProps={{
+                                  name: "company",
+                                  id: "company",
+                                }}
+                              >
+                                <option value={"Intracom Africa Ltd"}>
+                                  Intracom Africa Ltd
+                                </option>
+                                <option value={"Saava Eng. Ltd"}>
+                                  Saava Eng. Ltd
+                                </option>
+                                <option value={"Benesse EA. Ltd"}>
+                                  Benesse EA. Ltd
+                                </option>
+                              </NativeSelect>
+                            </FormControl>
                             {formik.errors.company &&
                               formik.touched.company && (
                                 <Alert severity="error" className="mt-1">
@@ -300,7 +369,7 @@ export default function AddTender() {
                                 color="primary"
                                 id="tenderFile"
                                 name="tenderFile"
-                                type="file"
+                                type="text"
                                 onChange={formik.handleChange}
                                 value={formik.values.tenderFile}
                                 onBlur={formik.handleBlur}
