@@ -1,10 +1,12 @@
 import Sidebar from "./Sidebar";
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
-import data from "../assets/MOCK_DATA.json";
+// import data from "../assets/MOCK_DATA.json";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useState, useEffect } from "react";
 
 // tenderNo:
 // tenderDescription:
@@ -22,6 +24,20 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // status: "Not Bidded",
 
 // "filled_scanned_tender_softcopy":false,"month":"October","year":2023,"dollar_rate":146.48},
+// "tenderNo": "T-001",
+// "tenderDescription": "The Tender for supplying the Power Transmission",
+// "client": "Kenya Power",
+// "siteVisitDate": "2023-12-02T21:00:00.000Z",
+// "timeExtension": "5",
+// "bidSecurity": "Loan",
+// "bidSourceInsurance": "Insurance",
+// "closingDateTime": "2022-12-02T21:00:00.000Z",
+// "location": "Kericho",
+// "tenderValue": 100000,
+// "dollarRate": 1547,
+// "company": "Safaricom",
+// "tenderFile": "CollinsNgetich.pdf",
+// "tenderStatus": "Not Bidded",
 const theme = createTheme({
   palette: {
     primary: {
@@ -33,63 +49,82 @@ const theme = createTheme({
   },
 });
 
-const rows = data;
-
 export default function AllPendingTenders() {
+  const [tenderRows, setTenderRows] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://tenderpoa.onrender.com/api/tenders"
+        );
+        // Handle the successful response here
+        console.log(response.data);
+        setTenderRows(response.data);
+      } catch (error) {
+        // Handle errors here
+        console.error("Error making GET request:", error);
+      }
+    };
+
+    // Call the fetchData function
+    fetchData();
+  }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+
   const columns: GridColDef[] = [
     {
-      field: "tender_no",
-      headerClassName: 'super-app-theme--header',
+      field: "tenderNo",
+      headerClassName: "super-app-theme--header",
       headerName: "Tender No",
       width: 130,
       editable: true,
     },
     {
-      field: "tender_description",
+      field: "tenderDescription",
       headerName: "Tender Description",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
     {
       field: "client",
       headerName: "Client",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
     {
-      field: "site_visit_date",
+      field: "siteVisitDate",
       headerName: "Site Visit Date",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
+      valueFormatter: (params) => dayjs(params.value).format("DD/MM/YYYY"),
       width: 130,
       editable: true,
     },
     {
-      field: "time_extension",
+      field: "timeExtension",
       headerName: "Time Extension",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
     {
-      field: "bid_security",
+      field: "bidSecurity",
       headerName: "Bid Security",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
     {
-      field: "bid_source_insurance",
+      field: "bidSourceInsurance",
       headerName: "Bid Source Insurance",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 170,
       editable: true,
     },
     {
-      field: "closing_date_time",
+      field: "closingDateTime",
       headerName: "Closing Date Time",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       valueFormatter: (params) => dayjs(params.value).format("DD/MM/YYYY"),
       editable: true,
@@ -97,30 +132,48 @@ export default function AllPendingTenders() {
     {
       field: "location",
       headerName: "Location",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
     {
-      field: "tender_value",
+      field: "tenderValue",
       headerName: "Tender Value",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       type: "number",
       width: 130,
       editable: true,
     },
     {
-      field: "dollar_rate",
+      field: "dollarRate",
       headerName: "Dollar Rate",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
       width: 130,
       editable: true,
     },
 
     {
-      field: "tender_document_from_client",
+      field: "company",
+      headerName: "Company",
+      headerClassName: "super-app-theme--header",
+      description: "This column has a value getter and is not sortable.",
+      sortable: true,
+      width: 160,
+      editable: true,
+    },
+    {
+      field: "tenderFile",
       headerName: "Tender Document",
-      headerClassName: 'super-app-theme--header',
+      headerClassName: "super-app-theme--header",
+      description: "This column has a value getter and is not sortable.",
+      sortable: false,
+      width: 160,
+      editable: true,
+    },
+    {
+      field: "tenderStatus",
+      headerName: "Tender Status",
+      headerClassName: "super-app-theme--header",
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
@@ -150,13 +203,14 @@ export default function AllPendingTenders() {
               width: "100%",
               "& .super-app-theme--header": {
                 backgroundColor: "#800000",
-                color:"white"
+                color: "white",
               },
             }}
           >
             <DataGrid
+              getRowId={(row) => row._id}
               editMode="row"
-              rows={rows}
+              rows={tenderRows}
               columns={columns}
               initialState={{
                 pagination: {
