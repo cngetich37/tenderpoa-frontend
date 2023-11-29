@@ -328,11 +328,11 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <FormControl fullWidth>
-                              <InputLabel variant="standard" htmlFor="status">
+                              <InputLabel variant="standard" htmlFor="company">
                                 Company
                               </InputLabel>
                               <NativeSelect
-                                defaultValue={formik.values.status}
+                                defaultValue={formik.values.company}
                                 onChange={formik.handleChange}
                                 inputProps={{
                                   name: "company",
