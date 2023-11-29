@@ -17,6 +17,8 @@ interface signUpFormValues {
 const SignUpPage = () => {
   const [accountSuccess, setaccountSuccess] = useState(false);
   const [accountError, setAccountError] = useState(false);
+  const [apiSignUpSuccess, setSignUpSuccess] = useState("");
+  const [errorSignup, setErrorSignup] = useState("");
   const handleSignup = async (
     values: signUpFormValues,
     { setSubmitting }: FormikHelpers<signUpFormValues>
@@ -30,14 +32,15 @@ const SignUpPage = () => {
 
       // Handle the response (you can customize this based on your API)
       console.log(response.data);
+      setSignUpSuccess(response.data.message);
       setTimeout(() => {
         setaccountSuccess(true);
         setAccountError(false);
       }, 1000);
       // Reset the form or perform any other actions on successful submission
-    } catch (error) {
+    } catch (error: any) {
       // Handle errors (e.g., display an error message)
-      console.error("Error during signup:", error);
+      setErrorSignup(error.response.data.message);
       setTimeout(() => {
         setAccountError(true);
         setaccountSuccess(false);
@@ -80,11 +83,11 @@ const SignUpPage = () => {
               <div className="flex justify-center">
                 {accountSuccess ? (
                   <Alert variant="filled" severity="success">
-                    <p>Account created successfully!</p>
+                    <p>{apiSignUpSuccess}</p>
                   </Alert>
                 ) : accountError ? (
                   <Alert variant="filled" severity="error">
-                    <p>Account already exists!</p>
+                    <p>{errorSignup}</p>
                   </Alert>
                 ) : null}
               </div>
