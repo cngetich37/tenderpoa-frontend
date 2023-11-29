@@ -16,6 +16,8 @@ interface LoginFormValues {
 const LoginPage = () => {
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [loginError, setLoginError] = useState(false);
+  const [apiLoginSuccess, setApiLoginSuccess] = useState("");
+  const [error, setError] = useState("");
   // const navigate = useNavigate();
   const handleLogin = async (
     values: LoginFormValues,
@@ -27,9 +29,7 @@ const LoginPage = () => {
         "https://tenderpoa.onrender.com/api/users/login",
         values
       );
-
-      // Handle the response
-      console.log(response.data);
+      setApiLoginSuccess(response.data.message);
       // Simulating a successful login after 1 seconds
       setTimeout(() => {
         setLoginSuccess(true);
@@ -37,16 +37,13 @@ const LoginPage = () => {
       }, 1000);
       // navigate('/allpendingtenders');
       // Reset the form or perform any other actions on successful submission
-    } catch (error) {
+    } catch (error: any) {
       // Handle errors (e.g., display an error message)
-      // Simulating a login error after 3 seconds
-      console.log(error);
+      setError(error.response.data.message);
       setTimeout(() => {
         setLoginError(true);
         setLoginSuccess(false);
       }, 2000);
-
-      console.error("Error during login:", error);
     } finally {
       // Make sure to set submitting to false, whether the request succeeds or fails
       setSubmitting(false);
@@ -83,11 +80,11 @@ const LoginPage = () => {
               <div className="flex justify-center">
                 {loginSuccess ? (
                   <Alert variant="filled" severity="success">
-                    <p>Login successful!</p>
+                    <p>{apiLoginSuccess}</p>
                   </Alert>
                 ) : loginError ? (
                   <Alert variant="filled" severity="error">
-                    <p>Invalid email or password!</p>
+                    <p>{error}</p>
                   </Alert>
                 ) : null}
               </div>
