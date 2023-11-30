@@ -20,7 +20,7 @@ const theme = createTheme({
   },
 });
 
-export default function AllPendingTenders() {
+export default function AllOpenTenders() {
   const [tenderRows, setTenderRows] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

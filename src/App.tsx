@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import SaavaEngLtd from "./components/SaavaEngLtd";
 import IntracomAfricaLtd from "./components/IntracomAfricaLtd";
 import DueTenders from "./components/DueTenders";
-import AllPendingTenders from "./components/AllOpenTenders";
 import AlreadyBidded from "./components/AlreadyBidded";
 import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";
@@ -17,6 +16,7 @@ import BenesseLtd from "./components/BenesseLtd";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import ClosedTenders from "./components/ClosedTenders";
+import AllOpenTenders from "./components/AllOpenTenders";
 const App = () => {
   return (
     <>
@@ -24,8 +24,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route
-          path="/allpendingtenders"
-          element={<AllPendingTenders />}
+          path="/allopentenders"
+          element={<AllOpenTenders />}
         ></Route>
         <Route path="/saava" element={<SaavaEngLtd />}></Route>
         <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>

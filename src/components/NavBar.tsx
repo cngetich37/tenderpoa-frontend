@@ -26,7 +26,7 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-[#800000] hover:text-teal-800 bg-white rounded-box w-48"
             >
               <li>
-                <Link to="/allpendingtenders">All Pending Tenders</Link>
+                <Link to="/allopentenders">All Open Tenders</Link>
               </li>
               <li>
                 <Link to="/addtender">Add a Tender</Link>
