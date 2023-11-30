@@ -42,7 +42,7 @@ const Sidebar = () => {
                           ></path>
                         </svg>
                         <span className="-mr-1 font-medium">
-                          All Pending Tenders
+                          All Open Tenders
                         </span>
                       </Link>
                     </li>
