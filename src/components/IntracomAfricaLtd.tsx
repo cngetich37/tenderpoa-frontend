@@ -157,7 +157,7 @@ export default function IntracomAfricaLtd() {
             color="primary"
             className="mb-4 pb-4"
           >
-            Intracom Africa Ltd Pending Tenders
+            Intracom Africa Ltd Open Tenders
           </Typography>
           <Box
             sx={{

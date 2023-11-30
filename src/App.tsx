@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import SaavaEngLtd from "./components/SaavaEngLtd";
 import IntracomAfricaLtd from "./components/IntracomAfricaLtd";
 import DueTenders from "./components/DueTenders";
-import AllPendingTenders from "./components/AllPendingTenders";
+import AllPendingTenders from "./components/AllOpenTenders";
 import AlreadyBidded from "./components/AlreadyBidded";
 import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";

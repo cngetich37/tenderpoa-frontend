@@ -157,7 +157,7 @@ export default function SaavaEngLtd() {
             color="primary"
             className="mb-4 pb-4"
           >
-           Saava Eng. Ltd Pending Tenders
+           Saava Eng. Ltd Open Tenders
           </Typography>
           <Box
             sx={{

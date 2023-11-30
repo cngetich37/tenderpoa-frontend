@@ -157,7 +157,7 @@ export default function AllPendingTenders() {
             color="primary"
             className="mb-4 pb-4"
           >
-            All Pending Tenders
+            All Open Tenders
           </Typography>
           <Box
             sx={{
