@@ -121,7 +121,7 @@ export default function AddTender() {
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              value={formik.values.tenderNo}
+                              value={formik.values.tenderNo.toUpperCase()}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               id="tenderNo"
@@ -142,7 +142,7 @@ export default function AddTender() {
                             <TextareaAutosize
                               id="tenderDescription"
                               name="tenderDescription"
-                              value={formik.values.tenderDescription}
+                              value={formik.values.tenderDescription.toUpperCase()}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               placeholder="tender description"
@@ -358,6 +358,7 @@ export default function AddTender() {
                                 <option value={"Not Bidded"}>Not Bidded</option>
                                 <option value={"Bidded"}>Bidded</option>
                                 <option value={"Due"}>Due</option>
+                                <option value={"Closed"}>Due</option>
                               </NativeSelect>
                             </FormControl>
 
