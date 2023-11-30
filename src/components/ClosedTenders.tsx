@@ -20,13 +20,13 @@ const theme = createTheme({
   },
 });
 
-export default function AllBiddedTenders() {
+export default function ClosedTenders() {
   const [tenderRows, setTenderRows] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://tenderpoa.onrender.com/api/tenders/bidded"
+          "https://tenderpoa.onrender.com/api/tenders/closed"
         );
         // Handle the successful response here
         console.log(response.data);
@@ -157,7 +157,7 @@ export default function AllBiddedTenders() {
             color="primary"
             className="mb-4 pb-4"
           >
-            Already Bidded Tenders
+            Closed Tenders
           </Typography>
           <Box
             sx={{

@@ -16,6 +16,7 @@ import AddTender from "./components/AddTender";
 import BenesseLtd from "./components/BenesseLtd";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import ClosedTenders from "./components/ClosedTenders";
 const App = () => {
   return (
     <>
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/addtender" element={<AddTender />}></Route>
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
         <Route path="/benesse" element={<BenesseLtd />}></Route>
+        <Route path="/closed" element={<ClosedTenders />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset-password/:token" element={<ResetPassword />}></Route>
       </Routes>

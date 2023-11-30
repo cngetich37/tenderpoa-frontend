@@ -161,7 +161,7 @@ export default function IntracomAfricaLtd() {
           </Typography>
           <Box
             sx={{
-              height: 400,
+              height: 450,
               width: "100%",
               "& .super-app-theme--header": {
                 backgroundColor: "#800000",

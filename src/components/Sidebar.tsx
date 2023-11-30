@@ -154,7 +154,7 @@ const Sidebar = () => {
                     </li>
                     <li className="min-w-max">
                       <Link
-                        to="/due"
+                        to="/closed"
                         className="group flex items-center space-x-4  px-4 py-3 text-gray-600  group-hover:text-white  bg-gradient-to-r from-white to-[#800000] "
                       >
                         <svg
