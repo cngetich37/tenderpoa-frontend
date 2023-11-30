@@ -36,7 +36,6 @@ import { useState, useEffect } from "react";
 // "tenderValue": 100000,
 // "dollarRate": 1547,
 // "company": "Safaricom",
-// "tenderFile": "CollinsNgetich.pdf",
 // "tenderStatus": "Not Bidded",
 const theme = createTheme({
   palette: {
@@ -158,15 +157,6 @@ export default function AllPendingTenders() {
       headerClassName: "super-app-theme--header",
       description: "This column has a value getter and is not sortable.",
       sortable: true,
-      width: 160,
-      editable: true,
-    },
-    {
-      field: "tenderFile",
-      headerName: "Tender Document",
-      headerClassName: "super-app-theme--header",
-      description: "This column has a value getter and is not sortable.",
-      sortable: false,
       width: 160,
       editable: true,
     },
