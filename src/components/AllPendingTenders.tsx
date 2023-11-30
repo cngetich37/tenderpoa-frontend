@@ -219,6 +219,7 @@ export default function AllPendingTenders() {
               }}
               pageSizeOptions={[10, 20]}
               slots={{ toolbar: GridToolbar }}
+              checkboxSelection
             />
           </Box>
         </ThemeProvider>
