@@ -67,13 +67,13 @@ export default function AddTender() {
       setTimeout(() => {
         setTenderSuccess(true);
         setTenderError(false);
-      }, 1000);
+      }, 2000);
       setApiTenderSuccess(response.data.message);
     } catch (error: any) {
       setTimeout(() => {
         setTenderError(true);
         setTenderSuccess(false);
-      }, 1000);
+      }, 3000);
 
       setError(error.response.data.message);
     }
