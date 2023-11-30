@@ -52,7 +52,7 @@ export default function AddTender() {
     tenderValue: 10000,
     dollarRate: 151.55,
     company: "Intracom Africa Ltd",
-    tenderFile: "The nice tender",
+    tenderFile: null,
     tenderStatus: "Not Bidded",
   };
 
@@ -348,7 +348,7 @@ export default function AddTender() {
                                 color="primary"
                                 id="tenderFile"
                                 name="tenderFile"
-                                type="text"
+                                type="file"
                                 onChange={formik.handleChange}
                                 value={formik.values.tenderFile}
                                 onBlur={formik.handleBlur}
