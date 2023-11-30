@@ -8,35 +8,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState, useEffect } from "react";
 
-// tenderNo:
-// tenderDescription:
-// client:,
-// siteVisitDate:
-// timeExtension: 5,
-// bidSecurity: "",
-// bidSourceInsurance: "",
-// closingDateTime: new Date(),
-// location: "",
-// tenderValue: 10000,
-// dollarRate: 151.55,
-// company: "",
-// tenderFile: File,
-// status: "Not Bidded",
 
-// "filled_scanned_tender_softcopy":false,"month":"October","year":2023,"dollar_rate":146.48},
-// "tenderNo": "T-001",
-// "tenderDescription": "The Tender for supplying the Power Transmission",
-// "client": "Kenya Power",
-// "siteVisitDate": "2023-12-02T21:00:00.000Z",
-// "timeExtension": "5",
-// "bidSecurity": "Loan",
-// "bidSourceInsurance": "Insurance",
-// "closingDateTime": "2022-12-02T21:00:00.000Z",
-// "location": "Kericho",
-// "tenderValue": 100000,
-// "dollarRate": 1547,
-// "company": "Safaricom",
-// "tenderStatus": "Not Bidded",
 const theme = createTheme({
   palette: {
     primary: {
