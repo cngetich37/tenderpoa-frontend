@@ -63,17 +63,16 @@ export default function AddTender() {
         "https://tenderpoa.onrender.com/api/tenders",
         values
       );
-      console.log(response.data.message);
+      setApiTenderSuccess(response.data.message);
       setTimeout(() => {
         setTenderSuccess(true);
         setTenderError(false);
-      }, 2000);
-      setApiTenderSuccess(response.data.message);
+      }, 1000);
     } catch (error: any) {
       setTimeout(() => {
         setTenderError(true);
         setTenderSuccess(false);
-      }, 3000);
+      }, 2000);
 
       setError(error.response.data.message);
     }
