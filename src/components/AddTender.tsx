@@ -59,7 +59,6 @@ export default function AddTender() {
   const handleTender = async (values: any) => {
     // Call your API here using Axios
     try {
-      console.log("Form Values:", values);
       const response = await axios.post(
         "https://tenderpoa.onrender.com/api/tenders",
         values
