@@ -52,7 +52,6 @@ export default function AddTender() {
     tenderValue: 10000,
     dollarRate: 151.55,
     company: "Intracom Africa Ltd",
-    tenderFile: null,
     tenderStatus: "Not Bidded",
   };
 
@@ -115,7 +114,10 @@ export default function AddTender() {
                     onSubmit={handleTender}
                   >
                     {(formik) => (
-                      <form onSubmit={formik.handleSubmit}>
+                      <form
+                        onSubmit={formik.handleSubmit}
+                        encType="multipart/form-data"
+                      >
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
@@ -335,31 +337,6 @@ export default function AddTender() {
                                   {formik.errors.company}
                                 </Alert>
                               )}
-                          </Grid>
-                          <Grid item xs={12} md={6}>
-                            <div className="mr-4">
-                              <InputLabel
-                                htmlFor="tenderFile"
-                                variant="standard"
-                              >
-                                Upload a Tender Document
-                              </InputLabel>
-                              <TextField
-                                color="primary"
-                                id="tenderFile"
-                                name="tenderFile"
-                                type="file"
-                                onChange={formik.handleChange}
-                                value={formik.values.tenderFile}
-                                onBlur={formik.handleBlur}
-                              />
-                              {formik.errors.tenderFile &&
-                                formik.touched.tenderFile && (
-                                  <Alert severity="error" className="mt-1">
-                                    {formik.errors.tenderFile}
-                                  </Alert>
-                                )}
-                            </div>
                           </Grid>
 
                           <Grid item xs={12} sm={6}>
