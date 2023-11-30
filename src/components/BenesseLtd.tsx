@@ -157,7 +157,7 @@ export default function BenesseLtd() {
             color="primary"
             className="mb-4 pb-4"
           >
-            All Pending Tenders
+            Benesse EA. Ltd Pending Tenders
           </Typography>
           <Box
             sx={{
