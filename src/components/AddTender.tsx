@@ -14,27 +14,11 @@ import Button from "@mui/material/Button";
 import { validateTender } from "./validationTenderForm/validateTenderForm";
 import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Formik, FormikHelpers } from "formik";
+import { Formik } from "formik";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import axios from "axios";
-interface TenderFormValues {
-  tenderNo: string;
-  tenderDescription: string;
-  client: string;
-  siteVisitDate: Date;
-  timeExtension: number;
-  bidSecurity: string;
-  bidSourceInsurance: string;
-  closingDateTime: Date;
-  location: string;
-  tenderValue: number;
-  dollarRate: number;
-  company: string;
-  tenderFile: string;
-  status: string;
-}
 
 const theme = createTheme({
   palette: {
@@ -54,34 +38,43 @@ export default function AddTender() {
   const [tenderError, setTenderError] = React.useState(false);
   const [tenderApiSuccess, setApiTenderSuccess] = React.useState("");
   const [error, setError] = React.useState("");
-  const handleTender = async (
-    values: TenderFormValues,
-    { setSubmitting }: FormikHelpers<TenderFormValues>
-  ) => {
+
+  const initialValues = {
+    tenderNo: "",
+    tenderDescription: "",
+    client: "",
+    siteVisitDate: new Date(),
+    timeExtension: 5,
+    bidSecurity: 2500,
+    bidSourceInsurance: "",
+    closingDateTime: new Date(),
+    location: "",
+    tenderValue: 10000,
+    dollarRate: 151.55,
+    company: "Intracom Africa Ltd",
+    tenderFile: "The nice tender",
+    tenderStatus: "Not Bidded",
+  };
+
+  const handleTender = async (values: any) => {
+    // Call your API here using Axios
     try {
-      // Make a POST request using Axios
+      console.log("Form Values:", values);
       const response = await axios.post(
         "https://tenderpoa.onrender.com/api/tenders",
         values
       );
       setApiTenderSuccess(response.data.message);
-      // Simulating a successful login after 1 seconds
       setTimeout(() => {
         setTenderSuccess(true);
         setTenderError(false);
       }, 1000);
-      // navigate('/allpendingtenders');
-      // Reset the form or perform any other actions on successful submission
     } catch (error: any) {
-      // Handle errors (e.g., display an error message)
       setError(error.response.data.message);
       setTimeout(() => {
         setTenderError(true);
         setTenderSuccess(false);
-      }, 2000);
-    } finally {
-      // Make sure to set submitting to false, whether the request succeeds or fails
-      setSubmitting(false);
+      }, 1000);
     }
   };
 
@@ -117,27 +110,12 @@ export default function AddTender() {
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <React.Fragment>
                   <Formik
-                    initialValues={{
-                      tenderNo: "",
-                      tenderDescription: "",
-                      client: "",
-                      siteVisitDate: new Date(),
-                      timeExtension: 5,
-                      bidSecurity: "",
-                      bidSourceInsurance: "",
-                      closingDateTime: new Date(),
-                      location: "",
-                      tenderValue: 10000,
-                      dollarRate: 151.55,
-                      company: "",
-                      tenderFile: "",
-                      status: "Not Bidded",
-                    }}
+                    initialValues={initialValues}
                     validationSchema={validateTender}
                     onSubmit={handleTender}
                   >
                     {(formik) => (
-                      <form onSubmit={formik.handleSubmit} encType="multipart/form-data">
+                      <form onSubmit={formik.handleSubmit}>
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
@@ -160,11 +138,11 @@ export default function AddTender() {
 
                           <Grid item xs={12} sm={6}>
                             <TextareaAutosize
+                              id="tenderDescription"
+                              name="tenderDescription"
                               value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
-                              id="tenderDescription"
-                              name="tenderDescription"
                               placeholder="tender description"
                               className="w-full mt-6 border-solid bg-white"
                             />
@@ -246,7 +224,7 @@ export default function AddTender() {
                               value={formik.values.bidSourceInsurance}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
-                              label="Bid Source / Insurance"
+                              label="Bid Source e.g Insurance/Bank"
                               fullWidth
                               variant="standard"
                             />
@@ -334,6 +312,7 @@ export default function AddTender() {
                               <NativeSelect
                                 defaultValue={formik.values.company}
                                 onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
                                 inputProps={{
                                   name: "company",
                                   id: "company",
@@ -385,15 +364,18 @@ export default function AddTender() {
 
                           <Grid item xs={12} sm={6}>
                             <FormControl fullWidth>
-                              <InputLabel variant="standard" htmlFor="status">
+                              <InputLabel
+                                variant="standard"
+                                htmlFor="tenderStatus"
+                              >
                                 Status
                               </InputLabel>
                               <NativeSelect
-                                defaultValue={formik.values.status}
+                                defaultValue={formik.values.tenderStatus}
                                 onChange={formik.handleChange}
                                 inputProps={{
-                                  name: "status",
-                                  id: "status",
+                                  name: "tenderStatus",
+                                  id: "tenderStatus",
                                 }}
                               >
                                 <option value={"Not Bidded"}>Not Bidded</option>
@@ -402,11 +384,12 @@ export default function AddTender() {
                               </NativeSelect>
                             </FormControl>
 
-                            {formik.errors.status && formik.touched.status && (
-                              <Alert severity="error" className="mt-1">
-                                {formik.errors.status}
-                              </Alert>
-                            )}
+                            {formik.errors.tenderStatus &&
+                              formik.touched.tenderStatus && (
+                                <Alert severity="error" className="mt-1">
+                                  {formik.errors.tenderStatus}
+                                </Alert>
+                              )}
                           </Grid>
                         </Grid>
                         <div className="flex justify-end mt-6">
