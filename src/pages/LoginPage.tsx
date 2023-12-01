@@ -6,20 +6,19 @@ import Alert from "@mui/material/Alert";
 import { FormikHelpers } from "formik";
 import axios from "axios";
 import { useState } from "react";
-// import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormValues {
   email: string;
   password: string;
 }
 
-
 const LoginPage = () => {
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [loginError, setLoginError] = useState(false);
   const [apiLoginSuccess, setApiLoginSuccess] = useState("");
   const [error, setError] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleLogin = async (
     values: LoginFormValues,
     { setSubmitting }: FormikHelpers<LoginFormValues>
@@ -30,13 +29,20 @@ const LoginPage = () => {
         "https://tenderpoa.onrender.com/api/users/login",
         values
       );
+      const token = response.data.token;
       setApiLoginSuccess(response.data.message);
+      console.log(response.data.token);
       // Simulating a successful login after 1 seconds
       setTimeout(() => {
         setLoginSuccess(true);
         setLoginError(false);
       }, 1000);
-      // navigate('/allpendingtenders');
+      setTimeout(() => {
+        navigate("/allopentenders");
+        window.location.reload();
+        localStorage.setItem("", token);
+      }, 4000);
+
       // Reset the form or perform any other actions on successful submission
     } catch (error: any) {
       // Handle errors (e.g., display an error message)
@@ -63,7 +69,10 @@ const LoginPage = () => {
     <>
       <div
         className="hero h-full bg-white"
-        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "contain" }}
+        style={{
+          backgroundImage: `url(${homepic})`,
+          backgroundSize: "contain",
+        }}
       >
         <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
           <div className="ml-4 flex-col text-center lg:text-center"></div>
