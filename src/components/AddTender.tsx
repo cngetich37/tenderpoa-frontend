@@ -157,7 +157,7 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              value={formik.values.client}
+                              value={formik.values.client.toUpperCase()}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               id="client"
@@ -223,7 +223,7 @@ export default function AddTender() {
                             <TextField
                               id="bidSourceInsurance"
                               name="bidSourceInsurance"
-                              value={formik.values.bidSourceInsurance}
+                              value={formik.values.bidSourceInsurance.toUpperCase()}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               label="Bid Source e.g Insurance/Bank"
@@ -256,7 +256,7 @@ export default function AddTender() {
                             <TextField
                               id="location"
                               name="location"
-                              value={formik.values.location}
+                              value={formik.values.location.toUpperCase()}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               label="Location"
