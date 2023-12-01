@@ -13,6 +13,7 @@ interface LoginFormValues {
   password: string;
 }
 
+
 const LoginPage = () => {
   const [loginSuccess, setLoginSuccess] = useState(false);
   const [loginError, setLoginError] = useState(false);
@@ -62,12 +63,12 @@ const LoginPage = () => {
     <>
       <div
         className="hero h-full bg-white"
-        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "cover" }}
+        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "contain" }}
       >
-        <div className="hero-content flex-col justify-center lg:flex-row-reverse">
+        <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
           <div className="ml-4 flex-col text-center lg:text-center"></div>
 
-          <div className="card flex-shrink-0 w-full max-w-lg bg-white">
+          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-200">
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
               Login
             </h1>
