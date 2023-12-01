@@ -78,7 +78,7 @@ export default function AddTender() {
   };
 
   return (
-    <div className="flex justify-center bg-white">
+    <div className="flex justify-center bg-[#eeeeee] h-full">
       <div className="flex h-full lg:w-2/3 w-screen sm:w-1/2 py-6 mt-6 mb-6">
         <Container component="main" maxWidth="md" sx={{ mb: 4 }}>
           <ThemeProvider theme={theme}>
