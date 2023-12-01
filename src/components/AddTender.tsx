@@ -371,7 +371,7 @@ export default function AddTender() {
                           </Grid>
                         </Grid>
                         <div className="flex justify-end mt-6">
-                          <Button variant="contained" type="submit">
+                          <Button variant="contained" type="submit" disabled={!formik.isValid || formik.isSubmitting}>
                             Submit
                           </Button>
                         </div>
