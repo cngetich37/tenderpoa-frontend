@@ -68,7 +68,7 @@ const LoginPage = () => {
         <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
           <div className="ml-4 flex-col text-center lg:text-center"></div>
 
-          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-200">
+          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-100">
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
               Login
             </h1>

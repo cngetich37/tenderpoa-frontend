@@ -6,6 +6,7 @@ import Alert from "@mui/material/Alert";
 import axios from "axios";
 import { FormikHelpers } from "formik";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 interface signUpFormValues {
   firstName: string;
   lastName: string;
@@ -19,6 +20,8 @@ const SignUpPage = () => {
   const [accountError, setAccountError] = useState(false);
   const [apiSignUpSuccess, setSignUpSuccess] = useState("");
   const [errorSignup, setErrorSignup] = useState("");
+  const navigate = useNavigate();
+
   const handleSignup = async (
     values: signUpFormValues,
     { setSubmitting }: FormikHelpers<signUpFormValues>
@@ -31,12 +34,15 @@ const SignUpPage = () => {
       );
 
       // Handle the response (you can customize this based on your API)
-      console.log(response.data);
       setSignUpSuccess(response.data.message);
       setTimeout(() => {
         setaccountSuccess(true);
         setAccountError(false);
       }, 1000);
+      setTimeout(() => {
+        navigate("/login");
+      }, 4000);
+
       // Reset the form or perform any other actions on successful submission
     } catch (error: any) {
       // Handle errors (e.g., display an error message)
@@ -68,11 +74,14 @@ const SignUpPage = () => {
       <div
         className="hero h-full bg-white"
         // style={{ backgroundImage: `url(${homepic}) `, backgroundSize: "contain" }}
-        style={{ backgroundImage: `url(${homepic})`, backgroundSize: "contain" }}
+        style={{
+          backgroundImage: `url(${homepic})`,
+          backgroundSize: "contain",
+        }}
       >
-        <div className="hero-content flex-col justify-center lg:flex-row-reverse">
-          <div className="ml-4 flex-col text-center lg:text-center"></div>
-          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-200">
+        <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
+          <div className="ml-4 flex-col text-center lg:text-center "></div>
+          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-100">
             <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
               Sign up
             </h1>
