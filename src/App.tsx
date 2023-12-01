@@ -23,10 +23,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route
-          path="/allopentenders"
-          element={<AllOpenTenders />}
-        ></Route>
+        <Route path="/allopentenders" element={<AllOpenTenders />}></Route>
         <Route path="/saava" element={<SaavaEngLtd />}></Route>
         <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
         <Route path="/due" element={<DueTenders />}></Route>
@@ -40,7 +37,10 @@ const App = () => {
         <Route path="/benesse" element={<BenesseLtd />}></Route>
         <Route path="/closed" element={<ClosedTenders />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-        <Route path="/reset-password/:token" element={<ResetPassword />}></Route>
+        <Route
+          path="/reset-password/:token"
+          element={<ResetPassword />}
+        ></Route>
       </Routes>
       <Footer />
     </>
