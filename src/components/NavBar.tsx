@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 const NavBar = () => {
+  // const isUserSignedIn = !!localStorage.getItem("token");
+  // const navigate = useNavigate();
+
+  // const handleSignOut = ()=>{
+  //   localStorage.removeItem('token')
+  // }
   return (
     <header className="sticky top-0 z-50">
       <div className="navbar relative bg-[#800000] text-white">
