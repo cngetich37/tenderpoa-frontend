@@ -23,14 +23,14 @@ const Home = () => {
               </h1>
               <p className="py-8 text-white font-mono">
                 Imagine a streamlined oasis for your bidding needs, where
-                efficiency meets elegance. Tenderpoa is your ticket to a world
-                of effortless vendor communication and proposal evaluation.
-                Picture a digital command center, where bids flow like a
-                symphony, and you hold the conductor's baton. Say goodbye to the
-                chaos of spreadsheets and emails, and say hello to a future
-                where your tendering process is a work of art, all within a few
-                clicks. This is the epitome of tendering sophistication, made
-                simple for you.
+                efficiency meets elegance.Tenderpoa is your ticket to a world of
+                effortless vendor communication and proposal evaluation.Picture
+                a digital command center,where bids flow like a symphony,and
+                you hold the conductor's baton.Say goodbye to the chaos of
+                spreadsheets and emails,and say hello to a future where your
+                tendering process is a work of art,all within a few clicks.
+                This is the epitome of tendering sophistication,made simple for
+                you.
               </p>
               <Link
                 to="/addtender"
