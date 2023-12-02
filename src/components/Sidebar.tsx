@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import intracompic from "../assets/intracom.jpeg";
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
   return (
     <>
       <div className="flex h-auto">
@@ -223,7 +228,7 @@ const Sidebar = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className=" group-hover:text-white">Logout</span>
+                    <span className=" group-hover:text-white" onClick={handleSignOut}>Logout</span>
                   </Link>
                 </div>
               </div>
