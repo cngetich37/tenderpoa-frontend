@@ -81,16 +81,16 @@ const NavBar = () => {
             <div className="navbar-end flex gap-2">
               <Link
                 to="/allopentenders"
-                className="btn text-white bg-[#7c3aed] font-mono hover:bg-[#9d174d]"
+                className="rounded-md text-white px-2 py-2 bg-[#7c3aed] font-mono hover:bg-[#9d174d]"
               >
-                Opentenders
+                Tenders
               </Link>
               <Link
                 to="/login"
-                className="btn text-white bg-[#FF0000] font-mono hover:bg-[#9d174d]"
+                className="rounded-md text-white px-2 py-2 text-md bg-[#FF0000] font-mono hover:bg-[#9d174d]"
                 onClick={handleSignOut}
               >
-                Signout
+                Logout
               </Link>
             </div>
           </>
