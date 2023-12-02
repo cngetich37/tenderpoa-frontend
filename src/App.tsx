@@ -18,7 +18,7 @@ import ResetPassword from "./pages/ResetPassword";
 import ClosedTenders from "./components/ClosedTenders";
 import AllOpenTenders from "./components/AllOpenTenders";
 const App = () => {
-  const isUserSignedIn = !!localStorage.getItem("token");
+  // const isUserSignedIn = !!localStorage.getItem("token");
   return (
     <>
       <NavBar />
@@ -36,8 +36,8 @@ const App = () => {
           element={<ResetPassword />}
         ></Route>
         <Route path="/otpcodepage" element={<OtpPage />}></Route>
-        {isUserSignedIn && (
-          <div>
+        {/* {isUserSignedIn && (
+          <div> */}
             <Route path="/allopentenders" element={<AllOpenTenders />}></Route>
             <Route path="/saava" element={<SaavaEngLtd />}></Route>
             <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
@@ -46,8 +46,8 @@ const App = () => {
             <Route path="/benesse" element={<BenesseLtd />}></Route>
             <Route path="/closed" element={<ClosedTenders />}></Route>
             <Route path="/addtender" element={<AddTender />}></Route>
-          </div>
-        )}
+          {/* </div>
+        )} */}
       </Routes>
       <Footer />
     </>
