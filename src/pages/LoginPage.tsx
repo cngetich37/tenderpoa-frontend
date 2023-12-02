@@ -68,26 +68,26 @@ const LoginPage = () => {
   return (
     <>
       <div
-        className="hero h-full bg-white"
+        className="hero h-screen bg-white"
         style={{
           backgroundImage: `url(${homepic})`,
           backgroundSize: "contain",
         }}
       >
-        <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
-          <div className="ml-4 flex-col text-center lg:text-center"></div>
+        <div className="hero-content flex-col justify-center lg:flex-row-reverse mb-12">
+          <div className="flex-col text-center lg:text-center"></div>
 
-          <div className="card flex-shrink-0 w-full max-w-lg bg-gray-100">
-            <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
-              Login
-            </h1>
-
+          <div className="flex-start card w-full max-w-lg bg-gray-100 h-full">
+          
             <form
               className="card-body"
               onSubmit={handleSubmit}
               autoComplete="true"
             >
               <div className="flex justify-center">
+              <h2 className="font-bold text-2xl text-[#800000] font-serif ">
+                Login
+              </h2>
                 {loginSuccess ? (
                   <Alert variant="filled" severity="success">
                     <p>{apiLoginSuccess}</p>
