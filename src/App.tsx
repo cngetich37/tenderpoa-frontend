@@ -49,6 +49,7 @@ const App = () => {
           <>
             <Route path="/addtender" element={<LoginPage />}></Route>
             <Route path="/allopentenders" element={<LoginPage />}></Route>
+            <Route path="/closed" element={<LoginPage />}></Route>
           </>
         )}
       </Routes>
