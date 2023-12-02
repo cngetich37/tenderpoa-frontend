@@ -23,7 +23,7 @@ const Home = () => {
               </h1>
               <p className="py-8 text-white font-mono">
                 Imagine a streamlined oasis for your bidding needs, where
-                efficiency meets elegance. Tender Poa is your ticket to a world
+                efficiency meets elegance. Tenderpoa is your ticket to a world
                 of effortless vendor communication and proposal evaluation.
                 Picture a digital command center, where bids flow like a
                 symphony, and you hold the conductor's baton. Say goodbye to the
