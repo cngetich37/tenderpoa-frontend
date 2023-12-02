@@ -212,9 +212,9 @@ const Sidebar = () => {
                   </ul>
                 </div>
                 <div className="w-max mt-2 rounded-md">
-                  <Link
-                    to="/"
+                  <button
                     className="group flex items-center space-x-4  px-4 py-2 text-gray-600  group-hover:text-white  bg-gradient-to-r from-white to-[#800000] mb-2"
+                    onClick={handleSignOut}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -228,8 +228,8 @@ const Sidebar = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className=" group-hover:text-white" onClick={handleSignOut}>Logout</span>
-                  </Link>
+                    <span className=" group-hover:text-white">Logout</span>
+                  </button>
                 </div>
               </div>
             </div>
