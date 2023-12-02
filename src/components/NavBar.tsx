@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const NavBar = () => {
-  // const isUserSignedIn = !!localStorage.getItem("token");
-  // const navigate = useNavigate();
+  const isUserSignedIn = !!localStorage.getItem("token");
+  const navigate = useNavigate();
 
-  // const handleSignOut = ()=>{
-  //   localStorage.removeItem('token')
-  // }
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
   return (
     <header className="sticky top-0 z-50">
       <div className="navbar relative bg-[#800000] text-white">
@@ -46,49 +47,71 @@ const NavBar = () => {
             TenderPoa
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/allopentenders">All Open Tenders</Link>
-            </li>
-            <li>
-              <Link to="/addtender">Add a Tender</Link>
-            </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Companies</summary>
-                <ul className="p-2  bg-white text-[#800000]">
-                  <li>
-                    <Link to="/intracom">Intracom</Link>
-                  </li>
-                  <li>
-                    <Link to="/saava">Saava</Link>
-                  </li>
-                  <li>
-                    <Link to="/benesse">Benesse</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <Link to="/stepstobid">Steps to Bid</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end flex gap-2">
-          <Link
-            to="/login"
-            className="btn text-white bg-[#000080] font-mono hover:bg-slate-600"
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className="btn text-white bg-[#228b22] font-mono hover:bg-slate-600"
-          >
-            Sign up
-          </Link>
-        </div>
+        {isUserSignedIn ? (
+          <>
+            <div className="navbar-center hidden lg:flex">
+              <ul className="menu menu-horizontal px-1">
+                <li>
+                  <Link to="/allopentenders">All Open Tenders</Link>
+                </li>
+                <li>
+                  <Link to="/addtender">Add a Tender</Link>
+                </li>
+                <li tabIndex={0}>
+                  <details>
+                    <summary>Companies</summary>
+                    <ul className="p-2  bg-white text-[#800000]">
+                      <li>
+                        <Link to="/intracom">Intracom</Link>
+                      </li>
+                      <li>
+                        <Link to="/saava">Saava</Link>
+                      </li>
+                      <li>
+                        <Link to="/benesse">Benesse</Link>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <Link to="/stepstobid">Steps to Bid</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="navbar-end flex gap-2">
+              <Link
+                to="/allopentenders"
+                className="btn text-white bg-[#7c3aed] font-mono hover:bg-[#9d174d]"
+              >
+                Opentenders
+              </Link>
+              <Link
+                to="/login"
+                className="btn text-white bg-[#FF0000] font-mono hover:bg-[#9d174d]"
+                onClick={handleSignOut}
+              >
+                Signout
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="navbar-end flex gap-2">
+              <Link
+                to="/login"
+                className="btn text-white bg-[#000080] font-mono hover:bg-slate-600"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="btn text-white bg-[#228b22] font-mono hover:bg-slate-600"
+              >
+                Sign up
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );

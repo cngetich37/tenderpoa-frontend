@@ -6,6 +6,7 @@ import { passwordSchema } from "../validationSchemas/validatePassword";
 import { FormikHelpers } from "formik";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 interface ResetPasswordFormValues {
   password: string;
 }
@@ -17,6 +18,7 @@ const ResetPassword = () => {
   const { token: routeToken } = useParams(); // Assuming the token is a route parameter
   const [resetSuccessful, setResetSuccessful] = useState("");
   const [resetError, setResetError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Make sure routeToken is defined before setting the state
@@ -41,6 +43,9 @@ const ResetPassword = () => {
         setResetPasswordSuccess(true);
         setResetPasswordError(false);
       }, 1000);
+      setTimeout(() => {
+        navigate("/login");
+      }, 4000);
       // Reset the form or perform any other actions on successful submission
     } catch (error: any) {
       // Handle errors (e.g., display an error message)
@@ -74,7 +79,7 @@ const ResetPassword = () => {
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
             <form className="card-body" onSubmit={handleSubmit}>
               <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
-                Forgot Password
+                Password Reset
               </h1>
               <div className="flex justify-center">
                 {resetPasswordSuccess ? (

@@ -29,18 +29,18 @@ const LoginPage = () => {
         "https://tenderpoa.onrender.com/api/users/login",
         values
       );
-      const token = response.data.token;
+
       setApiLoginSuccess(response.data.message);
-      console.log(response.data.token);
       // Simulating a successful login after 1 seconds
       setTimeout(() => {
         setLoginSuccess(true);
         setLoginError(false);
       }, 1000);
       setTimeout(() => {
+        const token = response.data.token;
         navigate("/allopentenders");
         window.location.reload();
-        localStorage.setItem("", token);
+        localStorage.setItem("token", token);
       }, 4000);
 
       // Reset the form or perform any other actions on successful submission

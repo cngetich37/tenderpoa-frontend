@@ -6,7 +6,7 @@ import axios from "axios";
 import { FormikHelpers } from "formik";
 import { emailSchema } from "../validationSchemas/validateEmail";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 interface ForgotPasswordFormValues {
   email: string;
 }
@@ -16,6 +16,7 @@ const ForgotPassword = () => {
   const [forgotPasswordError, setForgotPasswordError] = useState(false);
   const [forgotPasswordApiSuccess, setForgotPasswordApiSuccess] = useState("");
   const [forgotPasswordApiError, setForgotPasswordApiError] = useState("");
+  const navigate = useNavigate();
 
   const handleForgotPassword = async (
     values: ForgotPasswordFormValues,
@@ -35,6 +36,9 @@ const ForgotPassword = () => {
         setForgotPasswordSuccess(true);
         setForgotPasswordError(false);
       }, 1000);
+      setTimeout(() => {
+        navigate("/login");
+      }, 4000);
 
       // Reset the form or perform any other actions on successful submission
     } catch (error: any) {
