@@ -121,7 +121,7 @@ export default function AddTender() {
                         <Grid container spacing={3}>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              value={formik.values.tenderNo.toUpperCase()}
+                              value={formik.values.tenderNo}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               id="tenderNo"
@@ -142,7 +142,7 @@ export default function AddTender() {
                             <TextareaAutosize
                               id="tenderDescription"
                               name="tenderDescription"
-                              value={formik.values.tenderDescription.toUpperCase()}
+                              value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               placeholder="tender description"
@@ -157,7 +157,7 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              value={formik.values.client.toUpperCase()}
+                              value={formik.values.client}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               id="client"
@@ -223,7 +223,7 @@ export default function AddTender() {
                             <TextField
                               id="bidSourceInsurance"
                               name="bidSourceInsurance"
-                              value={formik.values.bidSourceInsurance.toUpperCase()}
+                              value={formik.values.bidSourceInsurance}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               label="Bid Source e.g Insurance/Bank"
@@ -256,7 +256,7 @@ export default function AddTender() {
                             <TextField
                               id="location"
                               name="location"
-                              value={formik.values.location.toUpperCase()}
+                              value={formik.values.location}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               label="Location"
