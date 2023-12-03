@@ -153,7 +153,7 @@ const LoginPage = () => {
                     <span className="label">
                       <Link
                         to="/signup"
-                        className="label-text-alt link text-[#2196F3] font-bold"
+                        className="label-text-alt link text-[#000080] font-bold"
                       >
                         Signup
                       </Link>

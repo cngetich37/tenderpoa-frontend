@@ -215,7 +215,7 @@ const SignUpPage = () => {
                     </a>
                     <Link
                       to="/login"
-                      className="label-text-alt link text-[#2196F3] font-bold"
+                      className="label-text-alt link text-[#000080] font-bold"
                     >
                       Login
                     </Link>
