@@ -146,15 +146,20 @@ export default function AddTender() {
                           </Grid>
 
                           <Grid item xs={12} sm={6}>
+                            <label
+                              htmlFor="tenderDescription"
+                              className="block text-sm font-medium text-gray-600"
+                            >
+                              Tender Description
+                            </label>
                             <TextareaAutosize
                               id="tenderDescription"
                               name="tenderDescription"
-                              label="Tender Description"
                               value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               placeholder="tender description"
-                              className="w-full mt-6 border-2 border-neutral-600 bg-white resize-none"
+                              className="w-full border-2 border-neutral-600 bg-white resize-none"
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
