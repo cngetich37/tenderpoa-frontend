@@ -118,13 +118,11 @@ const SignUpPage = () => {
                   autoComplete="on"
                   // className={errors.email && touched.email ? "input-error" : ""}
                 />
+                {errors.firstName && touched.firstName && (
+                  <p className="text-[#FF0000] text-sm">{errors.firstName}</p>
+                )}
               </div>
 
-              {errors.firstName && touched.firstName && (
-                <Alert severity="error" className="mt-1">
-                  {errors.firstName}
-                </Alert>
-              )}
               <div className="form-control">
                 <label className="label" htmlFor="lastName">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
@@ -141,13 +139,11 @@ const SignUpPage = () => {
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
+                {errors.lastName && touched.lastName && (
+                  <p className="text-[#FF0000] text-sm">{errors.lastName}</p>
+                )}
               </div>
 
-              {errors.lastName && touched.lastName && (
-                <Alert severity="error" className="mt-1">
-                  {errors.lastName}
-                </Alert>
-              )}
               <div className="form-control">
                 <label className="label" htmlFor="email">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
@@ -164,13 +160,10 @@ const SignUpPage = () => {
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
+                {errors.email && touched.email && (
+                  <p className="text-[#FF0000] text-sm">{errors.email}</p>
+                )}
               </div>
-
-              {errors.email && touched.email && (
-                <Alert severity="error" className="mt-1">
-                  {errors.email}
-                </Alert>
-              )}
               <div className="form-control">
                 <label className="label" htmlFor="password">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
@@ -187,13 +180,11 @@ const SignUpPage = () => {
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
+                {errors.password && touched.password && (
+                  <p className="text-[#FF0000] text-sm">{errors.password}</p>
+                )}
               </div>
 
-              {errors.password && touched.password && (
-                <Alert severity="error" className="mt-1">
-                  {errors.password}
-                </Alert>
-              )}
               <div className="form-control mb-1">
                 <label className="label" htmlFor="confirmPassword">
                   <span className="label-text text-[#800000] text-lg font-semibold font-mono">
@@ -212,9 +203,7 @@ const SignUpPage = () => {
                 />
 
                 {errors.confirmPassword && touched.confirmPassword && (
-                  <Alert severity="error" className="mt-1">
-                    {errors.confirmPassword}
-                  </Alert>
+                  <p className="text-[#FF0000] text-sm">{errors.confirmPassword}</p>
                 )}
                 <div className="flex gap-0">
                   <div className="label">
