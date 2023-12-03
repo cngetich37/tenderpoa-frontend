@@ -84,7 +84,7 @@ const LoginPage = () => {
               onSubmit={handleSubmit}
               autoComplete="true"
             >
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center justify-center ">
               <h2 className="font-bold text-2xl text-[#800000] font-serif ">
                 Login
               </h2>
