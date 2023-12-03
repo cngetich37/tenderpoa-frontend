@@ -4,8 +4,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const handleSignOut = () => {
     localStorage.removeItem("token");
-    window.location.reload();
     navigate("/login");
+    window.location.reload();
   };
   return (
     <>

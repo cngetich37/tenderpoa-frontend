@@ -19,6 +19,7 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -38,6 +39,7 @@ export default function AddTender() {
   const [tenderError, setTenderError] = React.useState(false);
   const [tenderApiSuccess, setApiTenderSuccess] = React.useState("");
   const [error, setError] = React.useState("");
+  const navigate = useNavigate();
 
   const initialValues = {
     tenderNo: "",
@@ -67,6 +69,9 @@ export default function AddTender() {
         setTenderSuccess(true);
         setTenderError(false);
       }, 1000);
+      setTimeout(() => {
+        navigate("/allopentenders");
+      }, 4000);
     } catch (error: any) {
       setTimeout(() => {
         setTenderError(true);
