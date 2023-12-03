@@ -78,16 +78,15 @@ const LoginPage = () => {
           {/* <div className="flex-col text-center lg:text-center"></div> */}
 
           <div className="flex-start card w-full max-w-lg bg-gray-100 h-full">
-          
             <form
               className="card-body"
               onSubmit={handleSubmit}
               autoComplete="true"
             >
               <div className="flex flex-col items-center justify-center ">
-              <h2 className="font-bold text-2xl text-[#800000] font-serif ">
-                Login
-              </h2>
+                <h2 className="font-bold text-2xl text-[#800000] font-serif ">
+                  Login
+                </h2>
                 {loginSuccess ? (
                   <Alert variant="filled" severity="success">
                     <p>{apiLoginSuccess}</p>
@@ -115,12 +114,10 @@ const LoginPage = () => {
                   className="input bg-white input-error w-full max-w-md lg:w-screen text-black"
                   autoComplete="on"
                 />
+                {errors.email && touched.email && (
+                  <p className="text-[#FF0000] text-sm"> {errors.email}</p>
+                )}
               </div>
-              {errors.email && touched.email && (
-                <Alert severity="error" className="mt-1">
-                  {errors.email}
-                </Alert>
-              )}
 
               <div className="form-control">
                 <label className="label" htmlFor="password">
@@ -140,9 +137,7 @@ const LoginPage = () => {
                   autoComplete="on"
                 />
                 {errors.password && touched.password && (
-                  <Alert severity="error" className="mt-2">
-                    {errors.password}
-                  </Alert>
+                  <p className="text-[#FF0000] text-sm"> {errors.password}</p>
                 )}
                 <div className="flex">
                   <div className="flex-1 label">
@@ -168,20 +163,20 @@ const LoginPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center w-full gap-2">
+              <div className="flex flex-col justify-center w-full">
                 <div className="form-control mt-6">
                   <button
-                    className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
+                    className="rounded-md px-2 py-4 font-bold bg-[#800000]  text-white hover:bg-zinc-500 mb-2"
                     type="submit"
                   >
                     Login
                   </button>
-                  <button
+                  {/* <button
                     className="btn bg-[#800000]  text-white hover:bg-red-700 mb-2"
                     type="submit"
                   >
                     <Link to="/loginsso">Login with SSO</Link>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </form>
