@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import intracompic from "../assets/intracom.jpeg";
+import tenderpoa from "../assets/tenderpoa.jpeg";
 const Sidebar = () => {
   const navigate = useNavigate();
   const handleSignOut = () => {
@@ -17,7 +17,7 @@ const Sidebar = () => {
                 <div>
                   <div className="ml-12 w-max p-2">
                     <img
-                      src={intracompic}
+                      src={tenderpoa}
                       className="rounded-full border-white h-20"
                       alt=""
                     />
