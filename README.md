@@ -13,7 +13,6 @@ Welcome to the React Tenderpoa Frontend project! This application allows users t
   - [Configuration](#configuration)
   - [Running the Application](#running-the-application)
 - [Features](#features)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Getting Started
@@ -91,10 +90,6 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser to see the 
 - Axios for efficient communication with the Express API.
 - Tailwind CSS for easy and customizable styling.
 - Typescript for enhanced code quality and maintainability.
-
-## Contributing
-
-If you'd like to contribute to this project, please follow the [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
