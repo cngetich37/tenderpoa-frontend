@@ -108,8 +108,8 @@ export default function ClosedTenders() {
       editable: true,
     },
     {
-      field: "tenderValue",
-      headerName: "Tender Value",
+      field: "tenderValueDollars",
+      headerName: "Tender Value $",
       headerClassName: "super-app-theme--header",
       type: "number",
       width: 130,
@@ -122,6 +122,15 @@ export default function ClosedTenders() {
       width: 130,
       editable: true,
     },
+    {
+      field: "tenderValueKsh",
+      headerName: "Tender Value Ksh.",
+      headerClassName: "super-app-theme--header",
+      type: "number",
+      width: 130,
+      editable: true,
+    },
+
 
     {
       field: "company",
