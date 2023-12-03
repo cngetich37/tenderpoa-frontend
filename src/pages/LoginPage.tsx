@@ -74,8 +74,7 @@ const LoginPage = () => {
           backgroundSize: "contain",
         }}
       >
-        <div className="hero-content flex flex-col justify-center items-center lg:flex-row-reverse">
-          {/* <div className="flex-col text-center lg:text-center"></div> */}
+        <div className="hero-content flex flex-col justify-center items-center">
 
           <div className="flex-start card w-full max-w-lg bg-gray-100 h-full">
             <form
