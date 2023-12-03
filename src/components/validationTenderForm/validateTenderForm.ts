@@ -16,7 +16,7 @@ export const validateTender = yup.object().shape({
     .date()
     .required("Please enter the valid closing date time!"),
   location: yup.string().required("Please enter the location!"),
-  tenderValue: yup.number().required("Please enter the tender value!"),
+  tenderValueDollars: yup.number().required("Please enter the tender value!"),
   dollarRate: yup.number().required("Please enter the dollar rate!"),
   company: yup.string().required("Please enter the name of the company!"),
   tenderStatus: yup.string().required("Please enter the status of the tender!"),
