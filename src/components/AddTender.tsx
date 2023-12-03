@@ -149,6 +149,7 @@ export default function AddTender() {
                             <TextareaAutosize
                               id="tenderDescription"
                               name="tenderDescription"
+                              label="Tender Description"
                               value={formik.values.tenderDescription}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}

@@ -7,7 +7,6 @@ import SaavaEngLtd from "./components/SaavaEngLtd";
 import IntracomAfricaLtd from "./components/IntracomAfricaLtd";
 import DueTenders from "./components/DueTenders";
 import AlreadyBidded from "./components/AlreadyBidded";
-import LoginWithSSO from "./pages/LoginWithSSO";
 import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
 import StepsToBid from "./components/StepsToBid";
@@ -28,7 +27,6 @@ const App = () => {
         <Route path="/stepstobid" element={<StepsToBid />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/loginsso" element={<LoginWithSSO />}></Route>
         <Route
           path="/reset-password/:token"
           element={<ResetPassword />}

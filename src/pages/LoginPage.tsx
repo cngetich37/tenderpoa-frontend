@@ -169,12 +169,6 @@ const LoginPage = () => {
                   >
                     Login
                   </button>
-                  {/* <button
-                    className="btn bg-[#800000]  text-white hover:bg-red-700 mb-2"
-                    type="submit"
-                  >
-                    <Link to="/loginsso">Login with SSO</Link>
-                  </button> */}
                 </div>
               </div>
             </form>
