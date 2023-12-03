@@ -82,15 +82,15 @@ const SignUpPage = () => {
         <div className="hero-content flex-col justify-center lg:flex-row-reverse ">
           <div className="ml-4 flex-col text-center lg:text-center "></div>
           <div className="card flex-shrink-0 w-full max-w-lg bg-gray-100">
-            <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
-              Sign up
-            </h1>
             <form
               className="card-body"
               onSubmit={handleSubmit}
               autoComplete="true"
             >
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-2xl font-bold text-[#800000] font-serif">
+                  Sign up
+                </h1>
                 {accountSuccess ? (
                   <Alert variant="filled" severity="success">
                     <p>{apiSignUpSuccess}</p>
