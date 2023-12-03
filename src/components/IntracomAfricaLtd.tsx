@@ -119,7 +119,7 @@ export default function IntracomAfricaLtd() {
       field: "dollarRate",
       headerName: "Dollar Rate",
       headerClassName: "super-app-theme--header",
-      width: 130,
+      width: 100,
       editable: true,
     },
     {
