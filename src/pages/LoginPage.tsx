@@ -168,7 +168,7 @@ const LoginPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex-col gap-2">
+              <div className="flex flex-col justify-center w-full gap-2">
                 <div className="form-control mt-6">
                   <button
                     className="btn bg-[#000080]  text-white hover:bg-zinc-500 mb-2"
