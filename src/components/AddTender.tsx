@@ -52,8 +52,9 @@ export default function AddTender() {
     bidSourceInsurance: "",
     closingDateTime: new Date(),
     location: "",
-    tenderValue: 10000,
-    dollarRate: 151.55,
+    tenderValueDollars: 0,
+    tenderValueKsh: 0,
+    dollarRate: 0,
     company: "Intracom Africa Ltd",
     tenderStatus: "Not Bidded",
   };
@@ -285,19 +286,28 @@ export default function AddTender() {
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <TextField
-                              id="tenderValue"
-                              name="tenderValue"
-                              value={formik.values.tenderValue}
-                              onChange={formik.handleChange}
+                              id="tenderValueDollars"
+                              name="tenderValueDollars"
+                              type="number"
+                              value={formik.values.tenderValueDollars}
+                              onChange={(e) => {
+                                formik.handleChange(e);
+                                const value = parseFloat(e.target.value);
+                                const tenderValueKsh = value * formik.values.dollarRate;
+                                // Update result in real-time
+                                formik.handleChange({
+                                  target: { name: 'tenderValueKsh', value: isNaN(tenderValueKsh) ? 0 : tenderValueKsh},
+                                });
+                              }}
                               onBlur={formik.handleBlur}
-                              label="Tender Value"
+                              label="Tender Value in $"
                               fullWidth
                               variant="standard"
                             />
-                            {formik.errors.tenderValue &&
-                              formik.touched.tenderValue && (
+                            {formik.errors.tenderValueDollars &&
+                              formik.touched.tenderValueDollars && (
                                 <p className="text-[#FF0000] text-sm">
-                                  {formik.errors.tenderValue}
+                                  {formik.errors.tenderValueDollars}
                                 </p>
                               )}
                           </Grid>
@@ -305,8 +315,17 @@ export default function AddTender() {
                             <TextField
                               id="dollarRate"
                               name="dollarRate"
+                              type="number"
                               value={formik.values.dollarRate}
-                              onChange={formik.handleChange}
+                              onChange={(e) => {
+                                formik.handleChange(e);
+                                const value = parseFloat(e.target.value);
+                                const tenderValueKsh = value * formik.values.tenderValueDollars;
+                                // Update result in real-time
+                                formik.handleChange({
+                                  target: { name: 'tenderValueKsh', value: isNaN(tenderValueKsh) ? 0 : tenderValueKsh},
+                                });
+                              }}
                               onBlur={formik.handleBlur}
                               label="Dollar Rate"
                               fullWidth
@@ -316,6 +335,26 @@ export default function AddTender() {
                               formik.touched.dollarRate && (
                                 <p className="text-[#FF0000] text-sm">
                                   {formik.errors.dollarRate}
+                                </p>
+                              )}
+                          </Grid>
+                          <Grid item xs={12} sm={6}>
+                            <TextField
+                              id="tenderValueKsh"
+                              name="tenderValueKsh"
+                              type="number"
+                              value={formik.values.tenderValueKsh}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              label="Tender Value in Ksh."
+                              fullWidth
+                              variant="standard"
+                              disabled
+                            />
+                            {formik.errors.tenderValueKsh &&
+                              formik.touched.tenderValueKsh && (
+                                <p className="text-[#FF0000] text-sm">
+                                  {formik.errors.tenderValueKsh}
                                 </p>
                               )}
                           </Grid>
