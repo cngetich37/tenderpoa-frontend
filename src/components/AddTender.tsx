@@ -71,6 +71,7 @@ export default function AddTender() {
       }, 1000);
       setTimeout(() => {
         navigate("/allopentenders");
+        window.location.reload();
       }, 4000);
     } catch (error: any) {
       setTimeout(() => {
@@ -376,7 +377,11 @@ export default function AddTender() {
                           </Grid>
                         </Grid>
                         <div className="flex justify-end mt-6">
-                          <Button variant="contained" type="submit" disabled={!formik.isValid || formik.isSubmitting}>
+                          <Button
+                            variant="contained"
+                            type="submit"
+                            disabled={!formik.isValid || formik.isSubmitting}
+                          >
                             Submit
                           </Button>
                         </div>
