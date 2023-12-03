@@ -74,8 +74,8 @@ const LoginPage = () => {
           backgroundSize: "contain",
         }}
       >
-        <div className="hero-content flex-col justify-center lg:flex-row-reverse mb-12">
-          <div className="flex-col text-center lg:text-center"></div>
+        <div className="hero-content flex flex-col justify-center items-center lg:flex-row-reverse mb-12">
+          {/* <div className="flex-col text-center lg:text-center"></div> */}
 
           <div className="flex-start card w-full max-w-lg bg-gray-100 h-full">
           
@@ -177,7 +177,7 @@ const LoginPage = () => {
                     Login
                   </button>
                   <button
-                    className="btn bg-[#800000]  text-white hover:bg-red-700"
+                    className="btn bg-[#800000]  text-white hover:bg-red-700 mb-2"
                     type="submit"
                   >
                     <Link to="/loginsso">Login with SSO</Link>
