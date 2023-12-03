@@ -161,10 +161,10 @@ const LoginPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center w-full">
+              <div className="flex flex-col justify-center items-center">
                 <div className="form-control mt-6">
                   <button
-                    className="rounded-md px-2 py-4 font-bold bg-[#800000]  text-white hover:bg-zinc-500 mb-2"
+                    className="rounded-md px-6 py-2 font-bold bg-[#800000]  text-white hover:bg-zinc-500 mb-2"
                     type="submit"
                   >
                     Login

@@ -222,13 +222,15 @@ const SignUpPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="form-control mt-6">
-                <button
-                  className="rounded-md px-2 py-4 bg-[#800000] font-bold text-white hover:bg-zinc-500"
-                  type="submit"
-                >
-                  Sign up
-                </button>
+              <div className="flex flex-col justify-center items-center">
+                <div className="form-control mt-4">
+                  <button
+                    className="rounded-md px-6 py-2 bg-[#800000] font-bold text-white hover:bg-zinc-500"
+                    type="submit"
+                  >
+                    Sign up
+                  </button>
+                </div>
               </div>
             </form>
           </div>
