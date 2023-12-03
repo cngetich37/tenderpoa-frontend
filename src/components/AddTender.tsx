@@ -138,9 +138,9 @@ export default function AddTender() {
                             />
                             {formik.errors.tenderNo &&
                               formik.touched.tenderNo && (
-                                <Alert severity="error" className="mt-2">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.tenderNo}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
 
@@ -156,9 +156,9 @@ export default function AddTender() {
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.tenderDescription}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -173,11 +173,12 @@ export default function AddTender() {
                               autoComplete="given-name"
                               variant="standard"
                             />
-                            {formik.errors.client && formik.touched.client && (
-                              <Alert severity="error" className="mt-1">
-                                {formik.errors.client}
-                              </Alert>
-                            )}
+                            {formik.errors.client &&
+                              formik.touched.client && (
+                                <p className="text-[#FF0000] text-sm">
+                                  {formik.errors.client}
+                                </p>
+                              )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <DatePicker
@@ -202,9 +203,9 @@ export default function AddTender() {
                             />
                             {formik.errors.timeExtension &&
                               formik.touched.timeExtension && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.timeExtension}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -220,9 +221,9 @@ export default function AddTender() {
                             />
                             {formik.errors.bidSecurity &&
                               formik.touched.bidSecurity && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.bidSecurity}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -236,11 +237,11 @@ export default function AddTender() {
                               fullWidth
                               variant="standard"
                             />
-                            {formik.errors.bidSourceInsurance &&
+                            {formik.errors.bidSourceInsurance&&
                               formik.touched.bidSourceInsurance && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.bidSourceInsurance}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -271,9 +272,9 @@ export default function AddTender() {
                             />
                             {formik.errors.location &&
                               formik.touched.location && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.location}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -289,9 +290,9 @@ export default function AddTender() {
                             />
                             {formik.errors.tenderValue &&
                               formik.touched.tenderValue && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.tenderValue}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -307,9 +308,9 @@ export default function AddTender() {
                             />
                             {formik.errors.dollarRate &&
                               formik.touched.dollarRate && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.dollarRate}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
@@ -339,9 +340,9 @@ export default function AddTender() {
                             </FormControl>
                             {formik.errors.company &&
                               formik.touched.company && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.company}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
 
@@ -370,9 +371,9 @@ export default function AddTender() {
 
                             {formik.errors.tenderStatus &&
                               formik.touched.tenderStatus && (
-                                <Alert severity="error" className="mt-1">
+                                <p className="text-[#FF0000] text-sm">
                                   {formik.errors.tenderStatus}
-                                </Alert>
+                                </p>
                               )}
                           </Grid>
                         </Grid>
