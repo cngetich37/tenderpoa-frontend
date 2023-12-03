@@ -224,7 +224,7 @@ const SignUpPage = () => {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className="btn bg-[#800000] text-white hover:bg-zinc-500"
+                  className="rounded-md px-2 py-4 bg-[#800000] font-bold text-white hover:bg-zinc-500"
                   type="submit"
                 >
                   Sign up
