@@ -99,13 +99,13 @@ const NavBar = () => {
             <div className="navbar-end flex gap-2">
               <Link
                 to="/login"
-                className="rounded-md px-2 py-2 text-white bg-[#000080] font-mono hover:bg-slate-600"
+                className="rounded-md px-4 py-2 text-white bg-[#000080] font-mono font-semibold hover:bg-slate-600"
               >
                 Login
               </Link>
               <Link
                 to="/signup"
-                className="rounded-md px-2 py-2 text-white bg-[#228b22] font-mono hover:bg-slate-600"
+                className="rounded-md px-4 py-2 text-white bg-[#228b22] font-mono font-semibold hover:bg-slate-600"
               >
                 Signup
               </Link>
