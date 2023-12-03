@@ -5,7 +5,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import dayjs from "dayjs";
-import { TextareaAutosize } from "@mui/base/TextareaAutosize";
+// import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -20,6 +20,7 @@ import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import TextareaAutosize from "react-textarea-autosize";
 
 const theme = createTheme({
   palette: {
@@ -152,7 +153,7 @@ export default function AddTender() {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               placeholder="tender description"
-                              className="w-full mt-6 border-solid bg-white"
+                              className="w-full mt-6 border-2 border-neutral-600 bg-white resize-none"
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
@@ -173,12 +174,11 @@ export default function AddTender() {
                               autoComplete="given-name"
                               variant="standard"
                             />
-                            {formik.errors.client &&
-                              formik.touched.client && (
-                                <p className="text-[#FF0000] text-sm">
-                                  {formik.errors.client}
-                                </p>
-                              )}
+                            {formik.errors.client && formik.touched.client && (
+                              <p className="text-[#FF0000] text-sm">
+                                {formik.errors.client}
+                              </p>
+                            )}
                           </Grid>
                           <Grid item xs={12} sm={6}>
                             <DatePicker
@@ -237,7 +237,7 @@ export default function AddTender() {
                               fullWidth
                               variant="standard"
                             />
-                            {formik.errors.bidSourceInsurance&&
+                            {formik.errors.bidSourceInsurance &&
                               formik.touched.bidSourceInsurance && (
                                 <p className="text-[#FF0000] text-sm">
                                   {formik.errors.bidSourceInsurance}
