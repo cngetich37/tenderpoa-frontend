@@ -18,7 +18,7 @@ const Sidebar = () => {
                   <div className="ml-12 w-max p-2">
                     <img
                       src={tenderpoa}
-                      className="rounded-full border-white h-20"
+                      className="rounded-full border-white h-16"
                       alt=""
                     />
                   </div>
