@@ -81,13 +81,13 @@ const NavBar = () => {
             <div className="navbar-end flex gap-2">
               <Link
                 to="/allopentenders"
-                className="rounded-md text-white px-2 py-2 bg-[#7c3aed] font-mono hover:bg-[#9d174d]"
+                className="rounded-md text-white px-2 py-2 bg-[#7c3aed]font-semibold font-mono hover:bg-[#9d174d]"
               >
                 Tenders
               </Link>
               <Link
                 to="/login"
-                className="rounded-md text-white px-2 py-2 text-md bg-[#FF0000] font-mono hover:bg-[#9d174d]"
+                className="rounded-md text-white px-2 py-2 text-md bg-[#FF0000] font-semibold font-mono hover:bg-[#9d174d]"
                 onClick={handleSignOut}
               >
                 Logout
