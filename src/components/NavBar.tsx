@@ -39,7 +39,7 @@ const NavBar = () => {
                 <Link to="/addtender">Add a Tender</Link>
               </li>
               <li>
-                <Link to="/stepstobid">Steps to Bid</Link>
+                <Link to="/howtoBid">How to Bid</Link>
               </li>
             </ul>
           </div>
@@ -74,7 +74,7 @@ const NavBar = () => {
                   </details>
                 </li>
                 <li>
-                  <Link to="/stepstobid">Steps to Bid</Link>
+                  <Link to="/howtoBid">How to Bid</Link>
                 </li>
               </ul>
             </div>

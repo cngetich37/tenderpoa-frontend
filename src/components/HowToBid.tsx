@@ -87,7 +87,7 @@ const steps = [
   },
 ];
 
-export default function StepsToBid() {
+export default function HowToBid() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {

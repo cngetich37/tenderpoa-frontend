@@ -9,7 +9,7 @@ import DueTenders from "./components/DueTenders";
 import AlreadyBidded from "./components/AlreadyBidded";
 import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
-import StepsToBid from "./components/StepsToBid";
+import HowToBid from "./components/HowToBid";
 import AddTender from "./components/AddTender";
 import BenesseLtd from "./components/BenesseLtd";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -24,7 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<SignUpPage />}></Route>
-        <Route path="/stepstobid" element={<StepsToBid />}></Route>
+        <Route path="/howtoBid" element={<HowToBid />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route
