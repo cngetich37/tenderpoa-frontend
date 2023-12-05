@@ -55,7 +55,7 @@ const NavBar = () => {
                   <Link to="/allopentenders">All Open Tenders</Link>
                 </li>
                 <li>
-                  <Link to="/addtender">Add a Tender</Link>
+                  <Link to="/addtender">Add Tender</Link>
                 </li>
                 <li tabIndex={0}>
                   <details>
