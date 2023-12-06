@@ -100,7 +100,7 @@ export default function AddTender() {
                 align="center"
                 color="primary"
               >
-                Add a Tender
+                Add Tender
               </Typography>
               <div className="flex justify-center">
                 {tenderSuccess ? (
