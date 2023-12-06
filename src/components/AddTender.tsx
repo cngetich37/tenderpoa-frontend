@@ -72,7 +72,7 @@ export default function AddTender() {
         setTenderError(false);
       }, 1000);
       setTimeout(() => {
-        navigate("/allopentenders");
+        navigate("/dashboard");
         window.location.reload();
       }, 4000);
     } catch (error: any) {

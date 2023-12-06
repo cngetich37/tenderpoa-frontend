@@ -25,7 +25,7 @@ const Sidebar = () => {
                   <ul className="mt-4 space-y-2 tracking-wide ">
                     <li className="min-w-max">
                       <Link
-                        to="/allopentenders"
+                        to="/dashboard"
                         aria-label="dashboard"
                         className="relative flex items-center space-x-4 px-4 py-3 text-gray-600 hover:text-white bg-gradient-to-r from-white to-[#800000]"
                       >
