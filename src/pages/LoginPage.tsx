@@ -38,7 +38,7 @@ const LoginPage = () => {
       }, 1000);
       setTimeout(() => {
         const token = response.data.token;
-        navigate("/allopentenders");
+        navigate("/dashboard");
         window.location.reload();
         localStorage.setItem("token", token);
       }, 4000);

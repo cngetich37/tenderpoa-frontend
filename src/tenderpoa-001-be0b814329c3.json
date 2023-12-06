@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tenderpoa-001",
+  "private_key_id": "be0b814329c3f9c836bd37c8b32d6a5acb963e63",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDZBNv48PgCS2zo\n/WcwMXyulZJvRXfFzazmm+ZXnWJZR+ibJ6WV1b1NzVhJCqXoQZ10tULHKuQA30Pa\nNZa9dZ4eCFf6DeMYNSPI00B9Gg82J76KtovgRj9g8OlTHGn7x/MBZEf+nRj5EbQp\nEKFUkVsMM/hvzq6u+lJZx4UoFb8TLY/oLUKL29r6NOMdkl8T8324yZ5xRJ4rsSmI\npUpxSR68AkdhSTdOUH+18z38BtSVaooCU+LFPeHHJ/g+eJ7BpQDgC+saRL4afD+x\nxSMFMUjrFI9599Evatl6xzD5nQWi2Sp1Qo5FNjisxpmlqIoHKf6Pd0HoEkTfOFu5\niXAGzf5tAgMBAAECggEAAksyGrbwb4vF5TwYIaVN+Cn85sRjYDm6iTWVQ2vfvw6d\nDBZ7OSmW2N/q/hHI2VZn6plDI2NoRXKEX0E7YywtCedv4uTiCdV/YQF5Knud/gq3\n2rz41ZKb7hf6VH06ba6n8VOSsMyzfENMCEim0ihktqPE+w1CXOUoxrwTOq5WuzPj\n/ORzKkWButeW9qsycaDClFu4Dw42WGYBCRcahBsbu/zMpTKhexyb2OYvg7wbnfHa\nQJdm2ypH/h2Mm3U/Og9hKonYVZNS/izS+f0JTD6aQbhhHwJ6SnkQXF/DOB+33CwH\nIOX99uTKNTJktLnTdcfl81fL8EDapfjodKHCohup0QKBgQDvohpev4ZHsM2k/o3N\nP2GKclrfSg4ydQogYahGkgjVKzSVZhMHwgUo7NcJVR0bXB6gWG5laRtOiju5m/6p\ncrde5iPfbUVOdiRLbHuu4WpB7SZZ2SYnUNECGqM53zFoAHz3xsTIg6zKqXXWgk9l\nJKkFDOORTBhpJZMYGWnQvQqQvQKBgQDn11rYIJ04c8zRIbDU132xISBwitv9U5uk\njVmigLYmZMw/PbMyMM2oTSgkrxPiTpJj21z5yokuSdsYf9Dwbg1s5IGZqdL+ydTG\nygpfxmqKHPAn1huIz3ZUqNzMwyS6dmHJ/FyxZ8RXFzjhjtTRjs6G+7HMjACZkY09\n4dr3mbG3cQKBgAhtmiHU+KMS29i+vzwFy6dz6DBMSX2K0kVbSfDZeAgPUfUjNu4h\n686JrfJ9FN3+enFHSvK0JKq5f+pCS02oZDypOX/FNxfQXextL1hyQyt4bM3iLk5Z\nsFAzoaQKbpFq2vpX+lnXD7+9ABEAWkyDYpJz5pkYpQ8lrCu/0RHvZCy9AoGAFXZf\nR5DFXTuDI30d9KY6UZKCgUipkusRhos7WArYUfeU3OnmU+gmscTqyXKXwaSKcsoU\n8l7okituJ/d1LTzS61jAEqyhBstCcmCz0yf4Ju8E4Hs2s1SZXL8BKceK9+QLq3o8\nToQPrgxNTLw/QWMaBW75h7kSOSU7URY+ghttU1ECgYBi4ygF9TcNOza8HjqJ5WgJ\nstOT/GW+t2O5ppTVx1zlQcfs7WVzcI/t7AQKW8anbMFv/oyMPNzO26woQW8Qs8qE\nr9K7u488aHt6FY+jHp2IWxn/q4aX1LHTMmoYGyWr7jfQiEkyY1ZeYo+rf4VmFFxg\nULzLUguvnYDpdLXt2xowrg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tenderpoaservice@tenderpoa-001.iam.gserviceaccount.com",
+  "client_id": "102559929609339655921",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tenderpoaservice%40tenderpoa-001.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
