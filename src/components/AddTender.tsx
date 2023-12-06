@@ -96,7 +96,7 @@ export default function AddTender() {
             >
               <Typography
                 component="h1"
-                variant="h4"
+                variant="h5"
                 align="center"
                 color="primary"
               >
@@ -240,7 +240,7 @@ export default function AddTender() {
                               value={formik.values.bidSourceInsurance}
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
-                              label="Bid Source e.g Insurance/Bank"
+                              label="Bid Source e.g Bank/Insurance"
                               fullWidth
                               variant="standard"
                             />

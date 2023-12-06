@@ -103,7 +103,7 @@ export default function HowToBid() {
   };
 
   return (
-    <div className="flex bg-white text-black">
+    <div className="flex justify-center bg-white text-black">
       <ThemeProvider theme={theme}>
         <Box className="w-1/2 h-auto px-6 py-6 mt-4 ml-6">
           <Stepper activeStep={activeStep} orientation="vertical">

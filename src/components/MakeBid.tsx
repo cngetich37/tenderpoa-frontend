@@ -11,6 +11,9 @@ import { DateTimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import NativeSelect from "@mui/material/NativeSelect";
 interface MyData {
   _id: string;
   tenderNo: string;
@@ -40,7 +43,7 @@ const theme = createTheme({
   },
 });
 
-const tomorrow = dayjs().subtract(-1, "day");
+// const tomorrow = dayjs().subtract(-1, "day");
 
 const MakeBid: React.FC = () => {
   const [data, setData] = useState<MyData[]>([]);
@@ -126,9 +129,10 @@ const MakeBid: React.FC = () => {
             >
               <Typography
                 component="h1"
-                variant="h4"
+                variant="h5"
                 align="center"
                 color="primary"
+                style={{ marginBottom: "10px" }}
               >
                 Make a Bid
               </Typography>
@@ -149,176 +153,204 @@ const MakeBid: React.FC = () => {
                       )}
                     />
                   </Grid>
-                  <Grid item xs={12} columnSpacing={3}>
+                  <Grid item xs={12}>
                     {/* Display selected data fields for updating */}
                     {selectedData && (
                       <>
-                        <TextField
-                          label="tenderNo"
-                          variant="outlined"
-                          value={selectedData.tenderNo}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              tenderNo: e.target.value,
-                            }))
-                          }
-                        />
-
-                        <TextField
-                          label="tenderDescription"
-                          variant="outlined"
-                          value={selectedData.tenderDescription}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              tenderDescription: e.target.value,
-                            }))
-                          }
-                        />
-
-                        {/* Add more fields as needed */}
-                        <TextField
-                          label="client"
-                          variant="outlined"
-                          value={selectedData.client}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              client: e.target.value,
-                            }))
-                          }
-                        />
-                        <DatePicker
-                          format="DD/MM/YYYY"
-                          label="site visit date"
-                          defaultValue={tomorrow}
-                          disablePast
-                          views={["year", "month", "day"]}
-                        />
-
-                        <TextField
-                          label="timeExtension"
-                          variant="outlined"
-                          value={selectedData.timeExtension}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              timeExtension: Number(e.target.value),
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="bidSecurity"
-                          variant="outlined"
-                          value={selectedData.bidSecurity}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              field2: e.target.value,
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="bidSourceInsurance"
-                          variant="outlined"
-                          value={selectedData.bidSourceInsurance}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              bidSourceInsurance: e.target.value,
-                            }))
-                          }
-                        />
-                        <DateTimePicker
-                          label="closing date & time"
-                          format="DD/MM/YYYY hh:mm A"
-                          defaultValue={tomorrow}
-                          disablePast
-                          views={["year", "month", "day", "hours", "minutes"]}
-                        />
-                        <TextField
-                          label="location"
-                          variant="outlined"
-                          value={selectedData.location}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              location: e.target.value,
-                            }))
-                          }
-                        />
-                        <TextField
-                          type="number"
-                          label="tenderValueDollars"
-                          variant="outlined"
-                          value={selectedData.tenderValueDollars}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              tenderValueDollars: Number(e.target.value),
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="dollarRate"
-                          type="number"
-                          variant="outlined"
-                          value={selectedData.dollarRate}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              dollarRate: Number(e.target.value),
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="tenderValueKsh"
-                          type="number"
-                          variant="outlined"
-                          value={selectedData.tenderValueKsh}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              tenderValueKsh: Number(e.target.value),
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="company"
-                          variant="outlined"
-                          value={selectedData.company}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              company: e.target.value,
-                            }))
-                          }
-                        />
-                        <TextField
-                          label="tenderStatus"
-                          variant="outlined"
-                          value={selectedData.tenderStatus}
-                          onChange={(e) =>
-                            setSelectedData((prev) => ({
-                              ...prev!,
-                              tenderStatus: e.target.value,
-                            }))
-                          }
-                        />
+                        <div className="flex gap-8">
+                          <TextField
+                            label="Tender No"
+                            variant="outlined"
+                            value={selectedData.tenderNo}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                tenderNo: e.target.value,
+                              }))
+                            }
+                          />
+                          <TextField
+                            label="Tender Description"
+                            variant="outlined"
+                            style={{ width: 400 }}
+                            value={selectedData.tenderDescription}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                tenderDescription: e.target.value,
+                              }))
+                            }
+                          />
+                        </div>
+                        <div style={{ marginBottom: "20px" }} />
+                        <div className="flex gap-8">
+                          <TextField
+                            label="Client"
+                            variant="outlined"
+                            value={selectedData.client}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                client: e.target.value,
+                              }))
+                            }
+                          />
+                          <DatePicker
+                            format="DD/MM/YYYY"
+                            label="Site Visit Date"
+                            value={dayjs(selectedData.siteVisitDate)}
+                            // disablePast
+                            views={["year", "month", "day"]}
+                          />
+                          <TextField
+                            label="Time Extension"
+                            variant="outlined"
+                            value={selectedData.timeExtension}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                timeExtension: Number(e.target.value),
+                              }))
+                            }
+                          />
+                        </div>
+                        <div style={{ marginBottom: "20px" }} />
+                        <div className="flex gap-8">
+                          <TextField
+                            label="Bid Security"
+                            variant="outlined"
+                            value={selectedData.bidSecurity}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                field2: e.target.value,
+                              }))
+                            }
+                          />
+                          <TextField
+                            label="Bid Source e.g Bank/Insurance"
+                            variant="outlined"
+                            value={selectedData.bidSourceInsurance}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                bidSourceInsurance: e.target.value,
+                              }))
+                            }
+                          />
+                          <DateTimePicker
+                            label="Closing Date & Time"
+                            format="DD/MM/YYYY hh:mm A"
+                            value={dayjs(selectedData.closingDateTime)}
+                            // disablePast
+                            views={["year", "month", "day", "hours", "minutes"]}
+                          />
+                        </div>
+                        <div style={{ marginBottom: "20px" }} />
+                        <div className="flex gap-8">
+                          <TextField
+                            label="Location"
+                            variant="outlined"
+                            value={selectedData.location}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                location: e.target.value,
+                              }))
+                            }
+                          />
+                          <TextField
+                            type="number"
+                            label="Tender Value Dollars"
+                            variant="outlined"
+                            value={selectedData.tenderValueDollars}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                tenderValueDollars: Number(e.target.value),
+                              }))
+                            }
+                          />
+                          <TextField
+                            label="Dollar Rate"
+                            type="number"
+                            variant="outlined"
+                            value={selectedData.dollarRate}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                dollarRate: Number(e.target.value),
+                              }))
+                            }
+                          />
+                        </div>
+                        <div style={{ marginBottom: "20px" }} />
+                        <div className="flex gap-8">
+                          <TextField
+                            label="Tender Value Ksh"
+                            type="number"
+                            variant="outlined"
+                            value={selectedData.tenderValueKsh}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                tenderValueKsh: Number(e.target.value),
+                              }))
+                            }
+                          />
+                          <TextField
+                            label="Company"
+                            variant="outlined"
+                            value={selectedData.company}
+                            onChange={(e) =>
+                              setSelectedData((prev) => ({
+                                ...prev!,
+                                company: e.target.value,
+                              }))
+                            }
+                          />
+                          <FormControl>
+                              <InputLabel
+                                variant="standard"
+                                htmlFor="tenderStatus"
+                              >
+                                Tender Status
+                              </InputLabel>
+                              <NativeSelect
+                              style={{ width: 200 }}
+                              onChange={(e:any) =>
+                                setSelectedData((prev) => ({
+                                  ...prev!,
+                                  tenderStatus: e.target.value,
+                                }))
+                              }
+                                value={selectedData.tenderStatus}
+                                inputProps={{
+                                  name: "tenderStatus",
+                                  id: "tenderStatus",
+                                }}
+                              >
+                                <option value={"Not Bidded"}>Not Bidded</option>
+                                <option value={"Bidded"}>Bidded</option>
+                                <option value={"Due"}>Due</option>
+                                <option value={"Closed"}>Closed</option>
+                              </NativeSelect>
+                            </FormControl>
+                        </div>
                       </>
                     )}
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  </Grid>
+                  <div className="flex justify-end mt-6">
                     <Button
                       variant="contained"
                       color="primary"
                       onClick={handleUpdate}
                     >
-                      Update
+                      Confirm Bid
                     </Button>
-                  </Grid>
-                </Grid>
+                  </div>
+                
               </LocalizationProvider>
             </Paper>
           </ThemeProvider>

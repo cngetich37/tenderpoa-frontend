@@ -74,10 +74,10 @@ const NavBar = () => {
                   </details>
                 </li>
                 <li>
-                  <Link to="/howtoBid">How to Bid</Link>
+                  <Link to="/makeBid">Make Bid</Link>
                 </li>
                 <li>
-                  <Link to="/makeBid">Make Bid</Link>
+                  <Link to="/howtoBid">How to Bid</Link>
                 </li>
               </ul>
             </div>
