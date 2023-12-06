@@ -199,7 +199,7 @@ const MakeBid: React.FC = () => {
                             format="DD/MM/YYYY"
                             label="Site Visit Date"
                             value={dayjs(selectedData.siteVisitDate)}
-                            // disablePast
+                            disablePast
                             views={["year", "month", "day"]}
                           />
                           <TextField

@@ -59,25 +59,16 @@ const NavBar = () => {
                 </li>
                 <li tabIndex={0}>
                   <details>
-                    <summary>Companies</summary>
+                    <summary>Bidding</summary>
                     <ul className="p-2  bg-white text-[#800000]">
                       <li>
-                        <Link to="/intracom">Intracom</Link>
+                        <Link to="/makeBid">Make Bid</Link>
                       </li>
                       <li>
-                        <Link to="/saava">Saava</Link>
-                      </li>
-                      <li>
-                        <Link to="/benesse">Benesse</Link>
+                        <Link to="/howtoBid">How to Bid</Link>
                       </li>
                     </ul>
                   </details>
-                </li>
-                <li>
-                  <Link to="/makeBid">Make Bid</Link>
-                </li>
-                <li>
-                  <Link to="/howtoBid">How to Bid</Link>
                 </li>
               </ul>
             </div>
