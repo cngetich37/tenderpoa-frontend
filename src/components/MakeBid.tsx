@@ -125,7 +125,7 @@ const MakeBid: React.FC = () => {
       // setData(response.data);
 
       // Reset the selected data
-      // setSelectedData(null);
+      setSelectedData(null);
 
       // console.log("Tender updated successfully");
       // navigate("/dashboard");
