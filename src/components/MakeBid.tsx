@@ -119,16 +119,16 @@ const MakeBid: React.FC = () => {
         window.location.reload();
       }, 4000);
       // Optional: Fetch updated data from the API and update the local state
-      const response = await axios.get<MyData[]>(
-        "https://tenderpoa.onrender.com/api/tenders"
-      );
-      setData(response.data);
+      // const response = await axios.get<MyData[]>(
+      //   "https://tenderpoa.onrender.com/api/tenders"
+      // );
+      // setData(response.data);
 
       // Reset the selected data
-      setSelectedData(null);
+      // setSelectedData(null);
 
-      console.log("Tender updated successfully");
-      navigate("/dashboard");
+      // console.log("Tender updated successfully");
+      // navigate("/dashboard");
     } catch (error: any) {
       setTimeout(() => {
         setBidError(true);
