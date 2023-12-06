@@ -126,9 +126,6 @@ const MakeBid: React.FC = () => {
 
       // Reset the selected data
       setSelectedData(null);
-
-      // console.log("Tender updated successfully");
-      // navigate("/dashboard");
     } catch (error: any) {
       setTimeout(() => {
         setBidError(true);
@@ -159,7 +156,7 @@ const MakeBid: React.FC = () => {
                 >
                   Make a Bid
                 </Typography>
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-2">
                   {bidSuccess ? (
                     <Alert variant="filled" severity="success">
                       <p>{bidApiSuccess}</p>
@@ -370,10 +367,10 @@ const MakeBid: React.FC = () => {
                                   id: "tenderStatus",
                                 }}
                               >
-                                <option value={"Not Bidded"}>Not Bidded</option>
+                                {/* <option value={"Not Bidded"}>Not Bidded</option> */}
                                 <option value={"Bidded"}>Bidded</option>
-                                <option value={"Due"}>Due</option>
-                                <option value={"Closed"}>Closed</option>
+                                {/* <option value={"Due"}>Due</option>
+                                <option value={"Closed"}>Closed</option> */}
                               </NativeSelect>
                             </FormControl>
                           </div>
