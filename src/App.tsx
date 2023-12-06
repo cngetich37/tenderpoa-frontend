@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/otpcodepage" element={<OtpPage />}></Route>
         {isUserSignedIn ? (
           <>
-            <Route path="/allopentenders" element={<AllOpenTenders />}></Route>
+            <Route path="/dashboard" element={<AllOpenTenders />}></Route>
             <Route path="/saava" element={<SaavaEngLtd />}></Route>
             <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
             <Route path="/due" element={<DueTenders />}></Route>
