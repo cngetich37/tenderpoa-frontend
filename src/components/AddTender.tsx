@@ -397,7 +397,7 @@ export default function AddTender() {
                                 variant="standard"
                                 htmlFor="tenderStatus"
                               >
-                                Status
+                                Tender Status
                               </InputLabel>
                               <NativeSelect
                                 defaultValue={formik.values.tenderStatus}
@@ -408,7 +408,6 @@ export default function AddTender() {
                                 }}
                               >
                                 <option value={"Not Bidded"}>Not Bidded</option>
-                                <option value={"Bidded"}>Bidded</option>
                                 <option value={"Due"}>Due</option>
                                 <option value={"Closed"}>Closed</option>
                               </NativeSelect>
