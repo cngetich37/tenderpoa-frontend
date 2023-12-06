@@ -41,6 +41,9 @@ const NavBar = () => {
               <li>
                 <Link to="/makeBid">Make Bid</Link>
               </li>
+              <li>
+                <Link to="/howtoBid">How to Bid</Link>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl font-serif">
