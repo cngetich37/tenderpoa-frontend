@@ -14,6 +14,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
+import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
 interface MyData {
   _id: string;
@@ -49,8 +50,11 @@ const theme = createTheme({
 const MakeBid: React.FC = () => {
   const [data, setData] = useState<MyData[]>([]);
   const [selectedData, setSelectedData] = useState<MyData | null>(null);
+  const [bidSuccess, setBidSuccess] = useState(false);
+  const [bidError, setBidError] = useState(false);
+  const [bidApiSuccess, setBidApiSuccess] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
-
 
   useEffect(() => {
     // Fetch your data from the Express API and set it to the state
@@ -86,7 +90,7 @@ const MakeBid: React.FC = () => {
 
     try {
       // Implement your API update logic here
-      await axios.put(
+      const response_update = await axios.put(
         `https://tenderpoa.onrender.com/api/tenders/${selectedData._id}`,
         {
           tenderNo: selectedData.tenderNo,
@@ -105,7 +109,15 @@ const MakeBid: React.FC = () => {
           tenderStatus: selectedData.tenderStatus,
         }
       );
-
+      setBidApiSuccess(response_update.data.message);
+      setTimeout(() => {
+        setBidSuccess(true);
+        setBidError(false);
+      }, 1000);
+      setTimeout(() => {
+        navigate("/dashboard");
+        window.location.reload();
+      }, 4000);
       // Optional: Fetch updated data from the API and update the local state
       const response = await axios.get<MyData[]>(
         "https://tenderpoa.onrender.com/api/tenders"
@@ -117,7 +129,13 @@ const MakeBid: React.FC = () => {
 
       console.log("Tender updated successfully");
       navigate("/dashboard");
-    } catch (error) {
+    } catch (error: any) {
+      setTimeout(() => {
+        setBidError(true);
+        setBidSuccess(false);
+      }, 2000);
+
+      setError(error.response_update.data.message);
       console.error("Error updating tender:", error);
     }
   };
@@ -141,6 +159,17 @@ const MakeBid: React.FC = () => {
                 >
                   Make a Bid
                 </Typography>
+                <div className="flex justify-center">
+                  {bidSuccess ? (
+                    <Alert variant="filled" severity="success">
+                      <p>{bidApiSuccess}</p>
+                    </Alert>
+                  ) : bidError ? (
+                    <Alert variant="filled" severity="error">
+                      <p>{error}</p>
+                    </Alert>
+                  ) : null}
+                </div>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
@@ -248,7 +277,13 @@ const MakeBid: React.FC = () => {
                               format="DD/MM/YYYY hh:mm A"
                               value={dayjs(selectedData.closingDateTime)}
                               // disablePast
-                              views={["year", "month", "day", "hours", "minutes"]}
+                              views={[
+                                "year",
+                                "month",
+                                "day",
+                                "hours",
+                                "minutes",
+                              ]}
                             />
                           </div>
                           <div style={{ marginBottom: "20px" }} />
@@ -315,47 +350,46 @@ const MakeBid: React.FC = () => {
                               }
                             />
                             <FormControl>
-                                <InputLabel
-                                  variant="standard"
-                                  htmlFor="tenderStatus"
-                                >
-                                  Tender Status
-                                </InputLabel>
-                                <NativeSelect
+                              <InputLabel
+                                variant="standard"
+                                htmlFor="tenderStatus"
+                              >
+                                Tender Status
+                              </InputLabel>
+                              <NativeSelect
                                 style={{ width: 200 }}
-                                onChange={(e:any) =>
+                                onChange={(e: any) =>
                                   setSelectedData((prev) => ({
                                     ...prev!,
                                     tenderStatus: e.target.value,
                                   }))
                                 }
-                                  value={selectedData.tenderStatus}
-                                  inputProps={{
-                                    name: "tenderStatus",
-                                    id: "tenderStatus",
-                                  }}
-                                >
-                                  <option value={"Not Bidded"}>Not Bidded</option>
-                                  <option value={"Bidded"}>Bidded</option>
-                                  <option value={"Due"}>Due</option>
-                                  <option value={"Closed"}>Closed</option>
-                                </NativeSelect>
-                              </FormControl>
+                                value={selectedData.tenderStatus}
+                                inputProps={{
+                                  name: "tenderStatus",
+                                  id: "tenderStatus",
+                                }}
+                              >
+                                <option value={"Not Bidded"}>Not Bidded</option>
+                                <option value={"Bidded"}>Bidded</option>
+                                <option value={"Due"}>Due</option>
+                                <option value={"Closed"}>Closed</option>
+                              </NativeSelect>
+                            </FormControl>
                           </div>
                         </>
                       )}
                     </Grid>
-                    </Grid>
-                    <div className="flex justify-end mt-6">
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleUpdate}
-                      >
-                        Confirm Bid
-                      </Button>
-                    </div>
-      
+                  </Grid>
+                  <div className="flex justify-end mt-6">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={handleUpdate}
+                    >
+                      Confirm Bid
+                    </Button>
+                  </div>
                 </LocalizationProvider>
               </Paper>
             </ThemeProvider>
