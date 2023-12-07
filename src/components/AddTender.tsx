@@ -160,7 +160,7 @@ export default function AddTender() {
                               onChange={formik.handleChange}
                               onBlur={formik.handleBlur}
                               placeholder="tender description"
-                              className="w-full border-2 border-neutral-600 bg-white resize-none"
+                              className="w-full border-2 border-slate-200 bg-white resize-none"
                             />
                             {formik.errors.tenderDescription &&
                               formik.touched.tenderDescription && (
