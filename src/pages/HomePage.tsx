@@ -19,7 +19,7 @@ const Home = () => {
           <div className="hero-content text-center">
             <div className="max-w-md font-serif">
               <h1 className="text-5xl font-bold text-white font-mono mt-8">
-                TenderPoa
+                Tenderpoa
               </h1>
               <p className="py-8 text-white font-mono">
                 Imagine a streamlined oasis for your bidding needs, where
