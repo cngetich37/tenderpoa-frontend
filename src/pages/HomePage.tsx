@@ -36,7 +36,7 @@ const Home = () => {
                 to="/addtender"
                 className="rounded-md text-md font-mono bg-[#800000] text-white hover:text-[#800000] hover:bg-gray-200 py-4 px-4"
               >
-                Get Started
+                Getting Started
               </Link>
             </div>
           </div>
