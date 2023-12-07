@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/howtoBid" element={<HowToBid />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/makeBid" element={<MakeBid />}></Route>
+        
         <Route
           path="/reset-password/:token"
           element={<ResetPassword />}
@@ -44,12 +44,14 @@ const App = () => {
             <Route path="/benesse" element={<BenesseLtd />}></Route>
             <Route path="/closed" element={<ClosedTenders />}></Route>
             <Route path="/addtender" element={<AddTender />}></Route>
+            <Route path="/makeBid" element={<MakeBid />}></Route>
           </>
         ) : (
           <>
             <Route path="/addtender" element={<LoginPage />}></Route>
             <Route path="/allopentenders" element={<LoginPage />}></Route>
             <Route path="/closed" element={<LoginPage />}></Route>
+            <Route path="/makeBid" element={<LoginPage />}></Route>
           </>
         )}
       </Routes>
