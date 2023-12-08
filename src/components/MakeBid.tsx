@@ -273,7 +273,7 @@ const MakeBid: React.FC = () => {
                               label="Closing Date & Time"
                               format="DD/MM/YYYY hh:mm A"
                               value={dayjs(selectedData.closingDateTime)}
-                              // disablePast
+                              disablePast
                               views={[
                                 "year",
                                 "month",
