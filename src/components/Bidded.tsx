@@ -20,7 +20,7 @@ const theme = createTheme({
   },
 });
 
-export default function AllBiddedTenders() {
+export default function BiddedTenders() {
   const [tenderRows, setTenderRows] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -165,7 +165,7 @@ export default function AllBiddedTenders() {
             color="primary"
             className="mb-4 pb-4"
           >
-            Already Bidded Tenders
+          Bidded Tenders
           </Typography>
           <Box
             sx={{

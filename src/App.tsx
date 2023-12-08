@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import SaavaEngLtd from "./components/SaavaEngLtd";
 import IntracomAfricaLtd from "./components/IntracomAfricaLtd";
 import DueTenders from "./components/DueTenders";
-import AlreadyBidded from "./components/AlreadyBidded";
 import OtpPage from "./pages/OtpPage";
 import SignUpPage from "./pages/SignUpPage";
 import HowToBid from "./components/HowToBid";
@@ -18,6 +17,7 @@ import ClosedTenders from "./components/ClosedTenders";
 import AllOpenTenders from "./components/AllOpenTenders";
 import MakeBid from "./components/MakeBid";
 import MissingPage from "./components/MissingPage";
+import BiddedTenders from "./components/Bidded";
 const App = () => {
   const isUserSignedIn = !!localStorage.getItem("token");
   return (
@@ -41,7 +41,7 @@ const App = () => {
             <Route path="/saava" element={<SaavaEngLtd />}></Route>
             <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
             <Route path="/due" element={<DueTenders />}></Route>
-            <Route path="/bidded" element={<AlreadyBidded />}></Route>
+            <Route path="/bidded" element={<BiddedTenders />}></Route>
             <Route path="/benesse" element={<BenesseLtd />}></Route>
             <Route path="/closed" element={<ClosedTenders />}></Route>
             <Route path="/addtender" element={<AddTender />}></Route>
