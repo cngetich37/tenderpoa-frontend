@@ -17,6 +17,7 @@ import ResetPassword from "./pages/ResetPassword";
 import ClosedTenders from "./components/ClosedTenders";
 import AllOpenTenders from "./components/AllOpenTenders";
 import MakeBid from "./components/MakeBid";
+import MissingPage from "./components/MissingPage";
 const App = () => {
   const isUserSignedIn = !!localStorage.getItem("token");
   return (
@@ -28,7 +29,7 @@ const App = () => {
         <Route path="/howtoBid" element={<HowToBid />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        
+        <Route path="*" element={<MissingPage/>}/>
         <Route
           path="/reset-password/:token"
           element={<ResetPassword />}
