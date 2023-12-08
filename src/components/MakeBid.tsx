@@ -367,7 +367,7 @@ const MakeBid: React.FC = () => {
                                   id: "tenderStatus",
                                 }}
                               >
-                                <option value={"Not Bidded"}>Not Bidded</option>
+                                <option value={"Open"}>Open</option>
                                 <option value={"Bidded"}>Bidded</option>
                               </NativeSelect>
                             </FormControl>
