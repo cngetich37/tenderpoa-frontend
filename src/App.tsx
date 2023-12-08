@@ -24,35 +24,32 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/signup" element={<SignUpPage />}></Route>
-        <Route path="/howtoBid" element={<HowToBid />}></Route>
-        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="*" element={<MissingPage/>}/>
-        <Route
-          path="/reset-password/:token"
-          element={<ResetPassword />}
-        ></Route>
-        <Route path="/otpcodepage" element={<OtpPage />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/howtoBid" element={<HowToBid />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="*" element={<MissingPage />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/otpcodepage" element={<OtpPage />} />
         {isUserSignedIn ? (
           <>
-            <Route path="/dashboard" element={<AllOpenTenders />}></Route>
-            <Route path="/saava" element={<SaavaEngLtd />}></Route>
-            <Route path="/intracom" element={<IntracomAfricaLtd />}></Route>
-            <Route path="/due" element={<DueTenders />}></Route>
-            <Route path="/bidded" element={<BiddedTenders />}></Route>
-            <Route path="/benesse" element={<BenesseLtd />}></Route>
-            <Route path="/closed" element={<ClosedTenders />}></Route>
-            <Route path="/addtender" element={<AddTender />}></Route>
-            <Route path="/makeBid" element={<MakeBid />}></Route>
+            <Route path="/dashboard" element={<AllOpenTenders />} />
+            <Route path="/saava" element={<SaavaEngLtd />} />
+            <Route path="/intracom" element={<IntracomAfricaLtd />} />
+            <Route path="/due" element={<DueTenders />} />
+            <Route path="/bidded" element={<BiddedTenders />} />
+            <Route path="/benesse" element={<BenesseLtd />} />
+            <Route path="/closed" element={<ClosedTenders />} />
+            <Route path="/addtender" element={<AddTender />} />
+            <Route path="/makeBid" element={<MakeBid />} />
           </>
         ) : (
           <>
-            <Route path="/addtender" element={<LoginPage />}></Route>
-            <Route path="/dashboard" element={<LoginPage />}></Route>
-            <Route path="/closed" element={<LoginPage />}></Route>
-            <Route path="/makeBid" element={<LoginPage />}></Route>
+            <Route path="/addtender" element={<LoginPage />} />
+            <Route path="/dashboard" element={<LoginPage />} />
+            <Route path="/closed" element={<LoginPage />} />
+            <Route path="/makeBid" element={<LoginPage />} />
           </>
         )}
       </Routes>
