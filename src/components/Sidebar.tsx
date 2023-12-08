@@ -48,7 +48,7 @@ const Sidebar = () => {
                           ></path>
                         </svg>
                         <span className="-mr-1 font-medium">
-                          All Open Tenders
+                          Open Tenders
                         </span>
                       </Link>
                     </li>
@@ -206,7 +206,7 @@ const Sidebar = () => {
                           />
                         </svg>
                         <span className="group-hover:text-white">
-                          Already Bidded
+                          Bidded
                         </span>
                       </Link>
                     </li>
