@@ -56,7 +56,7 @@ export default function AddTender() {
     tenderValueKsh: 0,
     dollarRate: 0,
     company: "Intracom Africa Ltd",
-    tenderStatus: "Not Bidded",
+    tenderStatus: "Open",
   };
 
   const handleTender = async (values: any) => {
