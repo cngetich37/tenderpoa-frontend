@@ -293,10 +293,16 @@ export default function AddTender() {
                               onChange={(e) => {
                                 formik.handleChange(e);
                                 const value = parseFloat(e.target.value);
-                                const tenderValueKsh = value * formik.values.dollarRate;
+                                const tenderValueKsh =
+                                  value * formik.values.dollarRate;
                                 // Update result in real-time
                                 formik.handleChange({
-                                  target: { name: 'tenderValueKsh', value: isNaN(tenderValueKsh) ? 0 : tenderValueKsh},
+                                  target: {
+                                    name: "tenderValueKsh",
+                                    value: isNaN(tenderValueKsh)
+                                      ? 0
+                                      : tenderValueKsh,
+                                  },
                                 });
                               }}
                               onBlur={formik.handleBlur}
@@ -320,10 +326,16 @@ export default function AddTender() {
                               onChange={(e) => {
                                 formik.handleChange(e);
                                 const value = parseFloat(e.target.value);
-                                const tenderValueKsh = value * formik.values.tenderValueDollars;
+                                const tenderValueKsh =
+                                  value * formik.values.tenderValueDollars;
                                 // Update result in real-time
                                 formik.handleChange({
-                                  target: { name: 'tenderValueKsh', value: isNaN(tenderValueKsh) ? 0 : tenderValueKsh},
+                                  target: {
+                                    name: "tenderValueKsh",
+                                    value: isNaN(tenderValueKsh)
+                                      ? 0
+                                      : tenderValueKsh,
+                                  },
                                 });
                               }}
                               onBlur={formik.handleBlur}
@@ -407,7 +419,7 @@ export default function AddTender() {
                                   id: "tenderStatus",
                                 }}
                               >
-                                <option value={"Not Bidded"}>Not Bidded</option>
+                                <option value={"Open"}>Open</option>
                                 <option value={"Due"}>Due</option>
                                 <option value={"Closed"}>Closed</option>
                               </NativeSelect>
