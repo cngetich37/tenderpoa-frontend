@@ -6,6 +6,7 @@ const NavBar = () => {
   const handleSignOut = () => {
     localStorage.removeItem("token");
     navigate("/login");
+    window.location.reload();
   };
   return (
     <header className="sticky top-0 z-50">
