@@ -39,7 +39,7 @@ export default function BiddedTenders() {
     // Call the fetchData function
     fetchData();
     // Fetch data every 5 seconds
-    const intervalId = setInterval(fetchData, 2000);
+    const intervalId = setInterval(fetchData, 5000);
 
     // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
