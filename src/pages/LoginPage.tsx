@@ -5,9 +5,10 @@ import { loginSchema } from "../validationSchemas/validateLoginForm";
 import Alert from "@mui/material/Alert";
 import { FormikHelpers } from "formik";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import handleSignOut from "../components/NavBar";
+import { jwtDecode, JwtPayload } from "jwt-decode";
 interface LoginFormValues {
   email: string;
   password: string;
@@ -56,6 +57,30 @@ const LoginPage = () => {
       setSubmitting(false);
     }
   };
+
+  useEffect(() => {
+    checkTokenExpiration();
+  }, []);
+
+  const checkTokenExpiration = () => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      try {
+        const decoded = jwtDecode<JwtPayload>(token);
+        const currentTime = Date.now() / 1000;
+
+        if (decoded?.exp && decoded.exp < currentTime) {
+          handleSignOut();
+        }
+      } catch (error) {
+        console.error("Error decoding token");
+        // Handle the error, e.g., force logout or show an error message
+        handleSignOut();
+      }
+    }
+  };
+
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik<LoginFormValues>({
       initialValues: {
