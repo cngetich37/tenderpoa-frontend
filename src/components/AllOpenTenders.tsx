@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState, useEffect } from "react";
 
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -39,6 +38,11 @@ export default function AllOpenTenders() {
 
     // Call the fetchData function
     fetchData();
+    // Fetch data every 5 seconds
+    const intervalId = setInterval(fetchData, 5000);
+
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
 
   const columns: GridColDef[] = [
@@ -165,7 +169,7 @@ export default function AllOpenTenders() {
             color="primary"
             className="mb-4 pb-4"
           >
-          Open Tenders
+            Open Tenders
           </Typography>
           <Box
             sx={{
