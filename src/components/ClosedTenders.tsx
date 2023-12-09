@@ -5,6 +5,7 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
+import Alert from "@mui/material/Alert";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState, useEffect } from "react";
 
@@ -21,6 +22,10 @@ const theme = createTheme({
 
 export default function ClosedTenders() {
   const [tenderRows, setTenderRows] = useState([]);
+  const [tenderSuccess, setTenderSuccess] = useState(false);
+  const [tenderError, setTenderError] = useState(false);
+  const [tenderApiSuccess, setApiTenderSuccess] = useState("");
+  const [error, setError] = useState("");
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,19 +35,13 @@ export default function ClosedTenders() {
         // Handle the successful response here
         console.log(response.data);
         setTenderRows(response.data);
-      } catch (error) {
-        // Handle errors here
+      } catch (error: any) {
         console.error("No Closed Tenders!", error);
       }
     };
 
     // Call the fetchData function
     fetchData();
-    // Fetch data every 5 seconds
-    const intervalId = setInterval(fetchData, 5000);
-
-    // Clear the interval when the component is unmounted
-    return () => clearInterval(intervalId);
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
 
   const updateClosedTenders = async () => {
@@ -54,9 +53,19 @@ export default function ClosedTenders() {
       console.log(response.data);
       setTenderRows(response.data);
       window.location.reload();
-    } catch (error) {
+      setApiTenderSuccess(response.data.message);
+      setTimeout(() => {
+        setTenderSuccess(true);
+        setTenderError(false);
+      }, 1000);
+    } catch (error: any) {
       // Handle errors here
-      console.error("No Closed Tenders!", error);
+      setTimeout(() => {
+        setTenderError(true);
+        setTenderSuccess(false);
+      }, 2000);
+
+      setError(error.response.data.message);
     }
   };
 
@@ -177,6 +186,17 @@ export default function ClosedTenders() {
       </div>
       <div className="flex-1 w-48 h-full ml-6 mt-12 mr-6">
         <ThemeProvider theme={theme}>
+          <div className="flex justify-center">
+            {tenderSuccess ? (
+              <Alert variant="filled" severity="success">
+                <p>{tenderApiSuccess}</p>
+              </Alert>
+            ) : tenderError ? (
+              <Alert variant="filled" severity="error">
+                <p>{error}</p>
+              </Alert>
+            ) : null}
+          </div>
           <div className="flex justify-between">
             <div className="ml-8">
               <Typography
@@ -199,6 +219,7 @@ export default function ClosedTenders() {
               </button>
             </div>
           </div>
+
           <Box
             sx={{
               height: 450,
