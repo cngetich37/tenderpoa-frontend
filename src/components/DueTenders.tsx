@@ -32,13 +32,28 @@ export default function DueTenders() {
         setTenderRows(response.data);
       } catch (error) {
         // Handle errors here
-        console.error("Error making GET request:", error);
+        console.error("No Due Tenders!");
       }
     };
 
     // Call the fetchData function
     fetchData();
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+
+  const updateDueTenders = async () => {
+    try {
+      const response = await axios.put(
+        "https://tenderpoa.onrender.com/api/tenders/update-due"
+      );
+      // Handle the successful response here
+      console.log(response.data);
+      setTenderRows(response.data);
+      window.location.reload();
+    } catch (error) {
+      // Handle errors here
+      console.error("No Due Tenders!", error);
+    }
+  };
 
   const columns: GridColDef[] = [
     {
@@ -157,15 +172,28 @@ export default function DueTenders() {
       </div>
       <div className="flex-1 w-48 h-full ml-6 mt-12 mr-6">
         <ThemeProvider theme={theme}>
-          <Typography
-            component="h1"
-            variant="h6"
-            align="center"
-            color="primary"
-            className="mb-4 pb-4"
-          >
-            Due Tenders
-          </Typography>
+          <div className="flex justify-between">
+            <div className="ml-8">
+              <Typography
+                component="h1"
+                variant="h6"
+                align="center"
+                color="primary"
+                className="mb-4 pb-4"
+              >
+                Due Tenders
+              </Typography>
+            </div>
+            <div className="justify-items-center">
+              <div
+                className="ml-4 rounded-md font-mono font-semibold bg-[#800000] px-2 py-2 text-white mb-4 hover:bg-[#9d174d]"
+                onClick={updateDueTenders}
+              >
+                Check Due Tenders
+              </div>
+            </div>
+          </div>
+
           <Box
             sx={{
               height: 450,
