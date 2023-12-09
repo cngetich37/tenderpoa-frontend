@@ -190,12 +190,13 @@ export default function DueTenders() {
               </Typography>
             </div>
             <div className="justify-items-center">
-              <div
+              <button
                 className="ml-4 rounded-md font-mono font-semibold bg-[#800000] px-2 py-2 text-white mb-4 hover:bg-[#9d174d]"
+                type="submit"
                 onClick={updateDueTenders}
               >
                 Check Due Tenders
-              </div>
+              </button>
             </div>
           </div>
 
