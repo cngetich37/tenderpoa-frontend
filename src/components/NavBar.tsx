@@ -43,7 +43,7 @@ const NavBar = () => {
                 <Link to="/makeBid">Make Bid</Link>
               </li>
               <li>
-                <Link to="#">Documents</Link>
+                <Link to="/documents">Documents</Link>
               </li>
               <li>
                 <Link to="/howtoBid">How to Bid</Link>
@@ -78,7 +78,7 @@ const NavBar = () => {
                   </details>
                 </li>
                 <li>
-                  <Link to="#">Documents</Link>
+                  <Link to="/documents">Documents</Link>
                 </li>
               </ul>
             </div>
