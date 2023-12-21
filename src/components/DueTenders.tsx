@@ -174,7 +174,7 @@ export default function DueTenders() {
       <div className="flex-1 w-48 h-full ml-6 mt-12 mr-6">
         <ThemeProvider theme={theme}>
           <div className="flex justify-between">
-            <div className="ml-8">
+            <div className="ml-2">
               <Typography
                 component="h1"
                 variant="h6"

@@ -158,15 +158,17 @@ export default function IntracomAfricaLtd() {
       </div>
       <div className="flex-1 w-48 h-full ml-6 mt-12 mr-6">
         <ThemeProvider theme={theme}>
-          <Typography
-            component="h1"
-            variant="h6"
-            align="center"
-            color="primary"
-            className="mb-4 pb-4"
-          >
-            Intracom Africa Ltd Open Tenders
-          </Typography>
+          <div className="flex flex-1">
+            <Typography
+              component="h1"
+              variant="h6"
+              align="center"
+              color="primary"
+              className="mb-4 pb-4"
+            >
+              Intracom Africa Ltd Open Tenders
+            </Typography>
+          </div>
           <Box
             sx={{
               height: 450,

@@ -38,7 +38,6 @@ export default function BiddedTenders() {
 
     // Call the fetchData function
     fetchData();
-  
   }, []); // The empty dependency array ensures that this effect runs once when the component mounts
 
   const columns: GridColDef[] = [
@@ -158,15 +157,17 @@ export default function BiddedTenders() {
       </div>
       <div className="flex-1 w-48 h-full ml-6 mt-12 mr-6">
         <ThemeProvider theme={theme}>
-          <Typography
-            component="h1"
-            variant="h6"
-            align="center"
-            color="primary"
-            className="mb-4 pb-4"
-          >
-            Bidded Tenders
-          </Typography>
+          <div className="flex flex-1">
+            <Typography
+              component="h1"
+              variant="h6"
+              align="center"
+              color="primary"
+              className="mb-4 pb-4"
+            >
+              Bidded Tenders
+            </Typography>
+          </div>
           <Box
             sx={{
               height: 450,
