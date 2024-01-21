@@ -1,3 +1,5 @@
+import cnetechImage from "../assets/cnetech.png";
+
 const Footer = () => {
   return (
     <>
@@ -6,9 +8,13 @@ const Footer = () => {
           <p>Copyright © 2023 - All rights reserved</p>
         </aside>
       </footer> */}
-      <footer className="footer footer-center p-4 bg-[#800000]  text-primary-content">
+      <footer className="footer footer-center p-8 bg-[#800000]  text-primary-content">
         <aside>
-         
+          <img
+            src={cnetechImage}
+            className="rounded-full border-white h-8"
+            alt=""
+          />
           <p className="font-bold">
             CNETECH Systems Ltd. <br />
             Providing tech solutions since 2023
