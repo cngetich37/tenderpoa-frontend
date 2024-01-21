@@ -55,7 +55,7 @@ export default function AddTender() {
     tenderValueDollars: 0,
     tenderValueKsh: 0,
     dollarRate: 0,
-    company: "Intracom Africa Ltd",
+    company: "IT Tenders",
     tenderStatus: "Open",
   };
 
@@ -384,14 +384,14 @@ export default function AddTender() {
                                   id: "company",
                                 }}
                               >
-                                <option value={"Intracom Africa Ltd"}>
-                                  Intracom Africa Ltd
+                                <option value={"IT Tenders"}>
+                                IT Tenders
                                 </option>
-                                <option value={"Saava Eng. Ltd"}>
-                                  Saava Eng. Ltd
+                                <option value={"Engineering Tenders"}>
+                                Engineering Tenders
                                 </option>
-                                <option value={"Benesse EA. Ltd"}>
-                                  Benesse EA. Ltd
+                                <option value={"Medical Tenders"}>
+                                Medical Tenders
                                 </option>
                               </NativeSelect>
                             </FormControl>

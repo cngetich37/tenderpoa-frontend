@@ -166,7 +166,7 @@ export default function IntracomAfricaLtd() {
               color="primary"
               className="mb-4 pb-4"
             >
-              Intracom Africa Ltd Open Tenders
+              IT Open Tenders
             </Typography>
           </div>
           <Box

@@ -166,7 +166,7 @@ export default function BenesseLtd() {
               color="primary"
               className="mb-4 pb-4"
             >
-              Benesse EA. Ltd Open Tenders
+              Medical Open Tenders
             </Typography>
           </div>
           <Box

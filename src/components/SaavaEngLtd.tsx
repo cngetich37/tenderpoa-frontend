@@ -165,7 +165,7 @@ export default function SaavaEngLtd() {
               color="primary"
               className="mb-4 pb-4"
             >
-              Saava Eng. Ltd Open Tenders
+              Engineering Open Tenders
             </Typography>
           </div>
           <Box
