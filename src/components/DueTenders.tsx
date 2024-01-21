@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#800000",
+      main: "#212121",
     },
     secondary: {
       main: "#510000",
@@ -187,7 +187,7 @@ export default function DueTenders() {
             </div>
             <div className="justify-items-center">
               <button
-                className="ml-4 rounded-md font-mono font-semibold bg-[#800000] px-2 py-2 text-white mb-4 hover:bg-[#9d174d]"
+                className="ml-4 rounded-md font-mono font-semibold bg-[#212121] px-2 py-2 text-white mb-4 hover:bg-[#9d174d]"
                 type="submit"
                 onClick={updateDueTenders}
               >
@@ -201,7 +201,7 @@ export default function DueTenders() {
               height: 450,
               width: "100%",
               "& .super-app-theme--header": {
-                backgroundColor: "#800000",
+                backgroundColor: "#212121",
                 color: "white",
               },
             }}

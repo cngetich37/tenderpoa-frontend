@@ -107,7 +107,7 @@ const LoginPage = () => {
               autoComplete="true"
             >
               <div className="flex flex-col items-center justify-center ">
-                <h2 className="font-bold text-2xl text-[#800000] font-serif ">
+                <h2 className="font-bold text-2xl text-[#212121] font-serif ">
                   Login
                 </h2>
                 {loginSuccess ? (
@@ -122,7 +122,7 @@ const LoginPage = () => {
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="email">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Email
                   </span>
                 </label>
@@ -144,7 +144,7 @@ const LoginPage = () => {
 
               <div className="form-control">
                 <label className="label" htmlFor="password">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Password
                   </span>
                 </label>
@@ -166,13 +166,13 @@ const LoginPage = () => {
                   <div className="flex-1 label">
                     <Link
                       to="/forgot-password"
-                      className="label-text-alt link text-[#800000]"
+                      className="label-text-alt link text-[#212121]"
                     >
                       Forgot password?
                     </Link>
                   </div>
                   <div className="flex justify-end label">
-                    <a href="#" className="label-text-alt link text-[#800000]">
+                    <a href="#" className="label-text-alt link text-[#212121]">
                       Don't have an account?
                     </a>
                     <span className="label">
@@ -189,7 +189,7 @@ const LoginPage = () => {
               <div className="flex flex-col justify-center items-center">
                 <div className="form-control mt-6">
                   <button
-                    className="rounded-md px-6 py-2 font-bold font-mono bg-[#800000]  text-white hover:bg-zinc-500 mb-2"
+                    className="rounded-md px-6 py-2 font-bold font-mono bg-[#212121]  text-white hover:bg-zinc-500 mb-2"
                     type="submit"
                   >
                     Login

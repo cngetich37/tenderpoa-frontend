@@ -34,7 +34,7 @@ const Home = () => {
               </p>
               <Link
                 to="/addtender"
-                className="rounded-md text-md font-mono bg-[#800000] text-white hover:text-[#800000] hover:bg-gray-200 py-4 px-4"
+                className="rounded-md text-md font-mono bg-[#212121] text-white hover:text-[#212121] hover:bg-gray-200 py-4 px-4"
               >
                 Get Started
               </Link>

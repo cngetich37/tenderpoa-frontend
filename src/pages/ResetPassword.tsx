@@ -78,7 +78,7 @@ const ResetPassword = () => {
           <div className="ml-4 flex-col text-center lg:text-center"></div>
           <div className="card flex-shrink-0 w-full max-w-lg bg-white">
             <form className="card-body" onSubmit={handleSubmit}>
-              <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
+              <h1 className="flex justify-center text-3xl font-bold text-[#212121] font-serif">
                 Password Reset
               </h1>
               <div className="flex justify-center">
@@ -94,7 +94,7 @@ const ResetPassword = () => {
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="password">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
+                  <span className="label-text text-[#212121] text-lg font-semibold">
                     Password
                   </span>
                 </label>

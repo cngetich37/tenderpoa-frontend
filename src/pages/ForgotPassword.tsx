@@ -76,7 +76,7 @@ const ForgotPassword = () => {
               onSubmit={handleSubmit}
               autoComplete="true"
             >
-              <h1 className="flex justify-center text-3xl font-bold text-[#800000] font-serif">
+              <h1 className="flex justify-center text-3xl font-bold text-[#212121] font-serif">
                 Forgot Password
               </h1>
               <div className="flex justify-center">
@@ -92,7 +92,7 @@ const ForgotPassword = () => {
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="email">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
+                  <span className="label-text text-[#212121] text-lg font-semibold">
                     Email
                   </span>
                 </label>

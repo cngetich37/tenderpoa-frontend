@@ -67,7 +67,7 @@ const NavBar = () => {
                 <li tabIndex={0}>
                   <details>
                     <summary>Bidding</summary>
-                    <ul className="p-2  bg-white text-[#800000]">
+                    <ul className="p-2  bg-white text-[#212121]">
                       <li>
                         <Link to="/makeBid">Make Bid</Link>
                       </li>

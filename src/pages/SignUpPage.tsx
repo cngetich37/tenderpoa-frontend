@@ -88,7 +88,7 @@ const SignUpPage = () => {
               autoComplete="true"
             >
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-2xl font-bold text-[#800000] font-serif">
+                <h1 className="text-2xl font-bold text-[#212121] font-serif">
                   Sign up
                 </h1>
                 {accountSuccess ? (
@@ -103,7 +103,7 @@ const SignUpPage = () => {
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="firstName">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono lg:w-screen">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono lg:w-screen">
                     First Name
                   </span>
                 </label>
@@ -125,7 +125,7 @@ const SignUpPage = () => {
 
               <div className="form-control">
                 <label className="label" htmlFor="lastName">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Last Name
                   </span>
                 </label>
@@ -146,7 +146,7 @@ const SignUpPage = () => {
 
               <div className="form-control">
                 <label className="label" htmlFor="email">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Email
                   </span>
                 </label>
@@ -166,7 +166,7 @@ const SignUpPage = () => {
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="password">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Password
                   </span>
                 </label>
@@ -187,7 +187,7 @@ const SignUpPage = () => {
 
               <div className="form-control mb-1">
                 <label className="label" htmlFor="confirmPassword">
-                  <span className="label-text text-[#800000] text-lg font-semibold font-mono">
+                  <span className="label-text text-[#212121] text-lg font-semibold font-mono">
                     Confirm Password
                   </span>
                 </label>
@@ -209,7 +209,7 @@ const SignUpPage = () => {
                   <div className="label">
                     <a
                       href="#"
-                      className="label-text-alt link text-[#800000] mr-1"
+                      className="label-text-alt link text-[#212121] mr-1"
                     >
                       Already have an account?
                     </a>
@@ -225,7 +225,7 @@ const SignUpPage = () => {
               <div className="flex flex-col justify-center items-center">
                 <div className="form-control mt-4">
                   <button
-                    className="rounded-md px-6 py-2 bg-[#800000] font-bold font-mono text-white hover:bg-zinc-500"
+                    className="rounded-md px-6 py-2 bg-[#212121] font-bold font-mono text-white hover:bg-zinc-500"
                     type="submit"
                   >
                     Signup

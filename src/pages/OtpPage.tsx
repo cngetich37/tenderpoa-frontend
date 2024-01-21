@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const OtpPage = () => {
   return (
     <>
-      <div className="hero h-screen bg-[#800000]">
+      <div className="hero h-screen bg-[#212121]">
         <div className="hero-content flex-col justify-center lg:flex-row-reverse">
           <div className="ml-4 flex-col text-center lg:text-center">
             {/* <h1 className="text-5xl font-bold text-white">
@@ -15,7 +15,7 @@ const OtpPage = () => {
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-[#800000] text-lg font-semibold">
+                  <span className="label-text text-[#212121] text-lg font-semibold">
                     Enter the Code
                   </span>
                 </label>
