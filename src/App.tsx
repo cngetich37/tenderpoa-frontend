@@ -36,11 +36,11 @@ const App = () => {
         {isUserSignedIn ? (
           <>
             <Route path="/dashboard" element={<AllOpenTenders />} />
-            <Route path="/saava" element={<SaavaEngLtd />} />
-            <Route path="/intracom" element={<IntracomAfricaLtd />} />
+            <Route path="/engineering" element={<SaavaEngLtd />} />
+            <Route path="/it" element={<IntracomAfricaLtd />} />
             <Route path="/due" element={<DueTenders />} />
             <Route path="/bidded" element={<BiddedTenders />} />
-            <Route path="/benesse" element={<BenesseLtd />} />
+            <Route path="/medical" element={<BenesseLtd />} />
             <Route path="/closed" element={<ClosedTenders />} />
             <Route path="/addtender" element={<AddTender />} />
             <Route path="/makeBid" element={<MakeBid />} />

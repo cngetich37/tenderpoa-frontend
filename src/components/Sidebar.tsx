@@ -54,7 +54,7 @@ const Sidebar = () => {
                     </li>
                     <li className="min-w-max">
                       <Link
-                        to="/saava"
+                        to="/engineering"
                         className="bg group flex items-center space-x-4 px-4 py-3 text-gray-600 group-hover:text-white  bg-gradient-to-r from-white to-[#212121] "
                       >
                         <svg
@@ -81,7 +81,7 @@ const Sidebar = () => {
                     </li>
                     <li className="min-w-max">
                       <Link
-                        to="/intracom"
+                        to="/it"
                         className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600  group-hover:text-white  bg-gradient-to-r from-white to-[#212121] "
                       >
                         <svg
@@ -108,7 +108,7 @@ const Sidebar = () => {
                     </li>
                     <li className="min-w-max">
                       <Link
-                        to="/benesse"
+                        to="/medical"
                         className="bg group flex items-center space-x-4 px-4 py-3 text-gray-600 group-hover:text-white  bg-gradient-to-r from-white to-[#212121] "
                       >
                         <svg
