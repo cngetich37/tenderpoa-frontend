@@ -75,7 +75,7 @@ const Sidebar = () => {
                           />
                         </svg>
                         <span className="group-hover:text-white">
-                          Saava Eng. Ltd
+                          Engineering Tenders
                         </span>
                       </Link>
                     </li>
@@ -102,7 +102,7 @@ const Sidebar = () => {
                           />
                         </svg>
                         <span className="group-hover:text-white">
-                          Intracom Africa Ltd
+                          IT Tenders
                         </span>
                       </Link>
                     </li>
@@ -129,7 +129,7 @@ const Sidebar = () => {
                           />
                         </svg>
                         <span className="group-hover:text-white">
-                          Benesse EA. Ltd
+                          Medical Tenders
                         </span>
                       </Link>
                     </li>
