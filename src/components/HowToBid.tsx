@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#800000",
+      main: "#212121",
     },
     secondary: {
       main: "#510000",
@@ -148,7 +148,7 @@ export default function HowToBid() {
                 All bidding steps completed.- you&apos;re done
               </Typography>
               <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                Reset
+                Begin the steps of bidding
               </Button>
             </Paper>
           )}

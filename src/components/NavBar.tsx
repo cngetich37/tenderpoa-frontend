@@ -10,7 +10,7 @@ const NavBar = () => {
   };
   return (
     <header className="sticky top-0 z-50">
-      <div className="navbar relative bg-[#800000] text-white">
+      <div className="navbar relative bg-gray-900 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} className="btn btn-ghost lg:hidden">

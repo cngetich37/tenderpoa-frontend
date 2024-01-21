@@ -8,7 +8,7 @@ const Footer = () => {
           <p>Copyright © 2023 - All rights reserved</p>
         </aside>
       </footer> */}
-      <footer className="footer footer-center p-8 bg-[#800000]  text-primary-content">
+      <footer className="footer footer-center p-8 bg-gray-900 text-primary-content">
         <aside>
           <img
             src={cnetechImage}
@@ -19,7 +19,6 @@ const Footer = () => {
             CNETECH Systems Ltd. <br />
             Providing tech solutions since 2023
           </p>
-          <p>Copyright © 2024 - All right reserved</p>
         </aside>
         <nav>
           <div className="grid grid-flow-col gap-4">

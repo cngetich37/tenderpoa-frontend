@@ -37,7 +37,7 @@ interface MyData {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#800000",
+      main: "#212121",
     },
     secondary: {
       main: "#510000",

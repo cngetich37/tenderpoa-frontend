@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#800000",
+      main: "#212121",
     },
     secondary: {
       main: "#510000",
@@ -173,7 +173,7 @@ export default function BiddedTenders() {
               height: 450,
               width: "100%",
               "& .super-app-theme--header": {
-                backgroundColor: "#800000",
+                backgroundColor: "#212121",
                 color: "white",
               },
             }}
