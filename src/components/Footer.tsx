@@ -16,7 +16,7 @@ const Footer = () => {
             alt=""
           />
           <p className="font-bold">
-            CNETECH Systems Ltd. <br />
+            Cnetech Systems Ltd. <br />
             Providing tech solutions since 2023
           </p>
         </aside>
