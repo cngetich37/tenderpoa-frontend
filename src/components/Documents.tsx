@@ -4,7 +4,7 @@ const Documents = () => {
       <div className="hero h-screen bg-white flex items-start justify-center">
         <div className="hero-content mt-20">
           <div className="text-[#212121] text-4xl font-bold">
-            Will be launched soon!
+            In development!
           </div>
         </div>
       </div>
