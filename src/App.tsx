@@ -18,7 +18,6 @@ import AllOpenTenders from "./components/AllOpenTenders";
 import MakeBid from "./components/MakeBid";
 import MissingPage from "./components/MissingPage";
 import BiddedTenders from "./components/Bidded";
-import Documents from "./components/Documents";
 const App = () => {
   const isUserSignedIn = !!localStorage.getItem("token");
   return (
@@ -44,7 +43,6 @@ const App = () => {
             <Route path="/closed" element={<ClosedTenders />} />
             <Route path="/addtender" element={<AddTender />} />
             <Route path="/makeBid" element={<MakeBid />} />
-            <Route path="/documents" element={<Documents />} />
           </>
         ) : (
           <>
